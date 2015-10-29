@@ -12,12 +12,14 @@ import CoreData
 public class CoreDataHelper {
     
     private class func getEntityName<T: NSManagedObject>(entityClass: T.Type) -> String {
-        return NSStringFromClass(entityClass)
+        let nameSpaceClassName = NSStringFromClass(T)
+        let className = nameSpaceClassName.componentsSeparatedByString(".").last! as String
+        return className
     }
     
     public class func createEntityForClass<T: NSManagedObject>(entityClass: T.Type,
         context: NSManagedObjectContext) -> T {
-            return NSEntityDescription.insertNewObjectForEntityForName(NSStringFromClass(entityClass),
+            return NSEntityDescription.insertNewObjectForEntityForName(self.getEntityName(entityClass),
                 inManagedObjectContext: context) as! T
     }
     
