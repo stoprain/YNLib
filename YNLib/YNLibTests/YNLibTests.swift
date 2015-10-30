@@ -23,7 +23,10 @@ class YNLibTests: XCTestCase {
     
     func testRandomInRange() {
         for _ in 0...100 {
-            print(NumberUtils.randomInRange(1...6))
+            let n = NumberUtils.randomInRange(1...6)
+            if n < 1 || n > 6 {
+                XCTFail("Random number out of range")
+            }
         }
         XCTAssert(true, "Pass")
     }

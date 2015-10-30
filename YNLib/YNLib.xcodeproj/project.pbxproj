@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF471BE21FCD0087B832 /* AsyncOperation.swift */; };
+		B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF491BE221D70087B832 /* StopTimer.swift */; };
+		B441EB3E1BE31F9300000195 /* AsyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */; };
 		B486F5991BC66C07002AF53D /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B486F5981BC66C07002AF53D /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B486F5A01BC66C07002AF53D /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B486F5951BC66C07002AF53D /* YNLib.framework */; settings = {ASSET_TAGS = (); }; };
+		B486F5A01BC66C07002AF53D /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B486F5951BC66C07002AF53D /* YNLib.framework */; };
 		B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5A41BC66C07002AF53D /* YNLibTests.swift */; };
-		B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */; settings = {ASSET_TAGS = (); }; };
-		B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */; settings = {ASSET_TAGS = (); }; };
-		B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */; settings = {ASSET_TAGS = (); }; };
-		B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */; settings = {ASSET_TAGS = (); }; };
+		B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */; };
+		B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */; };
+		B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */; };
+		B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */; };
+		B4F577091BE222EB00A403C2 /* StopTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F577081BE222EB00A403C2 /* StopTimerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +31,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B429EF471BE21FCD0087B832 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
+		B429EF491BE221D70087B832 /* StopTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimer.swift; sourceTree = "<group>"; };
+		B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperationTests.swift; sourceTree = "<group>"; };
 		B486F5951BC66C07002AF53D /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B486F5981BC66C07002AF53D /* YNLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
 		B486F59A1BC66C07002AF53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -37,6 +44,7 @@
 		B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
+		B4F577081BE222EB00A403C2 /* StopTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +87,14 @@
 		B486F5971BC66C07002AF53D /* YNLib */ = {
 			isa = PBXGroup;
 			children = (
+				B429EF491BE221D70087B832 /* StopTimer.swift */,
 				B486F5981BC66C07002AF53D /* YNLib.h */,
 				B486F59A1BC66C07002AF53D /* Info.plist */,
 				B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */,
 				B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */,
 				B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */,
 				B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */,
+				B429EF471BE21FCD0087B832 /* AsyncOperation.swift */,
 			);
 			path = YNLib;
 			sourceTree = "<group>";
@@ -92,7 +102,9 @@
 		B486F5A31BC66C07002AF53D /* YNLibTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4F577081BE222EB00A403C2 /* StopTimerTests.swift */,
 				B486F5A41BC66C07002AF53D /* YNLibTests.swift */,
+				B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */,
 				B486F5A61BC66C07002AF53D /* Info.plist */,
 			);
 			path = YNLibTests;
@@ -209,7 +221,9 @@
 				B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */,
 				B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */,
 				B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */,
+				B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */,
 				B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */,
+				B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,6 +232,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */,
+				B4F577091BE222EB00A403C2 /* StopTimerTests.swift in Sources */,
+				B441EB3E1BE31F9300000195 /* AsyncOperationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
