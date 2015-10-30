@@ -10,7 +10,7 @@ import UIKit
 
 public class AsyncOperation: NSOperation {
     
-    enum State {
+    public enum State {
         case Ready, Executing, Finished
         func keyPath() -> String {
             switch self {
@@ -24,7 +24,7 @@ public class AsyncOperation: NSOperation {
         }
     }
     
-    var state = State.Ready {
+    public var state = State.Ready {
         willSet {
             willChangeValueForKey(newValue.keyPath())
             willChangeValueForKey(state.keyPath())
@@ -35,11 +35,11 @@ public class AsyncOperation: NSOperation {
         }
     }
     
-    enum Result {
+    public enum Result {
         case Unknown, Succeed, Failed, Canceled
     }
     
-    var result = Result.Unknown
+    public var result = Result.Unknown
     
     public override var ready: Bool {
         return super.ready && state == .Ready
