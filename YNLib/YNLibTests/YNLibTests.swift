@@ -39,4 +39,10 @@ class YNLibTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
+    func testAppSandboxHelper() {
+        print("AppSandboxHelper documentsPath >> \(AppSandboxHelper.documentsPath)")
+        print("AppSandboxHelper cachesPath    >> \(AppSandboxHelper.cachesPath)")
+        XCTAssert(true, "Pass")
+    }
+    
 }
