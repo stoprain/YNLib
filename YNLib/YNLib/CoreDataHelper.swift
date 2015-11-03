@@ -23,9 +23,10 @@ public class CoreDataHelper {
                 inManagedObjectContext: context) as! T
     }
     
-    public class func getManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, predicate: NSPredicate? = nil) -> [T] {
+    public class func getManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, sortDescriptors: [NSSortDescriptor]? = nil, predicate: NSPredicate? = nil) -> [T] {
         let request = NSFetchRequest(entityName: self.getEntityName(entityClass))
         request.predicate = predicate
+        request.sortDescriptors = sortDescriptors
         do {
             let result = try context.executeFetchRequest(request)
             return result as! [T]
