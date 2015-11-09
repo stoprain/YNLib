@@ -11,6 +11,7 @@
 		B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF491BE221D70087B832 /* StopTimer.swift */; };
 		B441EB3E1BE31F9300000195 /* AsyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */; };
 		B441EB4E1BE3497400000195 /* AppSandboxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441EB4D1BE3497400000195 /* AppSandboxHelper.swift */; };
+		B44D6D471BF0813B0037FF08 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D6D461BF0813B0037FF08 /* ImageUtils.swift */; };
 		B486F5991BC66C07002AF53D /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B486F5981BC66C07002AF53D /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B486F5A01BC66C07002AF53D /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B486F5951BC66C07002AF53D /* YNLib.framework */; };
 		B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5A41BC66C07002AF53D /* YNLibTests.swift */; };
@@ -36,6 +37,7 @@
 		B429EF491BE221D70087B832 /* StopTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimer.swift; sourceTree = "<group>"; };
 		B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperationTests.swift; sourceTree = "<group>"; };
 		B441EB4D1BE3497400000195 /* AppSandboxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSandboxHelper.swift; sourceTree = "<group>"; };
+		B44D6D461BF0813B0037FF08 /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		B486F5951BC66C07002AF53D /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B486F5981BC66C07002AF53D /* YNLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
 		B486F59A1BC66C07002AF53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */,
 				B429EF471BE21FCD0087B832 /* AsyncOperation.swift */,
 				B441EB4D1BE3497400000195 /* AppSandboxHelper.swift */,
+				B44D6D461BF0813B0037FF08 /* ImageUtils.swift */,
 			);
 			path = YNLib;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */,
 				B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */,
 				B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */,
+				B44D6D471BF0813B0037FF08 /* ImageUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

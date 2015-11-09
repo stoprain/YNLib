@@ -23,10 +23,16 @@ public class CoreDataHelper {
                 inManagedObjectContext: context) as! T
     }
     
-    public class func getManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, sortDescriptors: [NSSortDescriptor]? = nil, predicate: NSPredicate? = nil) -> [T] {
+    public class func getManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, sortDescriptors: [NSSortDescriptor]? = nil, predicate: NSPredicate? = nil, fetchOffset: Int? = nil, fetchLimit: Int? = nil) -> [T] {
         let request = NSFetchRequest(entityName: self.getEntityName(entityClass))
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
+        if let offset = fetchOffset where offset >= 0 {
+            request.fetchOffset = offset
+        }
+        if let limit = fetchLimit where limit >= 0 {
+            request.fetchLimit = limit
+        }
         do {
             let result = try context.executeFetchRequest(request)
             return result as! [T]
