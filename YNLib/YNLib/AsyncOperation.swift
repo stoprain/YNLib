@@ -57,6 +57,8 @@ public class AsyncOperation: NSOperation {
         return true
     }
     
+    public var seq: String = "asop \(Utils.getSeq())"
+    
     public override func cancel() {
         self.result = Result.Canceled
         if self.state == State.Executing {
