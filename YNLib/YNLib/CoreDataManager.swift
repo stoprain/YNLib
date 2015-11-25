@@ -9,15 +9,11 @@
 import UIKit
 import CoreData
 
-private let sharedInstance = CoreDataManager()
-
 public class CoreDataManager {
     
     public var modelName = "Model"
     
-    public class var sharedManager: CoreDataManager {
-        return sharedInstance
-    }
+    public static let sharedManager = CoreDataManager()
     
     // MARK: - Core Data stack
     
