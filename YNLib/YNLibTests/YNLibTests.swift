@@ -45,4 +45,12 @@ class YNLibTests: XCTestCase {
         XCTAssert(true, "Pass")
     }
     
+    func testFileSizeFormatter() {
+        print(FileSizeFormatter.sharedFormatter.stringFromNumber(666))
+        print(FileSizeFormatter.sharedFormatter.stringFromNumber(6666))
+        print(FileSizeFormatter.sharedFormatter.stringFromNumber(66666))
+        print(FileSizeFormatter.sharedFormatter.stringFromNumber(666666))
+        print(FileSizeFormatter.sharedFormatter.stringFromNumber(6666666))
+    }
+    
 }

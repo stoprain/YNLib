@@ -20,6 +20,7 @@
 		B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */; };
 		B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */; };
 		B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */; };
+		B4E5204D1C0AA61200274F3A /* FileSizeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */; };
 		B4F577091BE222EB00A403C2 /* StopTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F577081BE222EB00A403C2 /* StopTimerTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
+		B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSizeFormatter.swift; sourceTree = "<group>"; };
 		B4F577081BE222EB00A403C2 /* StopTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +106,7 @@
 				B429EF471BE21FCD0087B832 /* AsyncOperation.swift */,
 				B441EB4D1BE3497400000195 /* AppSandboxHelper.swift */,
 				B44D6D461BF0813B0037FF08 /* ImageUtils.swift */,
+				B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */,
 			);
 			path = YNLib;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */,
 				B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */,
 				B458831E1BFF1864005A55FC /* Utils.swift in Sources */,
+				B4E5204D1C0AA61200274F3A /* FileSizeFormatter.swift in Sources */,
 				B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */,
 				B441EB4E1BE3497400000195 /* AppSandboxHelper.swift in Sources */,
 				B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */,
