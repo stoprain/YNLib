@@ -13,6 +13,7 @@
 		B441EB4E1BE3497400000195 /* AppSandboxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441EB4D1BE3497400000195 /* AppSandboxHelper.swift */; };
 		B44D6D471BF0813B0037FF08 /* ImageUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44D6D461BF0813B0037FF08 /* ImageUtils.swift */; };
 		B458831E1BFF1864005A55FC /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458831D1BFF1864005A55FC /* Utils.swift */; };
+		B459E3E11C104B4300783219 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B459E3E01C104B4300783219 /* DateUtils.swift */; };
 		B486F5991BC66C07002AF53D /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B486F5981BC66C07002AF53D /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B486F5A01BC66C07002AF53D /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B486F5951BC66C07002AF53D /* YNLib.framework */; };
 		B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5A41BC66C07002AF53D /* YNLibTests.swift */; };
@@ -41,6 +42,7 @@
 		B441EB4D1BE3497400000195 /* AppSandboxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSandboxHelper.swift; sourceTree = "<group>"; };
 		B44D6D461BF0813B0037FF08 /* ImageUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUtils.swift; sourceTree = "<group>"; };
 		B458831D1BFF1864005A55FC /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B459E3E01C104B4300783219 /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		B486F5951BC66C07002AF53D /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B486F5981BC66C07002AF53D /* YNLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
 		B486F59A1BC66C07002AF53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		B486F5971BC66C07002AF53D /* YNLib */ = {
 			isa = PBXGroup;
 			children = (
+				B459E3E01C104B4300783219 /* DateUtils.swift */,
 				B458831D1BFF1864005A55FC /* Utils.swift */,
 				B429EF491BE221D70087B832 /* StopTimer.swift */,
 				B486F5981BC66C07002AF53D /* YNLib.h */,
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B459E3E11C104B4300783219 /* DateUtils.swift in Sources */,
 				B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */,
 				B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */,
 				B458831E1BFF1864005A55FC /* Utils.swift in Sources */,
