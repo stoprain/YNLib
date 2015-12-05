@@ -23,6 +23,7 @@
 		B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */; };
 		B4E5204D1C0AA61200274F3A /* FileSizeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */; };
 		B4F577091BE222EB00A403C2 /* StopTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F577081BE222EB00A403C2 /* StopTimerTests.swift */; };
+		B4FB8B521C12B80A00B0CF51 /* ImageCompressor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4FB8B511C12B80A00B0CF51 /* ImageCompressor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
 		B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSizeFormatter.swift; sourceTree = "<group>"; };
 		B4F577081BE222EB00A403C2 /* StopTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimerTests.swift; sourceTree = "<group>"; };
+		B4FB8B511C12B80A00B0CF51 /* ImageCompressor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCompressor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				B441EB4D1BE3497400000195 /* AppSandboxHelper.swift */,
 				B44D6D461BF0813B0037FF08 /* ImageUtils.swift */,
 				B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */,
+				B4FB8B511C12B80A00B0CF51 /* ImageCompressor.swift */,
 			);
 			path = YNLib;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4FB8B521C12B80A00B0CF51 /* ImageCompressor.swift in Sources */,
 				B459E3E11C104B4300783219 /* DateUtils.swift in Sources */,
 				B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */,
 				B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */,
