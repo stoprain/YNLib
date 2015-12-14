@@ -70,3 +70,22 @@ public extension NSManagedObjectContext {
         })
     }
 }
+
+public extension NSManagedObject {
+    public func isValid() -> Bool {
+        if self.managedObjectContext == nil {
+            return false
+        }
+        
+        do {
+            if let _ = try self.managedObjectContext?.existingObjectWithID(self.objectID) {
+                return true
+            }
+        } catch {
+            return false
+        }
+
+        return self.managedObjectContext != nil && !self.deleted
+    }
+}
+
