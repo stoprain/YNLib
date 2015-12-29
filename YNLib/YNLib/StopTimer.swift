@@ -12,7 +12,7 @@ import UIKit
     StopTimer
 */
 
-class StopTimer: NSObject {
+class StopTimer {
     
     class Task {
         var uuid: String = ""
@@ -25,11 +25,16 @@ class StopTimer: NSObject {
     
     var timer: NSTimer?
     var tasks = [Task]()
+    var runLoopMode: String?
     
     private static let shareInstance = StopTimer()
     
     class var shareTimer: StopTimer {
         return shareInstance
+    }
+    
+    init(runLoopMode: String? = nil) {
+        self.runLoopMode = runLoopMode
     }
     
     /**
@@ -67,9 +72,9 @@ class StopTimer: NSObject {
         self.start()
     }
     
-    private func start(runLoopMode: String? = nil) {
+    private func start() {
         if self.timer == nil {
-            if let mode = runLoopMode {
+            if let mode = self.runLoopMode {
                 self.timer = NSTimer(timeInterval: MinInterval, target: self, selector: Selector("onTimer"), userInfo: nil, repeats: true)
                 NSRunLoop.currentRunLoop().addTimer(self.timer!, forMode: mode)
             } else {
