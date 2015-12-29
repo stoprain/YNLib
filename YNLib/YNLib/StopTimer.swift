@@ -67,10 +67,16 @@ class StopTimer: NSObject {
         self.start()
     }
     
-    private func start() {
+    private func start(runLoopMode: String? = nil) {
         if self.timer == nil {
-            self.timer = NSTimer.scheduledTimerWithTimeInterval(MinInterval, target: self, selector: Selector("onTimer"), userInfo: nil, repeats: true)
+            if let mode = runLoopMode {
+                self.timer = NSTimer(timeInterval: MinInterval, target: self, selector: Selector("onTimer"), userInfo: nil, repeats: true)
+                NSRunLoop.currentRunLoop().addTimer(self.timer!, forMode: mode)
+            } else {
+                self.timer = NSTimer.scheduledTimerWithTimeInterval(MinInterval, target: self, selector: Selector("onTimer"), userInfo: nil, repeats: true)
+            }
         }
+        NSRunLoopCommonModes
     }
     
     @objc private func onTimer() {
