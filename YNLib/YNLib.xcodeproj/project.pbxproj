@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B42495761C48DA5200CA2659 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42495751C48DA5200CA2659 /* Chrono.swift */; };
 		B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF471BE21FCD0087B832 /* AsyncOperation.swift */; };
 		B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF491BE221D70087B832 /* StopTimer.swift */; };
 		B441EB3E1BE31F9300000195 /* AsyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */; };
@@ -19,6 +20,7 @@
 		B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5A41BC66C07002AF53D /* YNLibTests.swift */; };
 		B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */; };
 		B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */; };
+		B4DA2A3C1C48E8C400DEE567 /* ChronoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */; };
 		B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */; };
 		B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */; };
 		B4E5204D1C0AA61200274F3A /* FileSizeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */; };
@@ -37,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B42495751C48DA5200CA2659 /* Chrono.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chrono.swift; sourceTree = "<group>"; };
 		B429EF471BE21FCD0087B832 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		B429EF491BE221D70087B832 /* StopTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimer.swift; sourceTree = "<group>"; };
 		B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperationTests.swift; sourceTree = "<group>"; };
@@ -52,6 +55,7 @@
 		B486F5A61BC66C07002AF53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChronoTests.swift; sourceTree = "<group>"; };
 		B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
 		B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileSizeFormatter.swift; sourceTree = "<group>"; };
@@ -113,6 +117,7 @@
 				B44D6D461BF0813B0037FF08 /* ImageUtils.swift */,
 				B4E5204C1C0AA61200274F3A /* FileSizeFormatter.swift */,
 				B4FB8B511C12B80A00B0CF51 /* ImageCompressor.swift */,
+				B42495751C48DA5200CA2659 /* Chrono.swift */,
 			);
 			path = YNLib;
 			sourceTree = "<group>";
@@ -124,6 +129,7 @@
 				B486F5A41BC66C07002AF53D /* YNLibTests.swift */,
 				B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */,
 				B486F5A61BC66C07002AF53D /* Info.plist */,
+				B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */,
 			);
 			path = YNLibTests;
 			sourceTree = "<group>";
@@ -244,6 +250,7 @@
 				B4E5204D1C0AA61200274F3A /* FileSizeFormatter.swift in Sources */,
 				B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */,
 				B441EB4E1BE3497400000195 /* AppSandboxHelper.swift in Sources */,
+				B42495761C48DA5200CA2659 /* Chrono.swift in Sources */,
 				B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */,
 				B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */,
 				B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */,
@@ -255,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4DA2A3C1C48E8C400DEE567 /* ChronoTests.swift in Sources */,
 				B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */,
 				B4F577091BE222EB00A403C2 /* StopTimerTests.swift in Sources */,
 				B441EB3E1BE31F9300000195 /* AsyncOperationTests.swift in Sources */,

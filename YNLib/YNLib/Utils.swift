@@ -10,7 +10,13 @@ import UIKit
 
 class Utils {
     
-    static var seqIndex = 0
+    private static var seqIndex = 0
+    
+    /**
+     Seq for debugging
+     
+     - returns: seq number
+     */
     
     class func getSeqSeed() -> Int {
         seqIndex++
@@ -19,6 +25,12 @@ class Utils {
         }
         return seqIndex
     }
+    
+    /**
+     Seq for debugging
+     
+     - returns: seq string
+     */
     
     class func getSeq() -> String {
         return "\(self.getSeqSeed())"

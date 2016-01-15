@@ -10,6 +10,16 @@ import UIKit
 
 public class ImageCompressor {
     
+    /**
+     Compress image to jpeg data
+     
+     - parameter image:     source image
+     - parameter shortEdge: short edge
+     - parameter level:     jpeg compress level
+     
+     - returns: jpeg data
+     */
+    
     public class func compressImage(image: UIImage, shortEdge: CGFloat, level: CGFloat) -> NSData {
         var width = image.size.width
         var height = image.size.height

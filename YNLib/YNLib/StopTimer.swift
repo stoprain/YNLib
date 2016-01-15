@@ -101,15 +101,16 @@ public class StopTimer {
             self.stop()
         }
     }
-
+    
     /**
-        Add block to StopTimer.
-
-        :param: interval Excute the block after interval.
-        :param: block The block to be excuted.
-
-        :returns: The uuid for access the block later.
-    */
+     Add block to StopTimer.
+     
+     - parameter interval: Excute the block after interval
+     - parameter repeats:  repeats the block
+     - parameter block:    block The block to be excuted
+     
+     - returns: The uuid for access the block late
+     */
     
     public func addBlock(interval: NSTimeInterval, repeats: Bool = false, block: ()->()) -> String {
         let node = Task()
@@ -124,10 +125,10 @@ public class StopTimer {
     }
     
     /**
-        Remove block from StopTimer
-    
-        :param: The uuid of the block.
-    */
+     Remove block from StopTimer
+     
+     - parameter uuid: The uuid of the block
+     */
     
     public func removeBlock(uuid: String) {
         self.tasks = self.tasks.filter { $0.uuid != uuid }

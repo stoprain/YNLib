@@ -10,6 +10,14 @@ import UIKit
 
 public class DateUtils {
     
+    /**
+     Convert GMT date to system time zone date
+     
+     - parameter date: the GMT date
+     
+     - returns: system time zone date
+     */
+    
     public class func currentDateInSystemTimezone(date: NSDate) -> NSDate {
         let sourceTimeZone = NSTimeZone(abbreviation: "GMT")
         let destinationTimeZone = NSTimeZone.systemTimeZone()

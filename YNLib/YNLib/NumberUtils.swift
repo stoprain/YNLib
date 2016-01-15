@@ -9,6 +9,14 @@
 import UIKit
 
 public class NumberUtils {
+    
+    /**
+     Retrive a random number in given range
+     
+     - parameter range: the range
+     
+     - returns: the random number
+     */
 
     public class func randomInRange(range: Range<Int>) -> Int {
         let count = UInt32(range.endIndex - range.startIndex)
