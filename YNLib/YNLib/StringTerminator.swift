@@ -9,9 +9,9 @@
 import Foundation
 
 @objc
-class StringTerminator: NSObject {
+public class StringTerminator: NSObject {
     
-    @objc class func subStringToAmount(string:String?,amount:Int) -> String? {
+    @objc public  class func subStringToAmount(string:String?,amount:Int) -> String? {
         if let s = string {
             var text = s
             while self.countString(text) > amount {
@@ -22,7 +22,7 @@ class StringTerminator: NSObject {
         return nil
     }
     
-    @objc class func subStringToAmountWithDot(string:String?,amount:Int) -> String? {
+    @objc public  class func subStringToAmountWithDot(string:String?,amount:Int) -> String? {
         if let s = string {
             var text = s
             if self.countString(text) > amount {
@@ -37,7 +37,7 @@ class StringTerminator: NSObject {
         return nil
     }
     
-    @objc class func countString(string:String?) -> Int {
+    @objc public  class func countString(string:String?) -> Int {
         if let s = string {
             var count = 0
             for s in s.unicodeScalars {
@@ -53,16 +53,16 @@ class StringTerminator: NSObject {
     }
     
     
-    @objc class func eligibleUserName(name: String?) -> String? {
+    @objc public  class func eligibleUserName(name: String?) -> String? {
         let newName = name?.stringByReplacingOccurrencesOfString("@", withString: "")
         return self.subStringToAmount(newName?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()), amount: 20)
     }
     
-    @objc class func eligibleUserDescroption(desc: String?) -> String? {
+    @objc public  class func eligibleUserDescroption(desc: String?) -> String? {
         return self.subStringToAmount(desc?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()), amount: 200)
     }
     
-    @objc class func retrieveUserNameFromMsg(msg: NSString?) -> [String] {
+    @objc public  class func retrieveUserNameFromMsg(msg: NSString?) -> [String] {
         guard let message = msg?.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()) else {
             return []
         }

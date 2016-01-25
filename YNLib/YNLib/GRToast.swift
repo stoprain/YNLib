@@ -9,16 +9,12 @@
 import Foundation
 import UIKit
 
-private let sharedInstance = GRToast()
+public class GRToast {
+    
+    public static let TastyToast = GRToast()
 
-class GRToast {
-    
-    class var TastyToast: GRToast {
-        return sharedInstance
-    }
-    
-    var successColor = UIColor(hexString: "F8E71C")
-    var errorColor = UIColor(hexString: "#FD4C5F")
+    public var successColor = UIColor(hexString: "F8E71C")
+    public var errorColor = UIColor(hexString: "#FD4C5F")
     private var notiView:UIView
     private var textLabel:UILabel
     private var showing:Bool = false
@@ -36,7 +32,7 @@ class GRToast {
         self.notiView.addSubview(self.textLabel)
     }
 
-    func showError(text:String,target:UINavigationBar) {
+    public func showError(text:String,target:UINavigationBar) {
         if self.showing {
             return
         }
@@ -63,7 +59,7 @@ class GRToast {
         })
     }
     
-    func showSuccess(text:String,target:UINavigationBar) {
+    public func showSuccess(text:String,target:UINavigationBar) {
         if self.showing {
             return
         }
