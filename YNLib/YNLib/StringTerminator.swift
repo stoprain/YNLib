@@ -78,7 +78,6 @@ class StringTerminator: NSObject {
             userName = "@" + userName!
             userNames.append(userName!)
         }
-        log.debug("\(userNames)")
         return userNames
     }
     
