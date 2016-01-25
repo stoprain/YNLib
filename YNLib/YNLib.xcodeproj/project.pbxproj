@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B4A625E1C56180F00FA975F /* GRToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A625D1C56180F00FA975F /* GRToast.swift */; };
 		B42495761C48DA5200CA2659 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42495751C48DA5200CA2659 /* Chrono.swift */; };
 		B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF471BE21FCD0087B832 /* AsyncOperation.swift */; };
 		B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF491BE221D70087B832 /* StopTimer.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B4A625D1C56180F00FA975F /* GRToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRToast.swift; sourceTree = "<group>"; };
 		B42495751C48DA5200CA2659 /* Chrono.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chrono.swift; sourceTree = "<group>"; };
 		B429EF471BE21FCD0087B832 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		B429EF491BE221D70087B832 /* StopTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimer.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				B429EF491BE221D70087B832 /* StopTimer.swift */,
 				B486F5981BC66C07002AF53D /* YNLib.h */,
 				B486F59A1BC66C07002AF53D /* Info.plist */,
+				7B4A625D1C56180F00FA975F /* GRToast.swift */,
 				B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */,
 				B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */,
 				B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */,
@@ -248,6 +251,7 @@
 				B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */,
 				B458831E1BFF1864005A55FC /* Utils.swift in Sources */,
 				B4E5204D1C0AA61200274F3A /* FileSizeFormatter.swift in Sources */,
+				7B4A625E1C56180F00FA975F /* GRToast.swift in Sources */,
 				B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */,
 				B441EB4E1BE3497400000195 /* AppSandboxHelper.swift in Sources */,
 				B42495761C48DA5200CA2659 /* Chrono.swift in Sources */,
