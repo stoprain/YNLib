@@ -57,7 +57,7 @@ public class AsyncOperation: NSOperation {
         return true
     }
     
-    public var seq: String = "asop \(Utils.getSeq())"
+    public var seq: String = "asop \(AsyncOperation.getSeq())"
     
     public override func cancel() {
         self.result = Result.Canceled
@@ -81,6 +81,32 @@ public class AsyncOperation: NSOperation {
     
     public func starting() {
         assert(true, "AsyncOperation starting not implemented!")
+    }
+    
+    private static var seqIndex = 0
+    
+    /**
+     Seq for debugging
+     
+     - returns: seq number
+     */
+    
+    class func getSeqSeed() -> Int {
+        seqIndex++
+        if seqIndex >= Int.max {
+            seqIndex = 1
+        }
+        return seqIndex
+    }
+    
+    /**
+     Seq for debugging
+     
+     - returns: seq string
+     */
+    
+    class func getSeq() -> String {
+        return "\(self.getSeqSeed())"
     }
 
 }
