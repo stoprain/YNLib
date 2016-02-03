@@ -22,7 +22,7 @@ public class GRToast {
     init() {
         self.notiView = UIView(frame: CGRect(x: 0, y: 44, width: UIScreen.mainScreen().bounds.width, height: 0))
         self.notiView.hidden = true
-        self.notiView.backgroundColor = UIColor(hexString: "#FD4C5F")
+        self.notiView.backgroundColor = self.errorColor
         
         self.textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.mainScreen().bounds.width, height: 29))
         self.textLabel.textColor = UIColor.whiteColor()
@@ -39,7 +39,7 @@ public class GRToast {
         self.showing = true
         self.notiView.hidden = false
         self.textLabel.text = text
-        self.notiView.backgroundColor = UIColor(hexString: "#FD4C5F")
+        self.notiView.backgroundColor = self.errorColor
         let t = self.timeCompute(text)
         target.addSubview(self.notiView)
         UIView.animateWithDuration(0.3, animations: { () -> Void in
@@ -66,7 +66,7 @@ public class GRToast {
         self.showing = true
         self.notiView.hidden = false
         self.textLabel.text = text
-        self.notiView.backgroundColor = UIColor(hexString: "F8E71C")
+        self.notiView.backgroundColor = self.successColor
         let t = self.timeCompute(text)
         target.addSubview(self.notiView)
         UIView.animateWithDuration(0.3, animations: { () -> Void in
