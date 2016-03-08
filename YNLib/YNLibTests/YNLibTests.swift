@@ -53,4 +53,16 @@ class YNLibTests: XCTestCase {
         print(FileSizeFormatter.sharedFormatter.stringFromNumber(6666666))
     }
     
+    func testMetaNumberFormatter() {
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(6666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(66666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(666666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(6666666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(66666666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(666666666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(6666666666))
+        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(66666666666))
+    }
+    
 }

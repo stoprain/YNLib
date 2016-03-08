@@ -22,6 +22,7 @@
 		B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5A41BC66C07002AF53D /* YNLibTests.swift */; };
 		B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */; };
 		B486F5C21BC670C3002AF53D /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */; };
+		B4A6CF7C1C8EA7AA00444F00 /* MetaNumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A6CF7B1C8EA7AA00444F00 /* MetaNumberFormatter.swift */; };
 		B4DA2A3C1C48E8C400DEE567 /* ChronoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */; };
 		B4E026E71BC8E29B009F8F6E /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */; };
 		B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */; };
@@ -59,6 +60,7 @@
 		B486F5A61BC66C07002AF53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B486F5B91BC66CDC002AF53D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		B486F5C11BC670C3002AF53D /* CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		B4A6CF7B1C8EA7AA00444F00 /* MetaNumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetaNumberFormatter.swift; sourceTree = "<group>"; };
 		B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChronoTests.swift; sourceTree = "<group>"; };
 		B4E026E61BC8E29B009F8F6E /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
 		B4E026E81BC8E36E009F8F6E /* NumberUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 		B486F5971BC66C07002AF53D /* YNLib */ = {
 			isa = PBXGroup;
 			children = (
+				B4A6CF7B1C8EA7AA00444F00 /* MetaNumberFormatter.swift */,
 				B459E3E01C104B4300783219 /* DateUtils.swift */,
 				B429EF491BE221D70087B832 /* StopTimer.swift */,
 				B486F5981BC66C07002AF53D /* YNLib.h */,
@@ -256,6 +259,7 @@
 				7B4A625E1C56180F00FA975F /* GRToast.swift in Sources */,
 				B4E026E91BC8E36E009F8F6E /* NumberUtils.swift in Sources */,
 				B441EB4E1BE3497400000195 /* AppSandboxHelper.swift in Sources */,
+				B4A6CF7C1C8EA7AA00444F00 /* MetaNumberFormatter.swift in Sources */,
 				7B4A62601C5618EA00FA975F /* StringTerminator.swift in Sources */,
 				B42495761C48DA5200CA2659 /* Chrono.swift in Sources */,
 				B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */,
