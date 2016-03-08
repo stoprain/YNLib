@@ -12,7 +12,7 @@ public class MetaNumberFormatter: NSNumberFormatter {
     
     public static let sharedFormatter = MetaNumberFormatter()
     
-    public override func stringFromNumber(number: NSNumber) -> String? {
+    public override func stringFromNumber(number: NSNumber) -> String {
         var valueText = "\(number)"
         if number.longLongValue >= 10000 {
             let stringValue = String(format: "%.1f",(Double(number)/10000.0))
