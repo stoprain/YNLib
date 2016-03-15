@@ -33,7 +33,7 @@ public class YNImageMeta: NSObject {
         self.path = YNImage.downloadPath.stringByAppendingString("/\(self.cacheKey)")
         
         if type == .Avatar {
-            self.placeHolderKey = YNImagePlaceHolder.Avatar.imageName()
+            self.placeHolderKey = YNImagePlaceHolder.Avatar.imageName() + self.borderColorHex
         }
     }
     
