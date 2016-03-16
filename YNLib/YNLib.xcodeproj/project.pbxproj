@@ -10,6 +10,7 @@
 		7B4A625E1C56180F00FA975F /* GRToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A625D1C56180F00FA975F /* GRToast.swift */; };
 		7B4A62601C5618EA00FA975F /* StringTerminator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A625F1C5618EA00FA975F /* StringTerminator.swift */; };
 		7B4A62621C56197400FA975F /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4A62611C56197400FA975F /* UIView+Frame.swift */; };
+		B41152B21C9912DF007C374A /* WeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41152B11C9912DF007C374A /* WeakSet.swift */; };
 		B42495761C48DA5200CA2659 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42495751C48DA5200CA2659 /* Chrono.swift */; };
 		B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF471BE21FCD0087B832 /* AsyncOperation.swift */; };
 		B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429EF491BE221D70087B832 /* StopTimer.swift */; };
@@ -48,6 +49,7 @@
 		7B4A625D1C56180F00FA975F /* GRToast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRToast.swift; sourceTree = "<group>"; };
 		7B4A625F1C5618EA00FA975F /* StringTerminator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTerminator.swift; sourceTree = "<group>"; };
 		7B4A62611C56197400FA975F /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
+		B41152B11C9912DF007C374A /* WeakSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakSet.swift; sourceTree = "<group>"; };
 		B42495751C48DA5200CA2659 /* Chrono.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chrono.swift; sourceTree = "<group>"; };
 		B429EF471BE21FCD0087B832 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		B429EF491BE221D70087B832 /* StopTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimer.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				B492021D1C91503B000D1472 /* NSURLRequestHelper.swift */,
 				B4C0F6451C91624200F1B062 /* YNImage.swift */,
 				B44E61AB1C9162F700C2AA9F /* YNImageMeta.swift */,
+				B41152B11C9912DF007C374A /* WeakSet.swift */,
 			);
 			path = YNLib;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				B42495761C48DA5200CA2659 /* Chrono.swift in Sources */,
 				B429EF481BE21FCD0087B832 /* AsyncOperation.swift in Sources */,
 				7B4A62621C56197400FA975F /* UIView+Frame.swift in Sources */,
+				B41152B21C9912DF007C374A /* WeakSet.swift in Sources */,
 				B486F5BA1BC66CDC002AF53D /* CoreDataManager.swift in Sources */,
 				B429EF4A1BE221D70087B832 /* StopTimer.swift in Sources */,
 				B44D6D471BF0813B0037FF08 /* ImageUtils.swift in Sources */,
