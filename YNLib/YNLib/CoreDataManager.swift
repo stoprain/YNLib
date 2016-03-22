@@ -91,7 +91,7 @@ public class CoreDataManager {
         mainContext.parentContext = self.backgroundContext
         
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "backgroundContextDidSave:",
+            selector: #selector(backgroundContextDidSave(_:)),
             name: NSManagedObjectContextDidSaveNotification,
             object: nil)
         

@@ -16,7 +16,7 @@ public class MetaNumberFormatter: NSNumberFormatter {
         var valueText = "\(number)"
         if number.longLongValue >= 10000 {
             let stringValue = String(format: "%.1f",(Double(number)/10000.0))
-            let range = Range(start: stringValue.endIndex.advancedBy(-1), end: stringValue.endIndex)
+            let range = stringValue.endIndex.advancedBy(-1)..<stringValue.endIndex
             if stringValue.substringWithRange(range) == "0" {
                 valueText = String(number.longLongValue/10000) + "万"
             } else {

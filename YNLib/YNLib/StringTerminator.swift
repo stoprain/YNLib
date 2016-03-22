@@ -42,7 +42,7 @@ public class StringTerminator: NSObject {
             var count = 0
             for s in s.unicodeScalars {
                 if s.value >= 0 && s.value <= 255 {
-                    count++
+                    count += 1
                 } else {
                     count += 2
                 }

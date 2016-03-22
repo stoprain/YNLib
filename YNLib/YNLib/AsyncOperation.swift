@@ -92,7 +92,7 @@ public class AsyncOperation: NSOperation {
      */
     
     class func getSeqSeed() -> Int {
-        seqIndex++
+        seqIndex += 1
         if seqIndex >= Int.max {
             seqIndex = 1
         }

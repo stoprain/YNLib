@@ -93,7 +93,7 @@ extension WeakSet : SequenceType {
         var contentsGenerator = contents.values.generate()         // generates arrays of entities
         var entryGenerator = contentsGenerator.next()?.generate()  // generates entries
 
-        return anyGenerator {
+        return AnyGenerator {
             // Note: If entryGenerator is nil, the party is over. No more.
             if let element = entryGenerator?.next()?.element {
                 return element

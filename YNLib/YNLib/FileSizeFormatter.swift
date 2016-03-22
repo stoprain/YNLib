@@ -23,7 +23,7 @@ public class FileSizeFormatter: NSNumberFormatter {
         
         while bytes >= multiplier {
             bytes /= multiplier
-            exponent++
+            exponent += 1
             if exponent == sUnits.count-1 {
                 break
             }
