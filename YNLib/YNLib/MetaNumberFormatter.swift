@@ -14,17 +14,19 @@ public class MetaNumberFormatter: NSNumberFormatter {
     
     public override func stringFromNumber(number: NSNumber) -> String {
         var valueText = "\(number)"
-        if number.longLongValue >= 10000 {
-            let stringValue = String(format: "%.1f",(Double(number)/10000.0))
-            let range = stringValue.endIndex.advancedBy(-1)..<stringValue.endIndex
-            if stringValue.substringWithRange(range) == "0" {
-                valueText = String(number.longLongValue/10000) + "万"
-            } else {
-                valueText = stringValue + "万"
-            }
+        let length = valueText.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+        if length > 4 {
+            valueText = valueText.insert(".", ind: length-4)
+            valueText = valueText.substringToIndex(valueText.endIndex.advancedBy(-2)) + "万"
         }
         
         return valueText
     }
 
+}
+
+extension String {
+    func insert(string:String, ind:Int) -> String {
+        return String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
+    }
 }
