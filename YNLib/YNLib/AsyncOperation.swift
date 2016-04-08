@@ -91,7 +91,7 @@ public class AsyncOperation: NSOperation {
      - returns: seq number
      */
     
-    class func getSeqSeed() -> Int {
+    public class func getSeqSeed() -> Int {
         seqIndex += 1
         if seqIndex >= Int.max {
             seqIndex = 1
@@ -105,7 +105,7 @@ public class AsyncOperation: NSOperation {
      - returns: seq string
      */
     
-    class func getSeq() -> String {
+    public class func getSeq() -> String {
         return "\(self.getSeqSeed())"
     }
 
