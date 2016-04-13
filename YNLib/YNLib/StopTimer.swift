@@ -82,7 +82,6 @@ public class StopTimer {
                 self.timer = NSTimer.scheduledTimerWithTimeInterval(MinInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
             }
         }
-        NSRunLoopCommonModes
     }
     
     @objc private func onTimer() {
