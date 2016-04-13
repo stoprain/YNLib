@@ -41,8 +41,11 @@ public extension UIColor {
         case 3:
             alpha = 255
             red = stof(s, start: 0, end: 1)
+            red = red+red*10
             green = stof(s, start: 1, end: 2)
+            green = green+green*10
             blue = stof(s, start: 2, end: 3)
+            blue = blue+blue*10
         case 4:
             alpha = stof(s, start: 0, end: 1)
             red = stof(s, start: 1, end: 2)

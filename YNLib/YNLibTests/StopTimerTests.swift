@@ -15,13 +15,13 @@ class StopTimerTests: XCTestCase {
         let expectation = self.expectationWithDescription("test stoptimer")
         var i = 0
         let _ = StopTimer.shareTimer.addBlock(0.1) { () -> () in
-            i++
+            i += 1
             let _ = StopTimer.shareTimer.addBlock(0.1, block: { () -> () in
                 i += 2
             })
         }
         let b = StopTimer.shareTimer.addBlock(0.1, block: { () -> () in
-            i++
+            i = 1
         })
         let _ = StopTimer.shareTimer.addBlock(0.4, block: { () -> () in
             if i == 3 {

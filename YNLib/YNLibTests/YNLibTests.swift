@@ -46,23 +46,50 @@ class YNLibTests: XCTestCase {
     }
     
     func testFileSizeFormatter() {
-        print(FileSizeFormatter.sharedFormatter.stringFromNumber(666))
-        print(FileSizeFormatter.sharedFormatter.stringFromNumber(6666))
-        print(FileSizeFormatter.sharedFormatter.stringFromNumber(66666))
-        print(FileSizeFormatter.sharedFormatter.stringFromNumber(666666))
-        print(FileSizeFormatter.sharedFormatter.stringFromNumber(6666666))
+        let f = FileSizeFormatter.sharedFormatter.stringFromNumber
+        XCTAssert(f(666) == "666B")
+        XCTAssert(f(6666) == "6K")
+        XCTAssert(f(66666) == "65K")
+        XCTAssert(f(666666) == "651K")
+        XCTAssert(f(6666666) == "6M")
     }
     
     func testMetaNumberFormatter() {
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(6666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(66666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(666666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(6666666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(66666666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(666666666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(6666666666))
-        print(MetaNumberFormatter.sharedFormatter.stringFromNumber(66666666666))
+        let f = MetaNumberFormatter.sharedFormatter.stringFromNumber
+        XCTAssert(f(666) == "666")
+        XCTAssert(f(6666) == "6666")
+        XCTAssert(f(66666) == "6.66万")
+        XCTAssert(f(666666) == "66.66万")
+        XCTAssert(f(6666666) == "666.66万")
+        XCTAssert(f(66666666) == "6666.66万")
+        XCTAssert(f(666666666) == "66666.66万")
+        XCTAssert(f(6666666666) == "666666.66万")
+        XCTAssert(f(66666666666) == "6666666.66万")
+    }
+    
+    func testColorUtils() {
+        var a: CGFloat = 0
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        UIColor(hexString: "#01020304").getRed(&r, green: &g, blue: &b, alpha: &a)
+        XCTAssert(a == 1/255)
+        XCTAssert(r == 2/255)
+        XCTAssert(g == 3/255)
+        XCTAssert(b == 4/255)
+        UIColor(hexString: "#020304").getRed(&r, green: &g, blue: &b, alpha: &a)
+        XCTAssert(r == 2/255)
+        XCTAssert(g == 3/255)
+        XCTAssert(b == 4/255)
+        UIColor(hexString: "#1234").getRed(&r, green: &g, blue: &b, alpha: &a)
+        XCTAssert(a == 1/255)
+        XCTAssert(r == 2/255)
+        XCTAssert(g == 3/255)
+        XCTAssert(b == 4/255)
+        UIColor(hexString: "#234").getRed(&r, green: &g, blue: &b, alpha: &a)
+        XCTAssert(r == 22/255)
+        XCTAssert(g == 33/255)
+        XCTAssert(b == 44/255)
     }
     
 }
