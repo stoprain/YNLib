@@ -92,4 +92,13 @@ class YNLibTests: XCTestCase {
         XCTAssert(b == 44/255)
     }
     
+    func testStringTerminator() {
+        XCTAssert(StringTerminator.subStringToAmount("0123456789", amount: 5) == "01234")
+        XCTAssert(StringTerminator.subStringToAmountWithDot("0123456789", amount: 5) == "01234...")
+        XCTAssert(StringTerminator.countString("00x00叉00") == 9)
+        XCTAssert(StringTerminator.countString("溜溜溜") == 6)
+        XCTAssert(StringTerminator.countString("666") == 3)
+        XCTAssert(StringTerminator.countString("liuliuliu") == 9)
+    }
+    
 }

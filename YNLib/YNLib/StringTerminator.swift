@@ -11,6 +11,7 @@ import Foundation
 @objc
 public class StringTerminator: NSObject {
     
+    // sub a string to a specific length string, count from start, sub from end
     @objc public  class func subStringToAmount(string:String?,amount:Int) -> String? {
         if let s = string {
             var text = s
@@ -22,6 +23,7 @@ public class StringTerminator: NSObject {
         return nil
     }
     
+    //sub a string to a specific length string, count from start, sub from end. return string end with '...'
     @objc public  class func subStringToAmountWithDot(string:String?,amount:Int) -> String? {
         if let s = string {
             var text = s
@@ -37,6 +39,7 @@ public class StringTerminator: NSObject {
         return nil
     }
     
+    //count a string. ascii character counts 1, chinese character counts 2, emojis have no exact count.
     @objc public  class func countString(string:String?) -> Int {
         if let s = string {
             var count = 0
@@ -51,7 +54,6 @@ public class StringTerminator: NSObject {
         }
         return 0
     }
-    
     
     @objc public  class func eligibleUserName(name: String?) -> String? {
         let newName = name?.stringByReplacingOccurrencesOfString("@", withString: "")
