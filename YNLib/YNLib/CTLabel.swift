@@ -28,7 +28,7 @@ public class CTLabel: UIImageView {
             CGContextAddRect(context, CGRectMake(0, 0, rect.size.width, rect.size.height))
             CGContextFillPath(context)
         
-            CGContextTranslateCTM(context, 0, rect.size.height-1)
+            CGContextTranslateCTM(context, 0, rect.size.height-3)   //HACK offset for chinese character
             CGContextScaleCTM(context, 1.0, -1.0)
             
             let line = CTLineCreateWithAttributedString(string)
