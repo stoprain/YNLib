@@ -31,7 +31,7 @@
 		B4701F141CC60AE4003812B5 /* YNImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4701EFD1CC60AE4003812B5 /* YNImage.swift */; };
 		B4701F151CC60AE4003812B5 /* YNImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4701EFE1CC60AE4003812B5 /* YNImageMeta.swift */; };
 		B4701F161CC60AE4003812B5 /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B4701EFF1CC60AE4003812B5 /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4701F181CC60B09003812B5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4701F171CC60B09003812B5 /* Info.plist */; };
+		B4701F201CC60D91003812B5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4701F1F1CC60D91003812B5 /* Info.plist */; };
 		B486F5A01BC66C07002AF53D /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B486F5951BC66C07002AF53D /* YNLib.framework */; };
 		B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5A41BC66C07002AF53D /* YNLibTests.swift */; };
 		B4DA2A3C1C48E8C400DEE567 /* ChronoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */; };
@@ -73,7 +73,7 @@
 		B4701EFD1CC60AE4003812B5 /* YNImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNImage.swift; sourceTree = "<group>"; };
 		B4701EFE1CC60AE4003812B5 /* YNImageMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNImageMeta.swift; sourceTree = "<group>"; };
 		B4701EFF1CC60AE4003812B5 /* YNLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
-		B4701F171CC60B09003812B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = SOURCE_ROOT; };
+		B4701F1F1CC60D91003812B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B486F5951BC66C07002AF53D /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B486F59F1BC66C07002AF53D /* YNLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B486F5A41BC66C07002AF53D /* YNLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNLibTests.swift; sourceTree = "<group>"; };
@@ -104,6 +104,7 @@
 		B4701EE81CC60AE4003812B5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B4701F1F1CC60D91003812B5 /* Info.plist */,
 				B4701EE91CC60AE4003812B5 /* AppSandboxHelper.swift */,
 				B4701EEA1CC60AE4003812B5 /* AsyncOperation.swift */,
 				B4701EEB1CC60AE4003812B5 /* Chrono.swift */,
@@ -152,7 +153,6 @@
 		B486F5971BC66C07002AF53D /* YNLib */ = {
 			isa = PBXGroup;
 			children = (
-				B4701F171CC60B09003812B5 /* Info.plist */,
 				B4701EE81CC60AE4003812B5 /* Sources */,
 			);
 			path = YNLib;
@@ -261,7 +261,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4701F181CC60B09003812B5 /* Info.plist in Resources */,
+				B4701F201CC60D91003812B5 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +423,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -442,7 +442,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = Sources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

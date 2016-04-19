@@ -28,8 +28,8 @@ Pod::Spec.new do |s|
 
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :tag => s.version }
   
-  s.source_files  = ["YNLib/*.swift", "YNLib/YNLib.h"]
-  s.public_header_files = ["YNLib/YNLib.h"]
+  s.source_files  = ["Sources/*.swift", "Sources/YNLib.h"]
+  s.public_header_files = ["Sources/YNLib.h"]
   
   s.requires_arc = true
 
