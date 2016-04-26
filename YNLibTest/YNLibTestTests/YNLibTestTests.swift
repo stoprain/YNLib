@@ -1,15 +1,15 @@
 //
-//  YNLibTests.swift
-//  YNLibTests
+//  YNLibTestTests.swift
+//  YNLibTestTests
 //
-//  Created by stoprain on 10/8/15.
-//  Copyright © 2015 yunio. All rights reserved.
+//  Created by stoprain on 4/26/16.
+//  Copyright © 2016 yunio. All rights reserved.
 //
 
 import XCTest
 @testable import YNLib
 
-class YNLibTests: XCTestCase {
+class YNLibTestTests: XCTestCase {
     
     override func setUp() {
         super.setUp()

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B441EB3E1BE31F9300000195 /* AsyncOperationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */; };
 		B4701F001CC60AE4003812B5 /* AppSandboxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4701EE91CC60AE4003812B5 /* AppSandboxHelper.swift */; };
 		B4701F011CC60AE4003812B5 /* AsyncOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4701EEA1CC60AE4003812B5 /* AsyncOperation.swift */; };
 		B4701F021CC60AE4003812B5 /* Chrono.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4701EEB1CC60AE4003812B5 /* Chrono.swift */; };
@@ -32,24 +31,9 @@
 		B4701F151CC60AE4003812B5 /* YNImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4701EFE1CC60AE4003812B5 /* YNImageMeta.swift */; };
 		B4701F161CC60AE4003812B5 /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B4701EFF1CC60AE4003812B5 /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4701F201CC60D91003812B5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4701F1F1CC60D91003812B5 /* Info.plist */; };
-		B486F5A01BC66C07002AF53D /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B486F5951BC66C07002AF53D /* YNLib.framework */; };
-		B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B486F5A41BC66C07002AF53D /* YNLibTests.swift */; };
-		B4DA2A3C1C48E8C400DEE567 /* ChronoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */; };
-		B4F577091BE222EB00A403C2 /* StopTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F577081BE222EB00A403C2 /* StopTimerTests.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B486F5A11BC66C07002AF53D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B486F58C1BC66C07002AF53D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B486F5941BC66C07002AF53D;
-			remoteInfo = YNLib;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperationTests.swift; sourceTree = "<group>"; };
 		B4701EE91CC60AE4003812B5 /* AppSandboxHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSandboxHelper.swift; sourceTree = "<group>"; };
 		B4701EEA1CC60AE4003812B5 /* AsyncOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncOperation.swift; sourceTree = "<group>"; };
 		B4701EEB1CC60AE4003812B5 /* Chrono.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chrono.swift; sourceTree = "<group>"; };
@@ -75,11 +59,6 @@
 		B4701EFF1CC60AE4003812B5 /* YNLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
 		B4701F1F1CC60D91003812B5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B486F5951BC66C07002AF53D /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B486F59F1BC66C07002AF53D /* YNLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B486F5A41BC66C07002AF53D /* YNLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNLibTests.swift; sourceTree = "<group>"; };
-		B486F5A61BC66C07002AF53D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChronoTests.swift; sourceTree = "<group>"; };
-		B4F577081BE222EB00A403C2 /* StopTimerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopTimerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,14 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B486F59C1BC66C07002AF53D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B486F5A01BC66C07002AF53D /* YNLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				B486F5971BC66C07002AF53D /* YNLib */,
-				B486F5A31BC66C07002AF53D /* YNLibTests */,
 				B486F5961BC66C07002AF53D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -145,7 +115,6 @@
 			isa = PBXGroup;
 			children = (
 				B486F5951BC66C07002AF53D /* YNLib.framework */,
-				B486F59F1BC66C07002AF53D /* YNLibTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,18 +125,6 @@
 				B4701EE81CC60AE4003812B5 /* Sources */,
 			);
 			path = YNLib;
-			sourceTree = "<group>";
-		};
-		B486F5A31BC66C07002AF53D /* YNLibTests */ = {
-			isa = PBXGroup;
-			children = (
-				B4F577081BE222EB00A403C2 /* StopTimerTests.swift */,
-				B486F5A41BC66C07002AF53D /* YNLibTests.swift */,
-				B441EB3D1BE31F9300000195 /* AsyncOperationTests.swift */,
-				B486F5A61BC66C07002AF53D /* Info.plist */,
-				B4DA2A3B1C48E8C400DEE567 /* ChronoTests.swift */,
-			);
-			path = YNLibTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,24 +159,6 @@
 			productReference = B486F5951BC66C07002AF53D /* YNLib.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B486F59E1BC66C07002AF53D /* YNLibTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B486F5AC1BC66C07002AF53D /* Build configuration list for PBXNativeTarget "YNLibTests" */;
-			buildPhases = (
-				B486F59B1BC66C07002AF53D /* Sources */,
-				B486F59C1BC66C07002AF53D /* Frameworks */,
-				B486F59D1BC66C07002AF53D /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B486F5A21BC66C07002AF53D /* PBXTargetDependency */,
-			);
-			name = YNLibTests;
-			productName = YNLibTests;
-			productReference = B486F59F1BC66C07002AF53D /* YNLibTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -231,9 +170,6 @@
 				ORGANIZATIONNAME = yunio;
 				TargetAttributes = {
 					B486F5941BC66C07002AF53D = {
-						CreatedOnToolsVersion = 7.0.1;
-					};
-					B486F59E1BC66C07002AF53D = {
 						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
@@ -251,7 +187,6 @@
 			projectRoot = "";
 			targets = (
 				B486F5941BC66C07002AF53D /* YNLib */,
-				B486F59E1BC66C07002AF53D /* YNLibTests */,
 			);
 		};
 /* End PBXProject section */
@@ -262,13 +197,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4701F201CC60D91003812B5 /* Info.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B486F59D1BC66C07002AF53D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,26 +232,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B486F59B1BC66C07002AF53D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B4DA2A3C1C48E8C400DEE567 /* ChronoTests.swift in Sources */,
-				B486F5A51BC66C07002AF53D /* YNLibTests.swift in Sources */,
-				B4F577091BE222EB00A403C2 /* StopTimerTests.swift in Sources */,
-				B441EB3E1BE31F9300000195 /* AsyncOperationTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B486F5A21BC66C07002AF53D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B486F5941BC66C07002AF53D /* YNLib */;
-			targetProxy = B486F5A11BC66C07002AF53D /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B486F5A71BC66C07002AF53D /* Debug */ = {
@@ -452,26 +361,6 @@
 			};
 			name = Release;
 		};
-		B486F5AD1BC66C07002AF53D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = YNLibTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunio.YNLibTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		B486F5AE1BC66C07002AF53D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				INFOPLIST_FILE = YNLibTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yunio.YNLibTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -489,15 +378,6 @@
 			buildConfigurations = (
 				B486F5AA1BC66C07002AF53D /* Debug */,
 				B486F5AB1BC66C07002AF53D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B486F5AC1BC66C07002AF53D /* Build configuration list for PBXNativeTarget "YNLibTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B486F5AD1BC66C07002AF53D /* Debug */,
-				B486F5AE1BC66C07002AF53D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
