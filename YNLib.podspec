@@ -13,7 +13,6 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/stoprain/YNLib"
-  s.screenshots  = ""
 
   s.license      = { :type => "MIT", :file => "LICENSE" }
 
@@ -22,9 +21,9 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = "8.0"
 
+  s.module_name  = 'YNLib'
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :tag => s.version }
-  s.source_files  = "Sources/*.{swift,h,m}"
-  s.requires_arc = true
+  s.source_files = "Sources/*.{swift,h,m}"
   s.dependency "CocoaLumberjack/Swift"
 
 end
