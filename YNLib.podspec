@@ -28,4 +28,10 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Sources/*.h'
   s.libraries = 'CommonCrypto'
 
+  s.preserve_paths = 'CocoaPods/**/*'
+  s.pod_target_xcconfig = {
+    'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'         => '$(SRCROOT)/YNLib/CocoaPods/iphoneos',
+    'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]'  => '$(SRCROOT)/YNLib/CocoaPods/iphonesimulator'
+  }
+
 end
