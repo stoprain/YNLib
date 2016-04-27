@@ -25,5 +25,6 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :tag => s.version }
   s.source_files = "Sources/*.{swift,h,m}"
   s.dependency "CocoaLumberjack/Swift"
+  s.public_header_files = 'Sources/*.h'
 
 end
