@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		456755E49032C7A9AF465143 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F935472F6C0664503D8BC6B /* Pods.framework */; };
 		B4212A191CD061C300A7AB20 /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B4212A181CD061C300A7AB20 /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E79C21CD0F9C60027FC67 /* DataUtils.swift */; };
 		B4D2B8541CCF42C200E5BE52 /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B8491CCF42C200E5BE52 /* YNLib.framework */; };
 		B4D2B8591CCF42C200E5BE52 /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8581CCF42C200E5BE52 /* YNLibTests.swift */; };
 		B4D2B87C1CCF430000E5BE52 /* AppSandboxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8641CCF430000E5BE52 /* AppSandboxHelper.swift */; };
@@ -54,6 +55,7 @@
 		A208AFBAB7F1D4DC29ABAF92 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A21931423A04D84CF6AF6DD5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B4212A181CD061C300A7AB20 /* YNLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
+		B44E79C21CD0F9C60027FC67 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
 		B4D2B8491CCF42C200E5BE52 /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D2B84E1CCF42C200E5BE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D2B8531CCF42C200E5BE52 /* YNLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -165,6 +167,7 @@
 		B4D2B8631CCF430000E5BE52 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B44E79C21CD0F9C60027FC67 /* DataUtils.swift */,
 				B4212A181CD061C300A7AB20 /* YNLib.h */,
 				B4D2B89A1CCF449C00E5BE52 /* RunMode.h */,
 				B4D2B89B1CCF449C00E5BE52 /* RunMode.m */,
@@ -363,6 +366,7 @@
 				B4D2B88A1CCF430000E5BE52 /* NSURLRequestHelper.swift in Sources */,
 				B4D2B8871CCF430000E5BE52 /* ImageUtils.swift in Sources */,
 				B4D2B8991CCF446F00E5BE52 /* LoggerWrapper.swift in Sources */,
+				B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */,
 				B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */,
 				B4D2B8921CCF430000E5BE52 /* YNImageMeta.swift in Sources */,
 			);
@@ -494,6 +498,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunio.YNLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/CocoaPods/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/CocoaPods/iphonesimulator";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -514,6 +520,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunio.YNLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				"SWIFT_INCLUDE_PATHS[sdk=iphoneos*]" = "$(SRCROOT)/CocoaPods/iphoneos";
+				"SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]" = "$(SRCROOT)/CocoaPods/iphonesimulator";
 			};
 			name = Release;
 		};
