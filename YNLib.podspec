@@ -23,12 +23,8 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "8.0"
 
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :tag => s.version }
-  
-  s.source_files  = ["Sources/*.swift", "Sources/*.h", "Sources/*.m"]
-  s.public_header_files = ["Sources/YNLib.h"]
-  
+  s.source_files  = "Sources/*.{swift,h,m}"
   s.requires_arc = true
-
   s.dependency "CocoaLumberjack/Swift"
 
 end
