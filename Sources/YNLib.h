@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "RunMode.h"
+
 //! Project version number for YNLib.
 FOUNDATION_EXPORT double YNLibVersionNumber;
 
@@ -15,7 +17,3 @@ FOUNDATION_EXPORT double YNLibVersionNumber;
 FOUNDATION_EXPORT const unsigned char YNLibVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <YNLib/PublicHeader.h>
-
-
-#import "RunMode.h"
-#import "SimpleDDLogFormatter.h"

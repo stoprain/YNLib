@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		456755E49032C7A9AF465143 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F935472F6C0664503D8BC6B /* Pods.framework */; };
-		B4D2B84D1CCF42C200E5BE52 /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D2B84C1CCF42C200E5BE52 /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4212A191CD061C300A7AB20 /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B4212A181CD061C300A7AB20 /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4D2B8541CCF42C200E5BE52 /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B8491CCF42C200E5BE52 /* YNLib.framework */; };
 		B4D2B8591CCF42C200E5BE52 /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8581CCF42C200E5BE52 /* YNLibTests.swift */; };
 		B4D2B87C1CCF430000E5BE52 /* AppSandboxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8641CCF430000E5BE52 /* AppSandboxHelper.swift */; };
@@ -37,8 +37,6 @@
 		B4D2B8991CCF446F00E5BE52 /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8981CCF446F00E5BE52 /* LoggerWrapper.swift */; };
 		B4D2B89C1CCF449C00E5BE52 /* RunMode.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D2B89A1CCF449C00E5BE52 /* RunMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B89B1CCF449C00E5BE52 /* RunMode.m */; };
-		B4D2B8A31CCF622300E5BE52 /* SimpleDDLogFormatter.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D2B8A11CCF622300E5BE52 /* SimpleDDLogFormatter.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4D2B8A41CCF622300E5BE52 /* SimpleDDLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8A21CCF622300E5BE52 /* SimpleDDLogFormatter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +53,8 @@
 		0F935472F6C0664503D8BC6B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A208AFBAB7F1D4DC29ABAF92 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A21931423A04D84CF6AF6DD5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		B4212A181CD061C300A7AB20 /* YNLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
 		B4D2B8491CCF42C200E5BE52 /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4D2B84C1CCF42C200E5BE52 /* YNLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
 		B4D2B84E1CCF42C200E5BE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D2B8531CCF42C200E5BE52 /* YNLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D2B8581CCF42C200E5BE52 /* YNLibTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YNLibTests.swift; sourceTree = "<group>"; };
@@ -87,8 +85,6 @@
 		B4D2B8981CCF446F00E5BE52 /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
 		B4D2B89A1CCF449C00E5BE52 /* RunMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunMode.h; sourceTree = "<group>"; };
 		B4D2B89B1CCF449C00E5BE52 /* RunMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunMode.m; sourceTree = "<group>"; };
-		B4D2B8A11CCF622300E5BE52 /* SimpleDDLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleDDLogFormatter.h; sourceTree = "<group>"; };
-		B4D2B8A21CCF622300E5BE52 /* SimpleDDLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleDDLogFormatter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +148,6 @@
 			isa = PBXGroup;
 			children = (
 				B4D2B8631CCF430000E5BE52 /* Sources */,
-				B4D2B84C1CCF42C200E5BE52 /* YNLib.h */,
 				B4D2B84E1CCF42C200E5BE52 /* Info.plist */,
 			);
 			path = YNLib;
@@ -170,8 +165,7 @@
 		B4D2B8631CCF430000E5BE52 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B4D2B8A11CCF622300E5BE52 /* SimpleDDLogFormatter.h */,
-				B4D2B8A21CCF622300E5BE52 /* SimpleDDLogFormatter.m */,
+				B4212A181CD061C300A7AB20 /* YNLib.h */,
 				B4D2B89A1CCF449C00E5BE52 /* RunMode.h */,
 				B4D2B89B1CCF449C00E5BE52 /* RunMode.m */,
 				B4D2B8981CCF446F00E5BE52 /* LoggerWrapper.swift */,
@@ -209,8 +203,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4D2B84D1CCF42C200E5BE52 /* YNLib.h in Headers */,
-				B4D2B8A31CCF622300E5BE52 /* SimpleDDLogFormatter.h in Headers */,
+				B4212A191CD061C300A7AB20 /* YNLib.h in Headers */,
 				B4D2B89C1CCF449C00E5BE52 /* RunMode.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,7 +365,6 @@
 				B4D2B8991CCF446F00E5BE52 /* LoggerWrapper.swift in Sources */,
 				B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */,
 				B4D2B8921CCF430000E5BE52 /* YNImageMeta.swift in Sources */,
-				B4D2B8A41CCF622300E5BE52 /* SimpleDDLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

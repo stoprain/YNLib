@@ -14,15 +14,11 @@ struct LoggerWrapper {
     
     static func setup(level: DDLogLevel) {
         if !RunMode.isProd() {
-            let f = SimpleDDLogFormatter()
             let ttyLogger = DDTTYLogger.sharedInstance()
-            ttyLogger.logFormatter = f
             DDLog.addLogger(ttyLogger, withLevel: level)
         }
         
-        let ff = SimpleDDLogFormatter()
         let fileLogger = DDFileLogger()
-        fileLogger.logFormatter = ff
         fileLogger.rollingFrequency = 60 * 60 * 24
         fileLogger.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.addLogger(fileLogger, withLevel: level)
