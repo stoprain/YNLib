@@ -8,9 +8,9 @@
 
 import UIKit
 
-extension NSData {
+public extension NSData {
     
-    func md5() -> String {
+    public func md5() -> String {
         let result = NSMutableData(length: Int(CC_MD5_DIGEST_LENGTH))!
         CC_MD5(self.bytes, CC_LONG(self.length), UnsafeMutablePointer<UInt8>(result.mutableBytes))
         var string = String()

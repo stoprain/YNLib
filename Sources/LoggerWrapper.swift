@@ -8,11 +8,11 @@
 
 import CocoaLumberjack
 
-let log = LoggerWrapper()
+public let log = LoggerWrapper()
 
-struct LoggerWrapper {
+public struct LoggerWrapper {
     
-    static func setup(level: DDLogLevel) {
+    public static func setup(level: DDLogLevel) {
         if !RunMode.isProd() {
             let ttyLogger = DDTTYLogger.sharedInstance()
             DDLog.addLogger(ttyLogger, withLevel: level)
