@@ -25,23 +25,23 @@ public struct LoggerWrapper {
     }
     
     
-    func verbose(s: String) {
+    public func verbose(s: String) {
         DDLogVerbose(s)
     }
     
-    func debug(s: String) {
+    public func debug(s: String) {
         DDLogDebug(s)
     }
     
-    func info(s: String) {
+    public func info(s: String) {
         DDLogInfo(s)
     }
     
-    func warning(s: String) {
+    public func warning(s: String) {
         DDLogWarn(s)
     }
     
-    func error(s: String) {
+    public func error(s: String) {
         DDLogError(s)
     }
 }
