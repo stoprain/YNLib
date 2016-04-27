@@ -26,5 +26,6 @@ Pod::Spec.new do |s|
   s.source_files = "Sources/*.{swift,h,m}"
   s.dependency "CocoaLumberjack/Swift"
   s.public_header_files = 'Sources/*.h'
+  s.libraries = 'CommonCrypto'
 
 end
