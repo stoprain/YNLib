@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CommonCrypto
 
 public extension NSData {
     
