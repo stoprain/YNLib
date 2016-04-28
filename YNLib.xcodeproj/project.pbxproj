@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		456755E49032C7A9AF465143 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F935472F6C0664503D8BC6B /* Pods.framework */; };
 		B4212A191CD061C300A7AB20 /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B4212A181CD061C300A7AB20 /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B441E46D1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */; };
+		B441E46E1CD1EFAE0004A5EE /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */; };
+		B441E4721CD1F01E0004A5EE /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */; };
 		B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E79C21CD0F9C60027FC67 /* DataUtils.swift */; };
 		B4D2B8541CCF42C200E5BE52 /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B8491CCF42C200E5BE52 /* YNLib.framework */; };
 		B4D2B8591CCF42C200E5BE52 /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8581CCF42C200E5BE52 /* YNLibTests.swift */; };
@@ -55,6 +58,9 @@
 		A208AFBAB7F1D4DC29ABAF92 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A21931423A04D84CF6AF6DD5 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		B4212A181CD061C300A7AB20 /* YNLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
+		B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleDDLogFormatter.swift; sourceTree = "<group>"; };
+		B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
+		B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
 		B44E79C21CD0F9C60027FC67 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
 		B4D2B8491CCF42C200E5BE52 /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D2B84E1CCF42C200E5BE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -167,6 +173,9 @@
 		B4D2B8631CCF430000E5BE52 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */,
+				B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */,
+				B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */,
 				B44E79C21CD0F9C60027FC67 /* DataUtils.swift */,
 				B4212A181CD061C300A7AB20 /* YNLib.h */,
 				B4D2B89A1CCF449C00E5BE52 /* RunMode.h */,
@@ -347,9 +356,11 @@
 				B4D2B8811CCF430000E5BE52 /* CoreDataManager.swift in Sources */,
 				B4D2B88B1CCF430000E5BE52 /* NumberUtils.swift in Sources */,
 				B4D2B8831CCF430000E5BE52 /* DateUtils.swift in Sources */,
+				B441E46D1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift in Sources */,
 				B4D2B8851CCF430000E5BE52 /* GRToast.swift in Sources */,
 				B4D2B88F1CCF430000E5BE52 /* UIView+Frame.swift in Sources */,
 				B4D2B8861CCF430000E5BE52 /* ImageCompressor.swift in Sources */,
+				B441E46E1CD1EFAE0004A5EE /* HTTPStatusCodes.swift in Sources */,
 				B4D2B8801CCF430000E5BE52 /* CoreDataHelper.swift in Sources */,
 				B4D2B8821CCF430000E5BE52 /* CTLabel.swift in Sources */,
 				B4D2B87D1CCF430000E5BE52 /* AsyncOperation.swift in Sources */,
@@ -366,6 +377,7 @@
 				B4D2B88A1CCF430000E5BE52 /* NSURLRequestHelper.swift in Sources */,
 				B4D2B8871CCF430000E5BE52 /* ImageUtils.swift in Sources */,
 				B4D2B8991CCF446F00E5BE52 /* LoggerWrapper.swift in Sources */,
+				B441E4721CD1F01E0004A5EE /* UserDataHelper.swift in Sources */,
 				B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */,
 				B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */,
 				B4D2B8921CCF430000E5BE52 /* YNImageMeta.swift in Sources */,
