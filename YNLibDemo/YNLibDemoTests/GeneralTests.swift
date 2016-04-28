@@ -105,5 +105,20 @@ class GeneralTests: XCTestCase {
         let d = "whatsup".dataUsingEncoding(NSUTF8StringEncoding)!
         XCTAssert(d.md5() == "57ba23b78c1fd7c8ac4bf325f6f40d9a")
     }
+    
+    func testUserDataHelper() {
+        XCTAssert(UserDataHelper.userDataPath == "")
+        XCTAssert(UserDataHelper.downloadPath == "")
+        XCTAssert(UserDataHelper.uploadPath == "")
+        UserDataHelper.check("pegasus")
+        XCTAssert(UserDataHelper.userDataPath.rangeOfString("/Library/Caches/pegasus") != nil)
+        XCTAssert(UserDataHelper.downloadPath.rangeOfString("/Library/Caches/pegasus/download") != nil)
+        XCTAssert(UserDataHelper.uploadPath.rangeOfString("/Library/Caches/pegasus/upload") != nil)
+    }
+    
+    func testShareDataManager() {
+        SharedDataManager.setObject("ha", prefix: SharedDataKey.Setting, key: "hei")
+        XCTAssert(SharedDataManager.objectForPrefix(SharedDataKey.Setting, key: "hei") as! String == "ha")
+    }
 
 }

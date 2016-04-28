@@ -11,9 +11,9 @@ public class UserDataHelper {
     private static let uploadFolderName = "upload"
     private static let downloadFolderName = "download"
     
-    private(set) static var userDataPath: String = ""
-    private(set) static var uploadPath: String = ""
-    private(set) static var downloadPath: String = ""
+    public static var userDataPath: String = ""
+    public static var uploadPath: String = ""
+    public static var downloadPath: String = ""
     
     private static let FileCount = 200
     private static let FileSize = 1024*1024*200 // 200 MB
