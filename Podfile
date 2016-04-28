@@ -3,3 +3,4 @@ platform :ios, '8.0'
 use_frameworks!
  
 pod 'CocoaLumberjack/Swift'
+pod 'Objective-LevelDB'

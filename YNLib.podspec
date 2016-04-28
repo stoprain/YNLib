@@ -24,7 +24,8 @@ Pod::Spec.new do |s|
   s.module_name  = 'YNLib'
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :tag => s.version }
   s.source_files = "Sources/*.{swift,h,m}"
-  s.dependency "CocoaLumberjack/Swift"
+  s.dependency 'CocoaLumberjack/Swift'
+  s.dependency 'Objective-LevelDB'
   s.public_header_files = 'Sources/*.h'
 
   s.preserve_paths = 'CocoaPods/**/*'

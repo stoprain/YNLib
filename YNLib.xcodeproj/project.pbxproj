@@ -13,6 +13,7 @@
 		B441E46E1CD1EFAE0004A5EE /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */; };
 		B441E4721CD1F01E0004A5EE /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */; };
 		B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E79C21CD0F9C60027FC67 /* DataUtils.swift */; };
+		B49874341CD1FC0B007EB6C4 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */; };
 		B4D2B8541CCF42C200E5BE52 /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B8491CCF42C200E5BE52 /* YNLib.framework */; };
 		B4D2B8591CCF42C200E5BE52 /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8581CCF42C200E5BE52 /* YNLibTests.swift */; };
 		B4D2B87C1CCF430000E5BE52 /* AppSandboxHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8641CCF430000E5BE52 /* AppSandboxHelper.swift */; };
@@ -62,6 +63,7 @@
 		B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
 		B44E79C21CD0F9C60027FC67 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
+		B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
 		B4D2B8491CCF42C200E5BE52 /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D2B84E1CCF42C200E5BE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4D2B8531CCF42C200E5BE52 /* YNLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YNLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -173,6 +175,7 @@
 		B4D2B8631CCF430000E5BE52 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */,
 				B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */,
 				B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */,
 				B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */,
@@ -363,6 +366,7 @@
 				B441E46E1CD1EFAE0004A5EE /* HTTPStatusCodes.swift in Sources */,
 				B4D2B8801CCF430000E5BE52 /* CoreDataHelper.swift in Sources */,
 				B4D2B8821CCF430000E5BE52 /* CTLabel.swift in Sources */,
+				B49874341CD1FC0B007EB6C4 /* SharedDataManager.swift in Sources */,
 				B4D2B87D1CCF430000E5BE52 /* AsyncOperation.swift in Sources */,
 				B4D2B88C1CCF430000E5BE52 /* ScrollHandle.swift in Sources */,
 				B4D2B87C1CCF430000E5BE52 /* AppSandboxHelper.swift in Sources */,
