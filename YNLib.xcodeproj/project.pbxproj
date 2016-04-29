@@ -37,8 +37,6 @@
 		B4D2B88E1CCF430000E5BE52 /* StringTerminator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8761CCF430000E5BE52 /* StringTerminator.swift */; };
 		B4D2B88F1CCF430000E5BE52 /* UIView+Frame.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8771CCF430000E5BE52 /* UIView+Frame.swift */; };
 		B4D2B8901CCF430000E5BE52 /* WeakSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8781CCF430000E5BE52 /* WeakSet.swift */; };
-		B4D2B8911CCF430000E5BE52 /* YNImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8791CCF430000E5BE52 /* YNImage.swift */; };
-		B4D2B8921CCF430000E5BE52 /* YNImageMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B87A1CCF430000E5BE52 /* YNImageMeta.swift */; };
 		B4D2B8991CCF446F00E5BE52 /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8981CCF446F00E5BE52 /* LoggerWrapper.swift */; };
 		B4D2B89C1CCF449C00E5BE52 /* RunMode.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D2B89A1CCF449C00E5BE52 /* RunMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B89B1CCF449C00E5BE52 /* RunMode.m */; };
@@ -90,8 +88,6 @@
 		B4D2B8761CCF430000E5BE52 /* StringTerminator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTerminator.swift; sourceTree = "<group>"; };
 		B4D2B8771CCF430000E5BE52 /* UIView+Frame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Frame.swift"; sourceTree = "<group>"; };
 		B4D2B8781CCF430000E5BE52 /* WeakSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakSet.swift; sourceTree = "<group>"; };
-		B4D2B8791CCF430000E5BE52 /* YNImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNImage.swift; sourceTree = "<group>"; };
-		B4D2B87A1CCF430000E5BE52 /* YNImageMeta.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YNImageMeta.swift; sourceTree = "<group>"; };
 		B4D2B8981CCF446F00E5BE52 /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
 		B4D2B89A1CCF449C00E5BE52 /* RunMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunMode.h; sourceTree = "<group>"; };
 		B4D2B89B1CCF449C00E5BE52 /* RunMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunMode.m; sourceTree = "<group>"; };
@@ -205,8 +201,6 @@
 				B4D2B8761CCF430000E5BE52 /* StringTerminator.swift */,
 				B4D2B8771CCF430000E5BE52 /* UIView+Frame.swift */,
 				B4D2B8781CCF430000E5BE52 /* WeakSet.swift */,
-				B4D2B8791CCF430000E5BE52 /* YNImage.swift */,
-				B4D2B87A1CCF430000E5BE52 /* YNImageMeta.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -376,7 +370,6 @@
 				B4D2B87E1CCF430000E5BE52 /* Chrono.swift in Sources */,
 				B4D2B87F1CCF430000E5BE52 /* ColorUtils.swift in Sources */,
 				B4D2B8901CCF430000E5BE52 /* WeakSet.swift in Sources */,
-				B4D2B8911CCF430000E5BE52 /* YNImage.swift in Sources */,
 				B4D2B88E1CCF430000E5BE52 /* StringTerminator.swift in Sources */,
 				B4D2B88A1CCF430000E5BE52 /* NSURLRequestHelper.swift in Sources */,
 				B4D2B8871CCF430000E5BE52 /* ImageUtils.swift in Sources */,
@@ -384,7 +377,6 @@
 				B441E4721CD1F01E0004A5EE /* UserDataHelper.swift in Sources */,
 				B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */,
 				B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */,
-				B4D2B8921CCF430000E5BE52 /* YNImageMeta.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
