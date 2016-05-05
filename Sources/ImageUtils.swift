@@ -11,8 +11,8 @@ import Foundation
 
 public extension UIImage {
     
-    public func imageByScalingAndCroppingForSize(targetSize: CGSize) -> UIImage? {
-
+    func imageByScalingAndCroppingForSize(targetSize: CGSize, isShortEdge: Bool? = true) -> UIImage? {
+        
         let sourceImage = self
         var newImage: UIImage?
         let imageSize = sourceImage.size
@@ -24,23 +24,35 @@ public extension UIImage {
         var scaleWidth = targetWidth
         var scaleHeight = targetHeight
         var thumbnailPoint = CGPointZero
+        var shortEdge = true
+        if let t = isShortEdge where !t {
+            shortEdge = false
+        }
         
         if !CGSizeEqualToSize(imageSize, targetSize) {
             let widthFactor = targetWidth/width
             let heightFactor = targetHeight/height
             if widthFactor > heightFactor {
-                scaleFactor = widthFactor
+                scaleFactor = shortEdge ? widthFactor : heightFactor
             } else {
-                scaleFactor = heightFactor
+                scaleFactor = shortEdge ? heightFactor : widthFactor
             }
             scaleWidth = width*scaleFactor
             scaleHeight = height*scaleFactor
             
             if widthFactor > heightFactor {
-                thumbnailPoint.y = (targetHeight-scaleHeight)*0.5
+                if shortEdge {
+                    thumbnailPoint.y = (targetHeight-scaleHeight)*0.5
+                } else {
+                    thumbnailPoint.x = (targetWidth-scaleWidth)*0.5
+                }
             } else {
                 if widthFactor < heightFactor {
-                    thumbnailPoint.x = (targetWidth-scaleWidth)*0.5
+                    if shortEdge {
+                        thumbnailPoint.x = (targetWidth-scaleWidth)*0.5
+                    } else {
+                        thumbnailPoint.y = (targetHeight-scaleHeight)*0.5
+                    }
                 }
             }
         }
