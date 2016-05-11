@@ -6,8 +6,14 @@
 //  Copyright © 2016 yunio. All rights reserved.
 //
 
+#ifdef ip
+
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 @import Foundation;
 @import UIKit;
+#else
+@import <Cocoa/Cocoa.h>
+#endif
 
 //! Project version number for YNLib.
 FOUNDATION_EXPORT double YNLibVersionNumber;
