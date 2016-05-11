@@ -28,6 +28,7 @@ Pod::Spec.new do |s|
   s.dependency 'CocoaLumberjack/Swift'
   s.dependency 'Objective-LevelDB'
   s.public_header_files = 'Sources/*.h'
+  s.osx.exclude_files = ["Sources/ColorUtils.swift", "Sources/CTLabel.swift", "Sources/GRToast.swift", "Sources/ImageCompressor.swift", "Sources/ImageUtils.swift", "Sources/ScrollHandle.swift", "Sources/UIView+Frame.swift"]
 
   s.preserve_paths = 'CocoaPods/**/*'
   s.pod_target_xcconfig = {
