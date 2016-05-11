@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = ""
 
   s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.9"
+  s.osx.deployment_target = "10.10"
 
   s.module_name  = 'YNLib'
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :branch => "master", :tag => s.version }
