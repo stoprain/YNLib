@@ -1,5 +1,13 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '8.0'
-use_frameworks!
- 
+
+target 'YNLibDemo' do 
+	platform :ios, '8.0'
+	use_frameworks!
+end
+
+target 'YNLibDemoOSX' do 
+	platform :osx, '10.10'
+	use_frameworks!
+end
+
 pod 'YNLib', :git => 'https://github.com/stoprain/YNLib.git'
