@@ -6,7 +6,8 @@
 //  Copyright © 2016 yunio. All rights reserved.
 //
 
-import UIKit
+import Foundation
+
 import CommonCrypto
 
 public extension NSData {

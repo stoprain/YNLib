@@ -20,6 +20,7 @@ Pod::Spec.new do |s|
   s.social_media_url   = ""
 
   s.ios.deployment_target = "8.0"
+  s.osx.deployment_target = "10.9"
 
   s.module_name  = 'YNLib'
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :tag => s.version }
@@ -32,6 +33,7 @@ Pod::Spec.new do |s|
   s.pod_target_xcconfig = {
     'SWIFT_INCLUDE_PATHS[sdk=iphoneos*]'         => '$(SRCROOT)/YNLib/CocoaPods/iphoneos',
     'SWIFT_INCLUDE_PATHS[sdk=iphonesimulator*]'  => '$(SRCROOT)/YNLib/CocoaPods/iphonesimulator'
+    'SWIFT_INCLUDE_PATHS[sdk=macosx*]'           => '$(SRCROOT)/YNLib/CocoaPods/macosx'
   }
 
 end

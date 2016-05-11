@@ -6,7 +6,6 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-import UIKit
 import CoreData
 
 public class CoreDataHelper {

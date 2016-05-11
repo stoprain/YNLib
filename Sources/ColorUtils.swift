@@ -6,8 +6,6 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-import UIKit
-
 public enum ColorFormat: Int {
     case RGB = 3, ARGB = 4, RRGGBB = 6, AARRGGBB = 8
 }

@@ -6,8 +6,6 @@
 //  Copyright © 2016 stoprain. All rights reserved.
 //
 
-import UIKit
-
 public class CTLabel: UIImageView {
     
     public func updateText(string: NSAttributedString, block: ((size: CGSize) -> ())? = nil) {

@@ -6,7 +6,7 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public class AsyncOperation: NSOperation {
     
