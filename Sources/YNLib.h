@@ -6,8 +6,8 @@
 //  Copyright © 2016 yunio. All rights reserved.
 //
 
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 @import Foundation;
+#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
 @import UIKit;
 #else
 @import Cocoa;
