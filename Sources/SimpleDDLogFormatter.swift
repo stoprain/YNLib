@@ -8,7 +8,7 @@
 
 import CocoaLumberjack
 
-class SimpleDDLogFormatter: NSObject, DDLogFormatter {
+public class SimpleDDLogFormatter: NSObject, DDLogFormatter {
     
     private var atomicLoggerCount: Int32 = 0
     private let threadUnsafeDateFormatter = NSDateFormatter()
@@ -38,7 +38,7 @@ class SimpleDDLogFormatter: NSObject, DDLogFormatter {
         return dateFormatter.stringFromDate(date)
     }
 
-    func formatLogMessage(logMessage: DDLogMessage!) -> String! {
+    public func formatLogMessage(logMessage: DDLogMessage!) -> String! {
         var logLevel = ""
         switch logMessage.flag {
         case DDLogFlag.Verbose:     logLevel = "V"
