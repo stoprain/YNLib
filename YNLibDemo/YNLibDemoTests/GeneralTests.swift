@@ -117,8 +117,8 @@ class GeneralTests: XCTestCase {
     }
     
     func testShareDataManager() {
-        SharedDataManager.setObject("ha", prefix: SharedDataKey.Setting, key: "hei")
-        XCTAssert(SharedDataManager.objectForPrefix(SharedDataKey.Setting, key: "hei") as! String == "ha")
+        SharedDataManager.setObject("ha", prefix: "setting", key: "hei")
+        XCTAssert(SharedDataManager.objectForPrefix("setting", key: "hei") as! String == "ha")
     }
 
 }
