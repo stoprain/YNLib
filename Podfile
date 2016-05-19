@@ -12,3 +12,5 @@ end
 
 pod 'CocoaLumberjack/Swift'
 pod 'Objective-LevelDB'
+pod 'PLCrashReporter'
+pod 'ZipArchive'

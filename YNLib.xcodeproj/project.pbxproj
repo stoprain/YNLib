@@ -36,6 +36,10 @@
 		B441E46E1CD1EFAE0004A5EE /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */; };
 		B441E4721CD1F01E0004A5EE /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */; };
 		B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E79C21CD0F9C60027FC67 /* DataUtils.swift */; };
+		B480BB0E1CED7C7200169C69 /* CrashReportWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = B480BB0C1CED7C7200169C69 /* CrashReportWrapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B480BB0F1CED7C7200169C69 /* CrashReportWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B480BB0D1CED7C7200169C69 /* CrashReportWrapper.m */; };
+		B480BB101CED7C7600169C69 /* CrashReportWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = B480BB0D1CED7C7200169C69 /* CrashReportWrapper.m */; };
+		B480BB141CED7EED00169C69 /* LogArchiverHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B480BB131CED7EED00169C69 /* LogArchiverHelper.swift */; };
 		B49874341CD1FC0B007EB6C4 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */; };
 		B4D2B8541CCF42C200E5BE52 /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B8491CCF42C200E5BE52 /* YNLib.framework */; };
 		B4D2B8591CCF42C200E5BE52 /* YNLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8581CCF42C200E5BE52 /* YNLibTests.swift */; };
@@ -89,6 +93,9 @@
 		B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
 		B44E79C21CD0F9C60027FC67 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
+		B480BB0C1CED7C7200169C69 /* CrashReportWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrashReportWrapper.h; sourceTree = "<group>"; };
+		B480BB0D1CED7C7200169C69 /* CrashReportWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CrashReportWrapper.m; sourceTree = "<group>"; };
+		B480BB131CED7EED00169C69 /* LogArchiverHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogArchiverHelper.swift; sourceTree = "<group>"; };
 		B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
 		B4D2B8491CCF42C200E5BE52 /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4D2B84E1CCF42C200E5BE52 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -215,6 +222,7 @@
 		B4D2B8631CCF430000E5BE52 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B480BB131CED7EED00169C69 /* LogArchiverHelper.swift */,
 				B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */,
 				B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */,
 				B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */,
@@ -245,6 +253,8 @@
 				B4D2B8761CCF430000E5BE52 /* StringTerminator.swift */,
 				B4D2B8771CCF430000E5BE52 /* UIView+Frame.swift */,
 				B4D2B8781CCF430000E5BE52 /* WeakSet.swift */,
+				B480BB0C1CED7C7200169C69 /* CrashReportWrapper.h */,
+				B480BB0D1CED7C7200169C69 /* CrashReportWrapper.m */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -278,6 +288,7 @@
 			files = (
 				B4212A191CD061C300A7AB20 /* YNLib.h in Headers */,
 				B4D2B89C1CCF449C00E5BE52 /* RunMode.h in Headers */,
+				B480BB0E1CED7C7200169C69 /* CrashReportWrapper.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -493,6 +504,7 @@
 				B43F88DB1CE3164700DF1C76 /* CoreDataManager.swift in Sources */,
 				B43F88D81CE3164700DF1C76 /* Chrono.swift in Sources */,
 				B43F88E61CE3164700DF1C76 /* StopTimer.swift in Sources */,
+				B480BB101CED7C7600169C69 /* CrashReportWrapper.m in Sources */,
 				B43F88D41CE3164700DF1C76 /* RunMode.m in Sources */,
 				B43F88D71CE3164700DF1C76 /* AsyncOperation.swift in Sources */,
 			);
@@ -502,6 +514,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B480BB141CED7EED00169C69 /* LogArchiverHelper.swift in Sources */,
 				B4D2B8811CCF430000E5BE52 /* CoreDataManager.swift in Sources */,
 				B4D2B88B1CCF430000E5BE52 /* NumberUtils.swift in Sources */,
 				B4D2B8831CCF430000E5BE52 /* DateUtils.swift in Sources */,
@@ -527,6 +540,7 @@
 				B4D2B8871CCF430000E5BE52 /* ImageUtils.swift in Sources */,
 				B4D2B8991CCF446F00E5BE52 /* LoggerWrapper.swift in Sources */,
 				B441E4721CD1F01E0004A5EE /* UserDataHelper.swift in Sources */,
+				B480BB0F1CED7C7200169C69 /* CrashReportWrapper.m in Sources */,
 				B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */,
 				B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */,
 			);

@@ -22,3 +22,4 @@ FOUNDATION_EXPORT const unsigned char YNLibVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <YNLib/PublicHeader.h>
 
 #import <YNLib/RunMode.h>
+#import <YNLib/CrashReportWrapper.h>
