@@ -1,14 +1,13 @@
 Pod::Spec.new do |s|
 
   s.name         = "YNLib"
-  s.version      = "0.0.6"
+  s.version      = "0.0.9"
   s.summary      = "YNLib is a general project utitities."
 
   s.description  = <<-DESC
                    YNLib is a general project utitities.
                    * CoreDataManager
                    * AsyncOperation
-                   * YNImage
                    * etc.
                    DESC
 

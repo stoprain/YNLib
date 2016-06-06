@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import ImageIO
 
 public extension UIImage {
     
@@ -73,6 +73,24 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         
         return newImage
+    }
+    
+    class func loadScreenSizeImageFromPath(path: String) -> UIImage? {
+        let url = NSURL(fileURLWithPath: path)
+        let screenFrame = UIScreen.mainScreen().bounds
+        if let imageSource = CGImageSourceCreateWithURL(url, nil), imageInfo = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary? {
+            if let pixelHeight = imageInfo[kCGImagePropertyPixelHeight as String] as? CGFloat,
+                pixelWidth = imageInfo[kCGImagePropertyPixelWidth as String] as? CGFloat {
+                let height = pixelHeight * screenFrame.size.width * 2 / pixelWidth
+                let options: [NSString: NSObject] = [
+                    kCGImageSourceThumbnailMaxPixelSize: max(height, screenFrame.size.width*2),
+                    kCGImageSourceCreateThumbnailFromImageAlways: true
+                ]
+                let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options).flatMap { UIImage(CGImage: $0) }
+                return scaledImage
+            }
+        }
+        return nil
     }
     
 }
