@@ -8,7 +8,8 @@
 
 import Foundation
 
-public class NumberUtils {
+@objc
+public class NumberUtils: NSObject {
     
     /**
      Retrive a random number in given range

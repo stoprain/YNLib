@@ -15,7 +15,8 @@ https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/
 
 */
 
-public class AppSandboxHelper {
+@objc
+public class AppSandboxHelper: NSObject {
     
     /*! Application Documents directory for critical user data
     * \return path of the Documents directory

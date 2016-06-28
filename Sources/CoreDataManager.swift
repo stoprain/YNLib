@@ -8,7 +8,8 @@
 
 import CoreData
 
-public class CoreDataManager {
+@objc
+public class CoreDataManager: NSObject {
     
     public var modelName = "Model"
     

@@ -8,7 +8,8 @@
 
 import Foundation
 
-public class DateUtils {
+@objc
+public class DateUtils: NSObject {
     
     /**
      Convert GMT date to system time zone date

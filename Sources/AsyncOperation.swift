@@ -8,6 +8,7 @@
 
 import Foundation
 
+@objc
 public class AsyncOperation: NSOperation {
     
     public enum State {

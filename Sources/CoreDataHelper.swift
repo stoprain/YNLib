@@ -8,7 +8,8 @@
 
 import CoreData
 
-public class CoreDataHelper {
+@objc
+public class CoreDataHelper: NSObject {
     
     private class func getEntityName<T: NSManagedObject>(entityClass: T.Type) -> String {
         let nameSpaceClassName = NSStringFromClass(T)

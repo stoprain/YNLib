@@ -8,9 +8,10 @@
 
 import Objective_LevelDB
 
-let ldb: LevelDB = LevelDB.databaseInLibraryWithName("shared.ldb") as! LevelDB
-
+@objc
 public class SharedDataManager: NSObject {
+    
+    static let ldb: LevelDB = LevelDB.databaseInLibraryWithName("shared.ldb") as! LevelDB
     
 //    override class func initialize() {
 //        

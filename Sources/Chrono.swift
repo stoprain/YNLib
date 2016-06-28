@@ -9,7 +9,8 @@
 import Foundation
 import QuartzCore
 
-public class Chrono {
+@objc
+public class Chrono: NSObject {
     
     private(set) static var ticks = [Int: CFTimeInterval]()
     
