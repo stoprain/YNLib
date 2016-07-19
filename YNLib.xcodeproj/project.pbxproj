@@ -35,6 +35,7 @@
 		B441E46D1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */; };
 		B441E46E1CD1EFAE0004A5EE /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */; };
 		B441E4721CD1F01E0004A5EE /* UserDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */; };
+		B44674FA1D3DE7FC006D0F0C /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44674F91D3DE7FC006D0F0C /* StringUtils.swift */; };
 		B44E79C31CD0F9C60027FC67 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E79C21CD0F9C60027FC67 /* DataUtils.swift */; };
 		B49874341CD1FC0B007EB6C4 /* SharedDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */; };
 		B4D2B8541CCF42C200E5BE52 /* YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4D2B8491CCF42C200E5BE52 /* YNLib.framework */; };
@@ -88,6 +89,7 @@
 		B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleDDLogFormatter.swift; sourceTree = "<group>"; };
 		B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusCodes.swift; sourceTree = "<group>"; };
 		B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDataHelper.swift; sourceTree = "<group>"; };
+		B44674F91D3DE7FC006D0F0C /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		B44E79C21CD0F9C60027FC67 /* DataUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataUtils.swift; sourceTree = "<group>"; };
 		B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharedDataManager.swift; sourceTree = "<group>"; };
 		B4D2B8491CCF42C200E5BE52 /* YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,6 +247,7 @@
 				B4D2B8761CCF430000E5BE52 /* StringTerminator.swift */,
 				B4D2B8771CCF430000E5BE52 /* UIView+Frame.swift */,
 				B4D2B8781CCF430000E5BE52 /* WeakSet.swift */,
+				B44674F91D3DE7FC006D0F0C /* StringUtils.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -522,6 +525,7 @@
 				B4D2B87E1CCF430000E5BE52 /* Chrono.swift in Sources */,
 				B4D2B87F1CCF430000E5BE52 /* ColorUtils.swift in Sources */,
 				B4D2B8901CCF430000E5BE52 /* WeakSet.swift in Sources */,
+				B44674FA1D3DE7FC006D0F0C /* StringUtils.swift in Sources */,
 				B4D2B88E1CCF430000E5BE52 /* StringTerminator.swift in Sources */,
 				B4D2B88A1CCF430000E5BE52 /* NSURLRequestHelper.swift in Sources */,
 				B4D2B8871CCF430000E5BE52 /* ImageUtils.swift in Sources */,
