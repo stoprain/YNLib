@@ -13,7 +13,7 @@ public let log = LoggerWrapper()
 @objc
 public class LoggerWrapper: NSObject {
     
-    static var oclog = log
+    public static var oclog = log
     
     public static func setup(level: DDLogLevel, formatter: DDLogFormatter = SimpleDDLogFormatter()) {
         if !RunMode.isProd() {
