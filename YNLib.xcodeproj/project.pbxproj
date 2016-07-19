@@ -64,6 +64,7 @@
 		B4D2B8991CCF446F00E5BE52 /* LoggerWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B8981CCF446F00E5BE52 /* LoggerWrapper.swift */; };
 		B4D2B89C1CCF449C00E5BE52 /* RunMode.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D2B89A1CCF449C00E5BE52 /* RunMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B89B1CCF449C00E5BE52 /* RunMode.m */; };
+		B4E5A0101D3E11C50084653F /* ApplicationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E5A00F1D3E11C50084653F /* ApplicationUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		B4D2B8981CCF446F00E5BE52 /* LoggerWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggerWrapper.swift; sourceTree = "<group>"; };
 		B4D2B89A1CCF449C00E5BE52 /* RunMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunMode.h; sourceTree = "<group>"; };
 		B4D2B89B1CCF449C00E5BE52 /* RunMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunMode.m; sourceTree = "<group>"; };
+		B4E5A00F1D3E11C50084653F /* ApplicationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationUtils.swift; sourceTree = "<group>"; };
 		BEFC1D4E32FEA8D6D20979E3 /* Pods-YNLibOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLibOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNLibOSX/Pods-YNLibOSX.release.xcconfig"; sourceTree = "<group>"; };
 		C56F0A3A11F72014369662FF /* Pods-YNLibOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLibOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNLibOSX/Pods-YNLibOSX.debug.xcconfig"; sourceTree = "<group>"; };
 		F2A7CED53D932C887A7600D6 /* Pods_YNLibOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNLibOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -217,6 +219,7 @@
 		B4D2B8631CCF430000E5BE52 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				B4E5A00F1D3E11C50084653F /* ApplicationUtils.swift */,
 				B49874331CD1FC0B007EB6C4 /* SharedDataManager.swift */,
 				B441E4711CD1F01E0004A5EE /* UserDataHelper.swift */,
 				B441E46B1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift */,
@@ -516,6 +519,7 @@
 				B4D2B8801CCF430000E5BE52 /* CoreDataHelper.swift in Sources */,
 				B4D2B8821CCF430000E5BE52 /* CTLabel.swift in Sources */,
 				B49874341CD1FC0B007EB6C4 /* SharedDataManager.swift in Sources */,
+				B4E5A0101D3E11C50084653F /* ApplicationUtils.swift in Sources */,
 				B4D2B87D1CCF430000E5BE52 /* AsyncOperation.swift in Sources */,
 				B4D2B88C1CCF430000E5BE52 /* ScrollHandle.swift in Sources */,
 				B4D2B87C1CCF430000E5BE52 /* AppSandboxHelper.swift in Sources */,

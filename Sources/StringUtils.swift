@@ -8,10 +8,8 @@
 
 import UIKit
 
-import UIKit
-
 @objc
-public class StringUitls: NSObject {
+public class StringUtils: NSObject {
     
     public static func boundingRect(s: String, size: CGSize, font: UIFont) -> CGRect {
         return (s as NSString).boundingRectWithSize(size,
@@ -24,7 +22,7 @@ public class StringUitls: NSObject {
 
 public extension String {
     public func boundingRect(size: CGSize, font: UIFont) -> CGRect {
-        return StringUitls.boundingRect(self, size: size, font: font)
+        return StringUtils.boundingRect(self, size: size, font: font)
     }
     
     public func boundingRect(size: CGSize, systemFontSize: CGFloat) -> CGRect {
