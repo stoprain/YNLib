@@ -8,6 +8,26 @@
 
 import Objective_LevelDB
 
+public class SharedDataKey<T:Any> {
+    public let _key: String
+    
+    public init(_ key: String) {
+        self._key = key
+    }
+    
+    public func set(v: T) {
+        guard let vv = v as? AnyObject else {
+            assert(false, "SharedDataManager: Faile to convert \(v) to AnyObject")
+            return
+        }
+        SharedDataManager.setObject(vv, key: _key)
+    }
+    
+    public func get() -> T? {
+        return SharedDataManager.objectForKey(_key) as? T
+    }
+}
+
 @objc
 public class SharedDataManager: NSObject {
     
