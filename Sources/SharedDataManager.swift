@@ -26,6 +26,11 @@ public class SharedDataKey<T:Any> {
     public func get() -> T? {
         return SharedDataManager.objectForKey(_key) as? T
     }
+    
+    public func remove() {
+        SharedDataManager.removeObjectForKey(_key)
+    }
+    
 }
 
 @objc
