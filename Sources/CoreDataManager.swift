@@ -98,6 +98,22 @@ public class CoreDataManager: NSObject {
         return mainContext
         }()
     
+    // in memory content for temp usage only
+    public lazy var inMemoryMainContext: NSManagedObjectContext? = {
+        guard let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil) else {
+            return nil
+        }
+        let coordinator: NSPersistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+        do {
+            try coordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
+            let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+            context.persistentStoreCoordinator = coordinator
+            return context
+        } catch {}
+        
+        return nil
+    }()
+    
     @objc
     private func backgroundContextDidSave(notification: NSNotification) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
