@@ -52,6 +52,13 @@ public class CoreDataHelper: NSObject {
         }
         return result
     }
+    
+    public class func deleteAllManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext) {
+        let objects = self.getManagedObjects(entityClass, context: context)
+        for o in objects {
+            context.deleteObject(o)
+        }
+    }
 
 }
 

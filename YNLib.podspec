@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YNLib"
-  s.version      = "0.0.19"
+  s.version      = "0.0.20"
   s.summary      = "YNLib is a general project utitities."
 
   s.description  = <<-DESC
