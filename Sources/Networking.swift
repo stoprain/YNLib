@@ -22,8 +22,8 @@ public class Networking {
     
     public typealias Request = (req: Int, request: NSMutableURLRequest)
     
-    public func logRequest(request: Request) {
-        log.info("req \(request.req), \(request.request.description)")
+    public init () {
+        
     }
     
 }
