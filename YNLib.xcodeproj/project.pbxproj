@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		09BC17B49553860DA305D90B /* Pods_YNLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E8D32621A04E318B986086 /* Pods_YNLib.framework */; };
 		948337F3065A000B584D209F /* Pods_YNLibOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2A7CED53D932C887A7600D6 /* Pods_YNLibOSX.framework */; };
+		B40FBD6A1D7C5CB600F60CD7 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FBD691D7C5CB600F60CD7 /* Networking.swift */; };
+		B40FBD6C1D7C5CEE00F60CD7 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FBD6B1D7C5CEE00F60CD7 /* DataStore.swift */; };
 		B4212A191CD061C300A7AB20 /* YNLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B4212A181CD061C300A7AB20 /* YNLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B43F88D01CE3164700DF1C76 /* HTTPStatusCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441E46C1CD1EFAE0004A5EE /* HTTPStatusCodes.swift */; };
 		B43F88D11CE3164700DF1C76 /* DataUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E79C21CD0F9C60027FC67 /* DataUtils.swift */; };
@@ -82,6 +84,8 @@
 		0F935472F6C0664503D8BC6B /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9368EE66F025C4E8840D6C9F /* Pods-YNLib.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLib.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNLib/Pods-YNLib.debug.xcconfig"; sourceTree = "<group>"; };
 		A7E8D32621A04E318B986086 /* Pods_YNLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B40FBD691D7C5CB600F60CD7 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		B40FBD6B1D7C5CEE00F60CD7 /* DataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		B4212A181CD061C300A7AB20 /* YNLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YNLib.h; sourceTree = "<group>"; };
 		B43F88C51CE3163700DF1C76 /* YNLibOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YNLibOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B43F88C71CE3163700DF1C76 /* YNLibOSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YNLibOSX.h; sourceTree = "<group>"; };
@@ -251,6 +255,8 @@
 				B4D2B8771CCF430000E5BE52 /* UIView+Frame.swift */,
 				B4D2B8781CCF430000E5BE52 /* WeakSet.swift */,
 				B44674F91D3DE7FC006D0F0C /* StringUtils.swift */,
+				B40FBD691D7C5CB600F60CD7 /* Networking.swift */,
+				B40FBD6B1D7C5CEE00F60CD7 /* DataStore.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -509,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D2B8811CCF430000E5BE52 /* CoreDataManager.swift in Sources */,
+				B40FBD6C1D7C5CEE00F60CD7 /* DataStore.swift in Sources */,
 				B4D2B88B1CCF430000E5BE52 /* NumberUtils.swift in Sources */,
 				B4D2B8831CCF430000E5BE52 /* DateUtils.swift in Sources */,
 				B441E46D1CD1EFAE0004A5EE /* SimpleDDLogFormatter.swift in Sources */,
@@ -529,6 +536,7 @@
 				B4D2B87E1CCF430000E5BE52 /* Chrono.swift in Sources */,
 				B4D2B87F1CCF430000E5BE52 /* ColorUtils.swift in Sources */,
 				B4D2B8901CCF430000E5BE52 /* WeakSet.swift in Sources */,
+				B40FBD6A1D7C5CB600F60CD7 /* Networking.swift in Sources */,
 				B44674FA1D3DE7FC006D0F0C /* StringUtils.swift in Sources */,
 				B4D2B88E1CCF430000E5BE52 /* StringTerminator.swift in Sources */,
 				B4D2B88A1CCF430000E5BE52 /* NSURLRequestHelper.swift in Sources */,
