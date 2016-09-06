@@ -6,11 +6,35 @@
 //  Copyright © 2016 yunio. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public extension NSURLRequest {
     
+    public enum LogStyle {
+        case CURL
+        case HTTPIE
+    }
+    
+    public static var logStyle: LogStyle = .CURL
+    
     override var description : String {
+        if NSURLRequest.logStyle == .HTTPIE {
+            var s = ""
+            if let url = self.URL?.absoluteString {
+                s += "http \(self.HTTPMethod!) '\(url)'"
+            }
+            if self.allHTTPHeaderFields?.count > 0 {
+                for (key, value) in self.allHTTPHeaderFields! {
+                    s += " '\(key):\(value)'"
+                }
+            }
+            if let d = self.HTTPBody {
+                if let t = NSString(data: d, encoding: NSUTF8StringEncoding) {
+                    s += " body='\(t)'"
+                }
+            }
+            return s
+        }
         var s = ""
         if let url = self.URL?.absoluteString {
             s += "curl -i '\(url)' -X \(self.HTTPMethod!)"

@@ -7,12 +7,12 @@
 //
 
 import Foundation
-
+import ImageIO
 
 public extension UIImage {
     
-    public func imageByScalingAndCroppingForSize(targetSize: CGSize) -> UIImage? {
-
+    func imageByScalingAndCroppingForSize(targetSize: CGSize, isShortEdge: Bool? = true) -> UIImage? {
+        
         let sourceImage = self
         var newImage: UIImage?
         let imageSize = sourceImage.size
@@ -24,23 +24,35 @@ public extension UIImage {
         var scaleWidth = targetWidth
         var scaleHeight = targetHeight
         var thumbnailPoint = CGPointZero
+        var shortEdge = true
+        if let t = isShortEdge where !t {
+            shortEdge = false
+        }
         
         if !CGSizeEqualToSize(imageSize, targetSize) {
             let widthFactor = targetWidth/width
             let heightFactor = targetHeight/height
             if widthFactor > heightFactor {
-                scaleFactor = widthFactor
+                scaleFactor = shortEdge ? widthFactor : heightFactor
             } else {
-                scaleFactor = heightFactor
+                scaleFactor = shortEdge ? heightFactor : widthFactor
             }
             scaleWidth = width*scaleFactor
             scaleHeight = height*scaleFactor
             
             if widthFactor > heightFactor {
-                thumbnailPoint.y = (targetHeight-scaleHeight)*0.5
+                if shortEdge {
+                    thumbnailPoint.y = (targetHeight-scaleHeight)*0.5
+                } else {
+                    thumbnailPoint.x = (targetWidth-scaleWidth)*0.5
+                }
             } else {
                 if widthFactor < heightFactor {
-                    thumbnailPoint.x = (targetWidth-scaleWidth)*0.5
+                    if shortEdge {
+                        thumbnailPoint.x = (targetWidth-scaleWidth)*0.5
+                    } else {
+                        thumbnailPoint.y = (targetHeight-scaleHeight)*0.5
+                    }
                 }
             }
         }
@@ -61,6 +73,24 @@ public extension UIImage {
         UIGraphicsEndImageContext()
         
         return newImage
+    }
+    
+    class func loadScreenSizeImageFromPath(path: String) -> UIImage? {
+        let url = NSURL(fileURLWithPath: path)
+        let screenFrame = UIScreen.mainScreen().bounds
+        if let imageSource = CGImageSourceCreateWithURL(url, nil), imageInfo = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary? {
+            if let pixelHeight = imageInfo[kCGImagePropertyPixelHeight as String] as? CGFloat,
+                pixelWidth = imageInfo[kCGImagePropertyPixelWidth as String] as? CGFloat {
+                let height = pixelHeight * screenFrame.size.width * 2 / pixelWidth
+                let options: [NSString: NSObject] = [
+                    kCGImageSourceThumbnailMaxPixelSize: max(height, screenFrame.size.width*2),
+                    kCGImageSourceCreateThumbnailFromImageAlways: true
+                ]
+                let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options).flatMap { UIImage(CGImage: $0) }
+                return scaledImage
+            }
+        }
+        return nil
     }
     
 }

@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 stoprain. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 /**
     StopTimer

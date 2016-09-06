@@ -6,10 +6,10 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-import UIKit
 import CoreData
 
-public class CoreDataManager {
+@objc
+public class CoreDataManager: NSObject {
     
     public var modelName = "Model"
     
@@ -18,7 +18,7 @@ public class CoreDataManager {
     // MARK: - Core Data stack
     
     lazy var applicationDocumentsDirectory: NSURL = {
-        // The directory the application uses to store the Core Data store file. This code uses a directory named "com.heartsquare.CoreDataManager" in the application's documents Application Support directory.
+        // The directory the application uses to store the Core Data store file.
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
         }()
@@ -97,6 +97,22 @@ public class CoreDataManager {
         
         return mainContext
         }()
+    
+    // in memory content for temp usage only
+    public lazy var inMemoryMainContext: NSManagedObjectContext? = {
+        guard let managedObjectModel = NSManagedObjectModel.mergedModelFromBundles(nil) else {
+            return nil
+        }
+        let coordinator: NSPersistentStoreCoordinator = NSPersistentStoreCoordinator(managedObjectModel: managedObjectModel)
+        do {
+            try coordinator.addPersistentStoreWithType(NSInMemoryStoreType, configuration: nil, URL: nil, options: nil)
+            let context = NSManagedObjectContext(concurrencyType: NSManagedObjectContextConcurrencyType.MainQueueConcurrencyType)
+            context.persistentStoreCoordinator = coordinator
+            return context
+        } catch {}
+        
+        return nil
+    }()
     
     @objc
     private func backgroundContextDidSave(notification: NSNotification) {

@@ -6,9 +6,10 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class NumberUtils {
+@objc
+public class NumberUtils: NSObject {
     
     /**
      Retrive a random number in given range

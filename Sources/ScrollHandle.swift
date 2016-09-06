@@ -6,8 +6,6 @@
 //  Copyright © 2016 yunio. All rights reserved.
 //
 
-import UIKit
-
 public protocol ScrollHandleDelegate: NSObjectProtocol {
     func scrollHandleChange(progress: CGFloat)
 }

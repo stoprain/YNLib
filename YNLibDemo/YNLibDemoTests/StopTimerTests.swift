@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import YNLib
+import YNLib
 
 class StopTimerTests: XCTestCase {
     

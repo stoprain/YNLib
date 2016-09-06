@@ -6,9 +6,10 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public class DateUtils {
+@objc
+public class DateUtils: NSObject {
     
     /**
      Convert GMT date to system time zone date
@@ -26,6 +27,14 @@ public class DateUtils {
         let interval = destinationGMTOffset - sourceGMTOffset
         let destinationDate = NSDate(timeInterval: NSTimeInterval(interval), sinceDate: date)
         return destinationDate
+    }
+    
+    public class func dateFromMillisecond(value: Int64) -> NSDate {
+        return NSDate(timeIntervalSince1970: NSTimeInterval(Double(value)/1000000.0))
+    }
+    
+    public class func dateToMillisecond(value: NSDate) -> Int64 {
+        return Int64(value.timeIntervalSince1970*1000000)
     }
 
 }

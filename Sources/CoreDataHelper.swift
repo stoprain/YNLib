@@ -6,10 +6,10 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-import UIKit
 import CoreData
 
-public class CoreDataHelper {
+@objc
+public class CoreDataHelper: NSObject {
     
     private class func getEntityName<T: NSManagedObject>(entityClass: T.Type) -> String {
         let nameSpaceClassName = NSStringFromClass(T)
@@ -51,6 +51,13 @@ public class CoreDataHelper {
             debugPrint("Failed to countManagedObjects")
         }
         return result
+    }
+    
+    public class func deleteAllManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext) {
+        let objects = self.getManagedObjects(entityClass, context: context)
+        for o in objects {
+            context.deleteObject(o)
+        }
     }
 
 }
