@@ -44,7 +44,7 @@ public class CoreDataManager: NSObject {
                 try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: optionsDictionary)
             } catch {
                 do {
-                    try NSFileManager.defaultManager().removeItemAtURL(url)
+                    try NSFileManager.defaultManager().removeItemAtURL(url!)
                 } catch {
                     do {
                         try coordinator!.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)

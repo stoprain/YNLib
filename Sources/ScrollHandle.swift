@@ -45,7 +45,7 @@ public class ScrollHandle: UIView {
         }
     }
     
-    override public func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+    override public func touchesCancelled(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.handle.backgroundColor = UIColor.greenColor()
         self.isDragging = false
     }
