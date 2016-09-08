@@ -42,7 +42,7 @@ public class CoreDataHelper: NSObject {
         return [T]()
     }
     
-    public class func countManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, predicate: NSPredicate? = nil) -> Int? {
+    public class func countManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, predicate: NSPredicate? = nil) -> Int {
         let request = NSFetchRequest(entityName: self.getEntityName(entityClass))
         request.predicate = predicate
         do {
@@ -51,7 +51,7 @@ public class CoreDataHelper: NSObject {
         } catch {
             debugPrint("Failed to countManagedObjects")
         }
-        return nil
+        return 0
     }
     
     public class func deleteAllManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext) {
