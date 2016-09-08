@@ -42,15 +42,16 @@ public class CoreDataHelper: NSObject {
         return [T]()
     }
     
-    public class func countManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, predicate: NSPredicate? = nil) -> Int {
+    public class func countManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, predicate: NSPredicate? = nil) -> Int? {
         let request = NSFetchRequest(entityName: self.getEntityName(entityClass))
         request.predicate = predicate
-        var error: NSError?
-        let result = context.countForFetchRequest(request, error: &error)
-        if error != nil {
+        do {
+            let result = try context.countForFetchRequest(request)
+            return result
+        } catch {
             debugPrint("Failed to countManagedObjects")
         }
-        return result
+        return nil
     }
     
     public class func deleteAllManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext) {
