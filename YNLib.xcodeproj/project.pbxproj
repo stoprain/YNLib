@@ -67,6 +67,7 @@
 		B4D2B89C1CCF449C00E5BE52 /* RunMode.h in Headers */ = {isa = PBXBuildFile; fileRef = B4D2B89A1CCF449C00E5BE52 /* RunMode.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4D2B89D1CCF449C00E5BE52 /* RunMode.m in Sources */ = {isa = PBXBuildFile; fileRef = B4D2B89B1CCF449C00E5BE52 /* RunMode.m */; };
 		B4E5A0101D3E11C50084653F /* ApplicationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E5A00F1D3E11C50084653F /* ApplicationUtils.swift */; };
+		B4F98E591D9CBD4800698BC7 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F98E581D9CBD4800698BC7 /* With.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		B4D2B89A1CCF449C00E5BE52 /* RunMode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RunMode.h; sourceTree = "<group>"; };
 		B4D2B89B1CCF449C00E5BE52 /* RunMode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RunMode.m; sourceTree = "<group>"; };
 		B4E5A00F1D3E11C50084653F /* ApplicationUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationUtils.swift; sourceTree = "<group>"; };
+		B4F98E581D9CBD4800698BC7 /* With.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
 		BEFC1D4E32FEA8D6D20979E3 /* Pods-YNLibOSX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLibOSX.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNLibOSX/Pods-YNLibOSX.release.xcconfig"; sourceTree = "<group>"; };
 		C56F0A3A11F72014369662FF /* Pods-YNLibOSX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLibOSX.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNLibOSX/Pods-YNLibOSX.debug.xcconfig"; sourceTree = "<group>"; };
 		F2A7CED53D932C887A7600D6 /* Pods_YNLibOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNLibOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +259,7 @@
 				B44674F91D3DE7FC006D0F0C /* StringUtils.swift */,
 				B40FBD691D7C5CB600F60CD7 /* Networking.swift */,
 				B40FBD6B1D7C5CEE00F60CD7 /* DataStore.swift */,
+				B4F98E581D9CBD4800698BC7 /* With.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -517,6 +520,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4D2B8811CCF430000E5BE52 /* CoreDataManager.swift in Sources */,
+				B4F98E591D9CBD4800698BC7 /* With.swift in Sources */,
 				B40FBD6C1D7C5CEE00F60CD7 /* DataStore.swift in Sources */,
 				B4D2B88B1CCF430000E5BE52 /* NumberUtils.swift in Sources */,
 				B4D2B8831CCF430000E5BE52 /* DateUtils.swift in Sources */,
