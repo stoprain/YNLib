@@ -65,11 +65,14 @@ public extension NSURLRequest {
             request.setValue("Bearer \(t)", forHTTPHeaderField: "Authorization")
         }
         if let b = body {
-            do {
-                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(b, options: NSJSONWritingOptions.PrettyPrinted)
-            } catch {
-                
-                print("Failed to build requeset \(resource)")
+            if b is NSData {
+                request.HTTPBody = b as? NSData
+            } else {
+                do {
+                    request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(b, options: NSJSONWritingOptions.PrettyPrinted)
+                } catch {
+                    print("Failed to build requeset \(resource)")
+                }
             }
         }
         return request
