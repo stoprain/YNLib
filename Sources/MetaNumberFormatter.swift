@@ -8,16 +8,16 @@
 
 import Foundation
 
-public class MetaNumberFormatter: NSNumberFormatter {
+open class MetaNumberFormatter: NumberFormatter {
     
-    public static let sharedFormatter = MetaNumberFormatter()
+    open static let sharedFormatter = MetaNumberFormatter()
     
-    public override func stringFromNumber(number: NSNumber) -> String {
+    open override func string(from number: NSNumber) -> String {
         var valueText = "\(number)"
-        let length = valueText.lengthOfBytesUsingEncoding(NSUTF8StringEncoding)
+        let length = valueText.lengthOfBytes(using: String.Encoding.utf8)
         if length > 4 {
             valueText = valueText.insert(".", ind: length-4)
-            valueText = valueText.substringToIndex(valueText.endIndex.advancedBy(-2)) + "万"
+            valueText = valueText.substring(to: valueText.characters.index(valueText.endIndex, offsetBy: -2)) + "万"
         }
         
         return valueText
@@ -26,7 +26,7 @@ public class MetaNumberFormatter: NSNumberFormatter {
 }
 
 extension String {
-    func insert(string:String, ind:Int) -> String {
+    func insert(_ string:String, ind:Int) -> String {
         return String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
     }
 }

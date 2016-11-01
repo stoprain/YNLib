@@ -8,14 +8,14 @@
 
 import Objective_LevelDB
 
-public class SharedDataKey<T:Any> {
-    public let _key: String
+open class SharedDataKey<T:Any> {
+    open let _key: String
     
     public init(_ key: String) {
         self._key = key
     }
     
-    public func set(v: T) {
+    open func set(_ v: T) {
         guard let vv = v as? AnyObject else {
             assert(false, "SharedDataManager: Faile to convert \(v) to AnyObject")
             return
@@ -23,56 +23,55 @@ public class SharedDataKey<T:Any> {
         SharedDataManager.setObject(vv, key: _key)
     }
     
-    public func get() -> T? {
+    open func get() -> T? {
         return SharedDataManager.objectForKey(_key) as? T
     }
     
-    public func remove() {
+    open func remove() {
         SharedDataManager.removeObjectForKey(_key)
     }
     
 }
 
 @objc
-public class SharedDataManager: NSObject {
+open class SharedDataManager: NSObject {
     
-    static let ldb: LevelDB = LevelDB.databaseInLibraryWithName("shared.ldb") as! LevelDB
+    static let ldb: LevelDB = LevelDB.databaseInLibrary(withName: "shared.ldb") as! LevelDB
     
 //    override class func initialize() {
 //        
 //    }
     
-    public class func objectForKey(key: String) -> AnyObject? {
-        return ldb.objectForKey(key)
+    open class func objectForKey(_ key: String) -> AnyObject? {
+        return ldb.object(forKey: key) as AnyObject?
     }
     
-    public class func objectForPrefix(prefix: String, key: String) -> AnyObject? {
-        return ldb.objectForKey(prefix+key)
+    open class func objectForPrefix(_ prefix: String, key: String) -> AnyObject? {
+        return ldb.object(forKey: prefix+key) as AnyObject?
     }
     
-    public class func setObject(object: AnyObject, key: String) {
+    open class func setObject(_ object: AnyObject, key: String) {
         ldb.setObject(object, forKey: key)
     }
     
-    public class func setObject(object: AnyObject, prefix: String, key: String) {
+    open class func setObject(_ object: AnyObject, prefix: String, key: String) {
         ldb.setObject(object, forKey: prefix+key)
     }
     
-    public class func removeObjectForKey(key: String) {
-        ldb.removeObjectForKey(key)
+    open class func removeObjectForKey(_ key: String) {
+        ldb.removeObject(forKey: key)
     }
     
-    public class func removeObjectForPrefix(prefix: String, key: String) {
-        ldb.removeObjectForKey(prefix+key)
+    open class func removeObjectForPrefix(_ prefix: String, key: String) {
+        ldb.removeObject(forKey: prefix+key)
     }
     
-    public class func keysForPrefix(prefix: String, block: LevelDBKeyBlock) {
-        ldb.enumerateKeysBackward(false, startingAtKey: nil, filteredByPredicate: nil, andPrefix: prefix, usingBlock: block)
+    open class func keysForPrefix(_ prefix: String, block: @escaping LevelDBKeyBlock) {
+        ldb.enumerateKeysBackward(false, startingAtKey: nil, filteredBy: nil, andPrefix: prefix, using: block)
     }
     
-    public class func logAllKeysAndValues() {
-        ldb.enumerateKeysAndObjectsUsingBlock { (key: UnsafeMutablePointer<LevelDBKey>, value: AnyObject!, stop: UnsafeMutablePointer<ObjCBool>) -> Void in
-            
+    open class func logAllKeysAndValues() {
+        ldb.enumerateKeysAndObjects { (key, value, stop) in
             let s: String = NSStringFromLevelDBKey(key)
             //println("\(s) -> \(value)")
             log.info("\(s) -> \(value)")

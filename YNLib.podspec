@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YNLib"
-  s.version      = "2.3.1"
+  s.version      = "3.0.0"
   s.summary      = "YNLib is a general project utitities."
 
   s.description  = <<-DESC
@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.module_name  = 'YNLib'
   s.source       = { :git => "https://github.com/stoprain/YNLib.git", :branch => "master", :tag => s.version }
   s.source_files = "Sources/*.{swift,h,m}"
-  s.dependency 'CocoaLumberjack/Swift', '2.4.0'
+  s.dependency 'CocoaLumberjack/Swift', '3.0.0'
   s.dependency 'Objective-LevelDB'
   s.public_header_files = 'Sources/*.h'
   s.osx.exclude_files = ["Sources/ColorUtils.swift", "Sources/CTLabel.swift", "Sources/GRToast.swift", "Sources/ImageCompressor.swift", "Sources/ImageUtils.swift", "Sources/ScrollHandle.swift", "Sources/UIView+Frame.swift"]

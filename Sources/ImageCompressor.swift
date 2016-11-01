@@ -6,7 +6,7 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-public class ImageCompressor {
+open class ImageCompressor {
     
     /**
      Compress image to jpeg data
@@ -18,7 +18,7 @@ public class ImageCompressor {
      - returns: jpeg data
      */
     
-    public class func compressImage(image: UIImage, shortEdge: CGFloat, level: CGFloat) -> NSData {
+    open class func compressImage(_ image: UIImage, shortEdge: CGFloat, level: CGFloat) -> Data {
         var width = image.size.width
         var height = image.size.height
         var ratio: CGFloat = 0
@@ -43,7 +43,7 @@ public class ImageCompressor {
         
         //http://stackoverflow.com/questions/6081356/a-thin-whiteline-is-been-added-
         //rounding the value to prevent white line
-        let result = image.imageByScalingAndCroppingForSize(CGSizeMake(round(width), round(height)))!
+        let result = image.imageByScalingAndCroppingForSize(CGSize(width: round(width), height: round(height)))!
         return UIImageJPEGRepresentation(result, level)!
     }
 

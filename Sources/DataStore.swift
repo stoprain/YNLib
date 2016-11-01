@@ -8,40 +8,40 @@
 
 import CoreData
 
-public class DataStore {
+open class DataStore {
     
-    public static let Async = AsyncDataStore.self
+    open static let Async = AsyncDataStore.self
     
-    public class func contextForThread() -> NSManagedObjectContext? {
-        if NSThread.currentThread() == NSThread.mainThread() {
+    open class func contextForThread() -> NSManagedObjectContext? {
+        if Thread.current == Thread.main {
             return CoreDataManager.sharedManager.mainContext
         }
         return CoreDataManager.sharedManager.backgroundContext
     }
     
-    public class func performBlock(block: (context: NSManagedObjectContext) -> ()) {
+    open class func performBlock(_ block: @escaping (_ context: NSManagedObjectContext) -> ()) {
         if let context = contextForThread() {
             context.performDataStoreBlock(self, block: {
-                block(context: context)
+                block(context)
             })
         }
     }
     
 }
 
-public class AsyncDataStore: DataStore {
+open class AsyncDataStore: DataStore {
     
 }
 
 public extension NSManagedObjectContext {
     
-    public func performDataStoreBlock(aClass: AnyClass, block: () -> ()) {
+    public func performDataStoreBlock(_ aClass: AnyClass, block: @escaping () -> ()) {
         if aClass is AsyncDataStore.Type {
-            self.performBlock({
+            self.perform({
                 block()
             })
         } else {
-            self.performBlockAndWait({
+            self.performAndWait({
                 block()
             })
         }

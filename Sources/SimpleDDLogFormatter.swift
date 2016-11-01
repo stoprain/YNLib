@@ -8,44 +8,44 @@
 
 import CocoaLumberjack
 
-public class SimpleDDLogFormatter: NSObject, DDLogFormatter {
+open class SimpleDDLogFormatter: NSObject, DDLogFormatter {
     
-    private var atomicLoggerCount: Int32 = 0
-    private let threadUnsafeDateFormatter = NSDateFormatter()
-    private let dateFormatString = "yyyy/MM/dd HH:mm:ss:SSS"
+    fileprivate var atomicLoggerCount: Int32 = 0
+    fileprivate let threadUnsafeDateFormatter = DateFormatter()
+    fileprivate let dateFormatString = "yyyy/MM/dd HH:mm:ss:SSS"
     
     override init() {
         super.init()
         
-        threadUnsafeDateFormatter.formatterBehavior = NSDateFormatterBehavior.Behavior10_4
+        threadUnsafeDateFormatter.formatterBehavior = DateFormatter.Behavior.behavior10_4
         threadUnsafeDateFormatter.dateFormat = dateFormatString
     }
     
-    func stringFromDate(date: NSDate) -> String {
+    func stringFromDate(_ date: Date) -> String {
         let loggerCount = OSAtomicAdd32(0, &atomicLoggerCount)
         if loggerCount <= 1 {
-            return threadUnsafeDateFormatter.stringFromDate(date)
+            return threadUnsafeDateFormatter.string(from: date)
         }
         let key = "MyCustomFormatter_NSDateFormatter"
-        let threadDictionary = NSThread.currentThread().threadDictionary
+        let threadDictionary = Thread.current.threadDictionary
         if let dateFormatter = threadDictionary[key] {
-            return dateFormatter.stringFromDate(date)
+            return (dateFormatter as AnyObject).stringFromDate(date)
         }
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.formatterBehavior = NSDateFormatterBehavior.Behavior10_4
+        let dateFormatter = DateFormatter()
+        dateFormatter.formatterBehavior = DateFormatter.Behavior.behavior10_4
         dateFormatter.dateFormat = dateFormatString
         threadDictionary[key] = dateFormatter
-        return dateFormatter.stringFromDate(date)
+        return dateFormatter.string(from: date)
     }
 
-    public func formatLogMessage(logMessage: DDLogMessage!) -> String! {
+    open func format(message logMessage: DDLogMessage!) -> String! {
         var logLevel = ""
         switch logMessage.flag {
-        case DDLogFlag.Verbose:     logLevel = "V"
-        case DDLogFlag.Debug:       logLevel = "D"
-        case DDLogFlag.Info:        logLevel = "I"
-        case DDLogFlag.Warning:     logLevel = "W"
-        case DDLogFlag.Error:       logLevel = "E"
+        case DDLogFlag.verbose:     logLevel = "V"
+        case DDLogFlag.debug:       logLevel = "D"
+        case DDLogFlag.info:        logLevel = "I"
+        case DDLogFlag.warning:     logLevel = "W"
+        case DDLogFlag.error:       logLevel = "E"
         default:
             logLevel = ""
         }

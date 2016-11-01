@@ -9,7 +9,7 @@
 import Foundation
 
 @objc
-public class NumberUtils: NSObject {
+open class NumberUtils: NSObject {
     
     /**
      Retrive a random number in given range
@@ -19,9 +19,9 @@ public class NumberUtils: NSObject {
      - returns: the random number
      */
 
-    public class func randomInRange(range: Range<Int>) -> Int {
-        let count = UInt32(range.endIndex - range.startIndex)
-        return Int(arc4random_uniform(count)) + range.startIndex
+    open class func randomInRange(_ range: ClosedRange<Int>) -> Int {
+        let count = UInt32(range.upperBound - range.lowerBound)
+        return Int(arc4random_uniform(count)) + range.lowerBound
     }
     
 }

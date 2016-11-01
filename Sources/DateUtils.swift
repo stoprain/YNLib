@@ -9,7 +9,7 @@
 import Foundation
 
 @objc
-public class DateUtils: NSObject {
+open class DateUtils: NSObject {
     
     /**
      Convert GMT date to system time zone date
@@ -19,21 +19,21 @@ public class DateUtils: NSObject {
      - returns: system time zone date
      */
     
-    public class func currentDateInSystemTimezone(date: NSDate) -> NSDate {
-        let sourceTimeZone = NSTimeZone(abbreviation: "GMT")
-        let destinationTimeZone = NSTimeZone.systemTimeZone()
-        let sourceGMTOffset = sourceTimeZone!.secondsFromGMTForDate(date)
-        let destinationGMTOffset = destinationTimeZone.secondsFromGMTForDate(date)
+    open class func currentDateInSystemTimezone(_ date: Date) -> Date {
+        let sourceTimeZone = TimeZone(abbreviation: "GMT")
+        let destinationTimeZone = TimeZone.current
+        let sourceGMTOffset = sourceTimeZone!.secondsFromGMT(for: date)
+        let destinationGMTOffset = destinationTimeZone.secondsFromGMT(for: date)
         let interval = destinationGMTOffset - sourceGMTOffset
-        let destinationDate = NSDate(timeInterval: NSTimeInterval(interval), sinceDate: date)
+        let destinationDate = Date(timeInterval: TimeInterval(interval), since: date)
         return destinationDate
     }
     
-    public class func dateFromMillisecond(value: Int64) -> NSDate {
-        return NSDate(timeIntervalSince1970: NSTimeInterval(Double(value)/1000000.0))
+    open class func dateFromMillisecond(_ value: Int64) -> Date {
+        return Date(timeIntervalSince1970: TimeInterval(Double(value)/1000000.0))
     }
     
-    public class func dateToMillisecond(value: NSDate) -> Int64 {
+    open class func dateToMillisecond(_ value: Date) -> Int64 {
         return Int64(value.timeIntervalSince1970*1000000)
     }
 

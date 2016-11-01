@@ -12,13 +12,13 @@ public extension UIView {
     
     //  frame setting
     
-    func setFrame(centerX:CGFloat,centerY:CGFloat,width:CGFloat,height:CGFloat) {
+    func setFrame(_ centerX:CGFloat,centerY:CGFloat,width:CGFloat,height:CGFloat) {
         self.frame = CGRect(x: centerX - width/2, y: centerY - height/2, width: width, height: height)
     }
     
     //  size setting
     
-    func setSizeByWidth(width:CGFloat) {
+    func setSizeByWidth(_ width:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x,
             y: self.frame.origin.y,
@@ -26,7 +26,7 @@ public extension UIView {
             height: self.frame.size.height)
     }
     
-    func setSizeByHeight(height:CGFloat) {
+    func setSizeByHeight(_ height:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x,
             y: self.frame.origin.y,
@@ -34,7 +34,7 @@ public extension UIView {
             height: height)
     }
     
-    func setSize(width:CGFloat,heigth:CGFloat) {
+    func setSize(_ width:CGFloat,heigth:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x,
             y: self.frame.origin.y,
@@ -42,7 +42,7 @@ public extension UIView {
             height: heigth)
     }
     
-    func setSizeForAnimation(width:CGFloat,heigth:CGFloat) {
+    func setSizeForAnimation(_ width:CGFloat,heigth:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x - (width - self.frame.width)/2,
             y: self.frame.origin.y - (heigth - self.frame.height)/2,
@@ -50,7 +50,7 @@ public extension UIView {
             height: heigth)
     }
     
-    func setSizeByMultiple(multiple:CGFloat) {
+    func setSizeByMultiple(_ multiple:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x,
             y: self.frame.origin.y,
@@ -58,7 +58,7 @@ public extension UIView {
             height: self.frame.size.height * multiple)
     }
     
-    func setSizeByMultipleForAnimation(multiplier:CGFloat) {
+    func setSizeByMultipleForAnimation(_ multiplier:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x - (self.frame.width * (multiplier - 1))/2,
             y: self.frame.origin.y - (self.frame.height * (multiplier - 1))/2,
@@ -68,7 +68,7 @@ public extension UIView {
     
     //  origin setting
     
-    func setOriginX(x:CGFloat) {
+    func setOriginX(_ x:CGFloat) {
         self.frame = CGRect(
             x: x,
             y: self.frame.origin.y,
@@ -76,7 +76,7 @@ public extension UIView {
             height: self.frame.size.height)
     }
     
-    func setOriginXByPlus(deltaX:CGFloat) {
+    func setOriginXByPlus(_ deltaX:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x + deltaX,
             y: self.frame.origin.y,
@@ -84,7 +84,7 @@ public extension UIView {
             height: self.frame.size.height)
     }
     
-    func setOriginY(y:CGFloat) {
+    func setOriginY(_ y:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x,
             y: y,
@@ -92,7 +92,7 @@ public extension UIView {
             height: self.frame.size.height)
     }
     
-    func setOriginYByPlus(deltaY:CGFloat) {
+    func setOriginYByPlus(_ deltaY:CGFloat) {
         self.frame = CGRect(
             x: self.frame.origin.x,
             y: self.frame.origin.y + deltaY,
@@ -100,7 +100,7 @@ public extension UIView {
             height: self.frame.size.height)
     }
     
-    func setOrigin(x:CGFloat,y:CGFloat) {
+    func setOrigin(_ x:CGFloat,y:CGFloat) {
         self.frame = CGRect(
             x: x,
             y: y,
@@ -110,12 +110,12 @@ public extension UIView {
     
     //  rotation
     
-    func rotateByAngle(angle:CGFloat) {
-        self.transform = CGAffineTransformMakeRotation((angle * CGFloat(M_PI)) / 180.0)
+    func rotateByAngle(_ angle:CGFloat) {
+        self.transform = CGAffineTransform(rotationAngle: (angle * CGFloat(M_PI)) / 180.0)
     }
     
-    func scaleByMultiple(deltaX:CGFloat,deltaY:CGFloat) {
-        self.transform = CGAffineTransformMakeScale(deltaX, deltaY)
+    func scaleByMultiple(_ deltaX:CGFloat,deltaY:CGFloat) {
+        self.transform = CGAffineTransform(scaleX: deltaX, y: deltaY)
     }
     
     //  get method

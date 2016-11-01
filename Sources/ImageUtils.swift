@@ -11,7 +11,7 @@ import ImageIO
 
 public extension UIImage {
     
-    func imageByScalingAndCroppingForSize(targetSize: CGSize, isShortEdge: Bool? = true) -> UIImage? {
+    func imageByScalingAndCroppingForSize(_ targetSize: CGSize, isShortEdge: Bool? = true) -> UIImage? {
         
         let sourceImage = self
         var newImage: UIImage?
@@ -23,13 +23,13 @@ public extension UIImage {
         var scaleFactor: CGFloat = 0
         var scaleWidth = targetWidth
         var scaleHeight = targetHeight
-        var thumbnailPoint = CGPointZero
+        var thumbnailPoint = CGPoint.zero
         var shortEdge = true
-        if let t = isShortEdge where !t {
+        if let t = isShortEdge, !t {
             shortEdge = false
         }
         
-        if !CGSizeEqualToSize(imageSize, targetSize) {
+        if !imageSize.equalTo(targetSize) {
             let widthFactor = targetWidth/width
             let heightFactor = targetHeight/height
             if widthFactor > heightFactor {
@@ -59,12 +59,12 @@ public extension UIImage {
         
         UIGraphicsBeginImageContext(targetSize)
         
-        var thumbnailRect = CGRectZero
+        var thumbnailRect = CGRect.zero
         thumbnailRect.origin = thumbnailPoint
         thumbnailRect.size.width = scaleWidth
         thumbnailRect.size.height = scaleHeight
         
-        sourceImage.drawInRect(thumbnailRect)
+        sourceImage.draw(in: thumbnailRect)
         
         newImage = UIGraphicsGetImageFromCurrentImageContext()
         if newImage == nil {
@@ -75,18 +75,18 @@ public extension UIImage {
         return newImage
     }
     
-    class func loadScreenSizeImageFromPath(path: String) -> UIImage? {
-        let url = NSURL(fileURLWithPath: path)
-        let screenFrame = UIScreen.mainScreen().bounds
-        if let imageSource = CGImageSourceCreateWithURL(url, nil), imageInfo = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary? {
-            if let pixelHeight = imageInfo[kCGImagePropertyPixelHeight as String] as? CGFloat,
-                pixelWidth = imageInfo[kCGImagePropertyPixelWidth as String] as? CGFloat {
+    class func loadScreenSizeImageFromPath(_ path: String) -> UIImage? {
+        let url = URL(fileURLWithPath: path)
+        let screenFrame = UIScreen.main.bounds
+        if let imageSource = CGImageSourceCreateWithURL(url as CFURL, nil), let imageInfo = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil) as Dictionary? {
+            if let pixelHeight = imageInfo[kCGImagePropertyPixelHeight as NSString] as? CGFloat,
+                let pixelWidth = imageInfo[kCGImagePropertyPixelWidth as NSString] as? CGFloat {
                 let height = pixelHeight * screenFrame.size.width * 2 / pixelWidth
                 let options: [NSString: NSObject] = [
-                    kCGImageSourceThumbnailMaxPixelSize: max(height, screenFrame.size.width*2),
-                    kCGImageSourceCreateThumbnailFromImageAlways: true
+                    kCGImageSourceThumbnailMaxPixelSize: NSNumber(value: Float(max(height, screenFrame.size.width*2))),
+                    kCGImageSourceCreateThumbnailFromImageAlways: NSNumber(value: true)
                 ]
-                let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options).flatMap { UIImage(CGImage: $0) }
+                let scaledImage = CGImageSourceCreateThumbnailAtIndex(imageSource, 0, options as CFDictionary?).flatMap { UIImage(cgImage: $0) }
                 return scaledImage
             }
         }

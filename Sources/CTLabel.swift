@@ -6,28 +6,28 @@
 //  Copyright © 2016 stoprain. All rights reserved.
 //
 
-public class CTLabel: UIImageView {
+open class CTLabel: UIImageView {
     
-    public func updateText(string: NSAttributedString, block: ((size: CGSize) -> ())? = nil) {
+    open func updateText(_ string: NSAttributedString, block: ((_ size: CGSize) -> ())? = nil) {
         
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async {
             
-            let r = string.boundingRectWithSize(
-                CGSizeZero,
-                options: .UsesLineFragmentOrigin,
+            let r = string.boundingRect(
+                with: CGSize.zero,
+                options: .usesLineFragmentOrigin,
                 context: nil)
-            let rect = CGRectMake(0, 0, ceil(r.size.width), ceil(r.size.height))
+            let rect = CGRect(x: 0, y: 0, width: ceil(r.size.width), height: ceil(r.size.height))
             
-            UIGraphicsBeginImageContextWithOptions(CGSizeMake(rect.size.width, rect.size.height), true, 2)
+            UIGraphicsBeginImageContextWithOptions(CGSize(width: rect.size.width, height: rect.size.height), true, 2)
             
             let context = UIGraphicsGetCurrentContext()!
             
-            CGContextSetRGBFillColor(context, 1, 1, 1, 1.0)
-            CGContextAddRect(context, CGRectMake(0, 0, rect.size.width, rect.size.height))
-            CGContextFillPath(context)
+            context.setFillColor(red: 1, green: 1, blue: 1, alpha: 1.0)
+            context.addRect(CGRect(x: 0, y: 0, width: rect.size.width, height: rect.size.height))
+            context.fillPath()
         
-            CGContextTranslateCTM(context, 0, rect.size.height-3)   //HACK offset for chinese character
-            CGContextScaleCTM(context, 1.0, -1.0)
+            context.translateBy(x: 0, y: rect.size.height-3)   //HACK offset for chinese character
+            context.scaleBy(x: 1.0, y: -1.0)
             
             let line = CTLineCreateWithAttributedString(string)
             CTLineDraw(line, context)
@@ -36,12 +36,12 @@ public class CTLabel: UIImageView {
             
             UIGraphicsEndImageContext()
             
-            dispatch_async(dispatch_get_main_queue(), {
-                self.backgroundColor = UIColor.redColor()
+            DispatchQueue.main.async(execute: {
+                self.backgroundColor = UIColor.white
                 self.image = image
-                self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, rect.size.width, rect.size.height)
+                self.frame = CGRect(x: self.frame.origin.x, y: self.frame.origin.y, width: rect.size.width, height: rect.size.height)
                 if let b = block {
-                    b(size: rect.size)
+                    b(rect.size)
                 }
             })
         }

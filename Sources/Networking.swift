@@ -6,7 +6,7 @@
 //  Copyright © 2016 yunio. All rights reserved.
 //
 
-public class Networking {
+open class Networking {
     
     public enum Method: String {
         case OPTIONS = "OPTIONS"

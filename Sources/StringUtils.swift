@@ -9,11 +9,11 @@
 import UIKit
 
 @objc
-public class StringUtils: NSObject {
+open class StringUtils: NSObject {
     
-    public static func boundingRect(s: String, size: CGSize, font: UIFont) -> CGRect {
-        return (s as NSString).boundingRectWithSize(size,
-                                                    options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+    open static func boundingRect(_ s: String, size: CGSize, font: UIFont) -> CGRect {
+        return (s as NSString).boundingRect(with: size,
+                                                    options: NSStringDrawingOptions.usesLineFragmentOrigin,
                                                     attributes: [NSFontAttributeName: font],
                                                     context: nil)
     }
@@ -21,15 +21,15 @@ public class StringUtils: NSObject {
 }
 
 public extension String {
-    public func boundingRect(size: CGSize, font: UIFont) -> CGRect {
+    public func boundingRect(_ size: CGSize, font: UIFont) -> CGRect {
         return StringUtils.boundingRect(self, size: size, font: font)
     }
     
-    public func boundingRect(size: CGSize, systemFontSize: CGFloat) -> CGRect {
-        return self.boundingRect(size, font: UIFont.systemFontOfSize(systemFontSize))
+    public func boundingRect(_ size: CGSize, systemFontSize: CGFloat) -> CGRect {
+        return self.boundingRect(size, font: UIFont.systemFont(ofSize: systemFontSize))
     }
     
-    public func boundingRect(size: CGSize, boldSystemFontOfSize: CGFloat) -> CGRect {
-        return self.boundingRect(size, font: UIFont.boldSystemFontOfSize(boldSystemFontOfSize))
+    public func boundingRect(_ size: CGSize, boldSystemFontOfSize: CGFloat) -> CGRect {
+        return self.boundingRect(size, font: UIFont.boldSystemFont(ofSize: boldSystemFontOfSize))
     }
 }

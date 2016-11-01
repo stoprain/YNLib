@@ -16,22 +16,22 @@ https://developer.apple.com/library/ios/documentation/FileManagement/Conceptual/
 */
 
 @objc
-public class AppSandboxHelper: NSObject {
+open class AppSandboxHelper: NSObject {
     
     /*! Application Documents directory for critical user data
     * \return path of the Documents directory
     */
     
-    public static var documentsPath: String = {
-        return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first!
+    open static var documentsPath: String = {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
     }()
     
     /*! Application Caches directory
     * \return path of the Caches directory
     */
     
-    public static var cachesPath: String = {
-        return NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true).first!
+    open static var cachesPath: String = {
+        return NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
     }()
 
 }

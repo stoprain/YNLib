@@ -12,25 +12,25 @@ import Foundation
     StopTimer
 */
 
-public class StopTimer {
+open class StopTimer {
     
-    public class Task {
+    open class Task {
         var uuid: String = ""
-        var from: NSTimeInterval = 0
-        var interval: NSTimeInterval = 0
+        var from: TimeInterval = 0
+        var interval: TimeInterval = 0
         var block: ()->() = {}
         var repeats: Bool = false
     }
     
     let MinInterval = 0.05
     
-    var timer: NSTimer?
+    var timer: Timer?
     var tasks = [Task]()
     var runLoopMode: String?
     
-    private static let shareInstance = StopTimer()
+    fileprivate static let shareInstance = StopTimer()
     
-    public class var shareTimer: StopTimer {
+    open class var shareTimer: StopTimer {
         return shareInstance
     }
     
@@ -42,7 +42,7 @@ public class StopTimer {
         Stop the StopTimer, all the existing block will be removed.
     */
     
-    public func stop() {
+    open func stop() {
         self.tasks = [Task]()
         self.timer?.invalidate()
         self.timer = nil
@@ -52,10 +52,10 @@ public class StopTimer {
         Pause the StopTimer.
     */
     
-    public func pause() {
-        let t = NSDate().timeIntervalSince1970
+    open func pause() {
+        let t = Date().timeIntervalSince1970
         for task in self.tasks {
-            task.interval = NSTimeInterval(task.interval - (t - task.from))
+            task.interval = TimeInterval(task.interval - (t - task.from))
         }
         self.timer?.invalidate()
         self.timer = nil
@@ -65,33 +65,33 @@ public class StopTimer {
         Resume the StopTimer.
     */
     
-    public func resume() {
-        let t = NSDate().timeIntervalSince1970
+    open func resume() {
+        let t = Date().timeIntervalSince1970
         for task in self.tasks {
             task.from = t
         }
         self.start()
     }
     
-    private func start() {
+    fileprivate func start() {
         if self.timer == nil {
             if let mode = self.runLoopMode {
-                self.timer = NSTimer(timeInterval: MinInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
-                NSRunLoop.currentRunLoop().addTimer(self.timer!, forMode: mode)
+                self.timer = Timer(timeInterval: MinInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+                RunLoop.current.add(self.timer!, forMode: RunLoopMode(rawValue: mode))
             } else {
-                self.timer = NSTimer.scheduledTimerWithTimeInterval(MinInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
+                self.timer = Timer.scheduledTimer(timeInterval: MinInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
             }
         }
     }
     
-    @objc private func onTimer() {
-        let t = NSDate().timeIntervalSince1970
+    @objc fileprivate func onTimer() {
+        let t = Date().timeIntervalSince1970
         let activeTasks = self.tasks.filter { t - $0.from > $0.interval }
         self.tasks = self.tasks.filter { t - $0.from <= $0.interval }
         for task in activeTasks {
             task.block()
             if task.repeats {
-                task.from = NSDate().timeIntervalSince1970
+                task.from = Date().timeIntervalSince1970
                 self.tasks.append(task)
             }
         }
@@ -111,10 +111,10 @@ public class StopTimer {
      - returns: The uuid for access the block late
      */
     
-    public func addBlock(interval: NSTimeInterval, repeats: Bool = false, block: ()->()) -> String {
+    open func addBlock(_ interval: TimeInterval, repeats: Bool = false, block: @escaping ()->()) -> String {
         let node = Task()
-        node.uuid = NSUUID().UUIDString
-        node.from = NSDate().timeIntervalSince1970
+        node.uuid = UUID().uuidString
+        node.from = Date().timeIntervalSince1970
         node.interval = interval
         node.block = block
         node.repeats = repeats
@@ -129,7 +129,7 @@ public class StopTimer {
      - parameter uuid: The uuid of the block
      */
     
-    public func removeBlock(uuid: String) {
+    open func removeBlock(_ uuid: String) {
         self.tasks = self.tasks.filter { $0.uuid != uuid }
     }
    

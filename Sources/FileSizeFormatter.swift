@@ -8,17 +8,17 @@
 
 import Foundation
 
-public class FileSizeFormatter: NSNumberFormatter {
+open class FileSizeFormatter: NumberFormatter {
     
-    public static let sharedFormatter = FileSizeFormatter()
+    open static let sharedFormatter = FileSizeFormatter()
     
-    private let sUnits = ["B", "K", "M", "G", "T", "P", "E", "Z", "Y"]
-    private var useBaseTenUnits = false
+    fileprivate let sUnits = ["B", "K", "M", "G", "T", "P", "E", "Z", "Y"]
+    fileprivate var useBaseTenUnits = false
     
-    public override func stringFromNumber(number: NSNumber) -> String? {
+    open override func string(from number: NSNumber) -> String? {
         
         let multiplier = self.useBaseTenUnits ? 1000 : 1024
-        var bytes = number.integerValue
+        var bytes = number.intValue
         var exponent = 0
         
         while bytes >= multiplier {

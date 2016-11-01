@@ -9,32 +9,32 @@
 import CoreData
 
 @objc
-public class CoreDataHelper: NSObject {
+open class CoreDataHelper: NSObject {
     
-    private class func getEntityName<T: NSManagedObject>(entityClass: T.Type) -> String {
+    fileprivate class func getEntityName<T: NSManagedObject>(_ entityClass: T.Type) -> String {
         let nameSpaceClassName = NSStringFromClass(T)
-        let className = nameSpaceClassName.componentsSeparatedByString(".").last! as String
+        let className = nameSpaceClassName.components(separatedBy: ".").last! as String
         return className
     }
     
-    public class func createEntityForClass<T: NSManagedObject>(entityClass: T.Type,
+    open class func createEntityForClass<T: NSManagedObject>(_ entityClass: T.Type,
         context: NSManagedObjectContext) -> T {
-            return NSEntityDescription.insertNewObjectForEntityForName(self.getEntityName(entityClass),
-                inManagedObjectContext: context) as! T
+            return NSEntityDescription.insertNewObject(forEntityName: self.getEntityName(entityClass),
+                into: context) as! T
     }
     
-    public class func getManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, sortDescriptors: [NSSortDescriptor]? = nil, predicate: NSPredicate? = nil, fetchOffset: Int? = nil, fetchLimit: Int? = nil) -> [T] {
-        let request = NSFetchRequest(entityName: self.getEntityName(entityClass))
+    open class func getManagedObjects<T: NSManagedObject>(_ entityClass: T.Type, context: NSManagedObjectContext, sortDescriptors: [NSSortDescriptor]? = nil, predicate: NSPredicate? = nil, fetchOffset: Int? = nil, fetchLimit: Int? = nil) -> [T] {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: self.getEntityName(entityClass))
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
-        if let offset = fetchOffset where offset >= 0 {
+        if let offset = fetchOffset, offset >= 0 {
             request.fetchOffset = offset
         }
-        if let limit = fetchLimit where limit >= 0 {
+        if let limit = fetchLimit, limit >= 0 {
             request.fetchLimit = limit
         }
         do {
-            let result = try context.executeFetchRequest(request)
+            let result = try context.fetch(request)
             return result as! [T]
         } catch {
             debugPrint("Failed to getManagedObjects")
@@ -42,11 +42,11 @@ public class CoreDataHelper: NSObject {
         return [T]()
     }
     
-    public class func countManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext, predicate: NSPredicate? = nil) -> Int {
-        let request = NSFetchRequest(entityName: self.getEntityName(entityClass))
+    open class func countManagedObjects<T: NSManagedObject>(_ entityClass: T.Type, context: NSManagedObjectContext, predicate: NSPredicate? = nil) -> Int {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: self.getEntityName(entityClass))
         request.predicate = predicate
         do {
-            let result = try context.countForFetchRequest(request)
+            let result = try context.count(for: request)
             return result
         } catch {
             debugPrint("Failed to countManagedObjects")
@@ -54,10 +54,10 @@ public class CoreDataHelper: NSObject {
         return 0
     }
     
-    public class func deleteAllManagedObjects<T: NSManagedObject>(entityClass: T.Type, context: NSManagedObjectContext) {
+    open class func deleteAllManagedObjects<T: NSManagedObject>(_ entityClass: T.Type, context: NSManagedObjectContext) {
         let objects = self.getManagedObjects(entityClass, context: context)
         for o in objects {
-            context.deleteObject(o)
+            context.delete(o)
         }
     }
 
@@ -73,8 +73,8 @@ public extension NSManagedObjectContext {
     
     func saveIgnoreErrorWithParentContextAndWait() {
         self.saveIgnoreError()
-        self.parentContext?.performBlockAndWait({ () -> Void in
-            self.parentContext?.saveIgnoreError()
+        self.parent?.performAndWait({ () -> Void in
+            self.parent?.saveIgnoreError()
         })
     }
 }
@@ -86,14 +86,14 @@ public extension NSManagedObject {
         }
         
         do {
-            if let _ = try self.managedObjectContext?.existingObjectWithID(self.objectID) {
+            if let _ = try self.managedObjectContext?.existingObject(with: self.objectID) {
                 return true
             }
         } catch {
             return false
         }
 
-        return self.managedObjectContext != nil && !self.deleted
+        return self.managedObjectContext != nil && !self.isDeleted
     }
 }
 

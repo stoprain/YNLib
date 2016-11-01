@@ -7,69 +7,93 @@
 //
 
 import Foundation
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
 
-public extension NSURLRequest {
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
+
+public extension URLRequest {
     
     public enum LogStyle {
-        case CURL
-        case HTTPIE
+        case curl
+        case httpie
     }
     
-    public static var logStyle: LogStyle = .CURL
+    public static var logStyle: LogStyle = .curl
     
-    override var description : String {
-        if NSURLRequest.logStyle == .HTTPIE {
+    var description : String {
+        if URLRequest.logStyle == .httpie {
             var s = ""
-            if let url = self.URL?.absoluteString {
-                s += "http \(self.HTTPMethod!) '\(url)'"
+            if let url = self.url?.absoluteString {
+                s += "http \(self.httpMethod!) '\(url)'"
             }
             if self.allHTTPHeaderFields?.count > 0 {
                 for (key, value) in self.allHTTPHeaderFields! {
                     s += " '\(key):\(value)'"
                 }
             }
-            if let d = self.HTTPBody {
-                if let t = NSString(data: d, encoding: NSUTF8StringEncoding) {
+            if let d = self.httpBody {
+                if let t = NSString(data: d, encoding: String.Encoding.utf8.rawValue) {
                     s += " body='\(t)'"
                 }
             }
             return s
         }
         var s = ""
-        if let url = self.URL?.absoluteString {
-            s += "curl -i '\(url)' -X \(self.HTTPMethod!)"
+        if let url = self.url?.absoluteString {
+            s += "curl -i '\(url)' -X \(self.httpMethod!)"
         }
         if self.allHTTPHeaderFields?.count > 0 {
             for (key, value) in self.allHTTPHeaderFields! {
                 s += " -H '\(key)':'\(value)'"
             }
         }
-        if let d = self.HTTPBody {
-            if let t = NSString(data: d, encoding: NSUTF8StringEncoding) {
+        if let d = self.httpBody {
+            if let t = NSString(data: d, encoding: String.Encoding.utf8.rawValue) {
                 s += " -d '\(t)'"
             }
         }
         return s
     }
     
-    static func createRequest(server: String, token: String?, tokenType: String?,
+    static func createRequest(_ server: String, token: String?, tokenType: String?,
         resource: String, method: String, body: AnyObject? = nil) -> NSMutableURLRequest {
         let characterSet = NSMutableCharacterSet()
-        characterSet.formUnionWithCharacterSet(.URLQueryAllowedCharacterSet())
-        characterSet.removeCharactersInString("+")
-        let s = resource.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!
-        let request = NSMutableURLRequest(URL: NSURL(string: server+s)!)
-        request.HTTPMethod = method
+        characterSet.formUnion(with: .urlQueryAllowed)
+        characterSet.removeCharacters(in: "+")
+        let s = resource.addingPercentEncoding(withAllowedCharacters: characterSet as CharacterSet)!
+        let request = NSMutableURLRequest(url: URL(string: server+s)!)
+        request.httpMethod = method
         request.timeoutInterval = 30
-        if let t = token, _ = tokenType {
+        if let t = token, let _ = tokenType {
             request.setValue("Bearer \(t)", forHTTPHeaderField: "Authorization")
         }
         if let b = body {
-            if b is NSData {
-                request.HTTPBody = b as? NSData
+            if b is Data {
+                request.httpBody = b as? Data
             } else {
                 do {
-                    request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(b, options: NSJSONWritingOptions.PrettyPrinted)
+                    request.httpBody = try JSONSerialization.data(withJSONObject: b, options: JSONSerialization.WritingOptions.prettyPrinted)
                 } catch {
                     print("Failed to build requeset \(resource)")
                 }

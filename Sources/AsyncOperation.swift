@@ -9,82 +9,82 @@
 import Foundation
 
 @objc
-public class AsyncOperation: NSOperation {
+open class AsyncOperation: Operation {
     
     public enum State {
-        case Ready, Executing, Finished
+        case ready, executing, finished
         func keyPath() -> String {
             switch self {
-            case Ready:
+            case .ready:
                 return "isReady"
-            case Executing:
+            case .executing:
                 return "isExecuting"
-            case Finished:
+            case .finished:
                 return "isFinished"
             }
         }
     }
     
-    public var state = State.Ready {
+    open var state = State.ready {
         willSet {
-            willChangeValueForKey(newValue.keyPath())
-            willChangeValueForKey(state.keyPath())
+            willChangeValue(forKey: newValue.keyPath())
+            willChangeValue(forKey: state.keyPath())
         }
         didSet {
-            didChangeValueForKey(oldValue.keyPath())
-            didChangeValueForKey(state.keyPath())
+            didChangeValue(forKey: oldValue.keyPath())
+            didChangeValue(forKey: state.keyPath())
         }
     }
     
     public enum Result {
-        case Unknown, Succeed, Failed, Canceled
+        case unknown, succeed, failed, canceled
     }
     
-    public var result = Result.Unknown
+    open var result = Result.unknown
     
-    public override var ready: Bool {
-        return super.ready && state == .Ready
+    open override var isReady: Bool {
+        return super.isReady && state == .ready
     }
     
-    public override var executing: Bool {
-        return state == .Executing
+    open override var isExecuting: Bool {
+        return state == .executing
     }
     
-    public override var finished: Bool {
-        return state == .Finished
+    open override var isFinished: Bool {
+        return state == .finished
     }
     
-    public override var asynchronous: Bool {
+    open override var isAsynchronous: Bool {
         return true
     }
     
-    public var seq: String = "asop \(AsyncOperation.getSeq())"
+    open var seq: String = "asop \(AsyncOperation.getSeq())"
     
-    public override func cancel() {
-        self.result = Result.Canceled
-        if self.state == State.Executing {
-            self.state = State.Finished
+    open override func cancel() {
+        self.result = Result.canceled
+        if self.state == State.executing {
+            self.state = State.finished
         }
         super.cancel()
     }
     
-    public override func start() {
-        if self.cancelled {
-            self.state = State.Finished
+    open override func start() {
+        if self.isCancelled {
+            self.state = State.finished
         } else {
-            self.state = State.Executing
+            self.state = State.executing
         }
         
-        if self.state == State.Executing {
+        if self.state == State.executing {
             self.starting()
         }
     }
     
-    public func starting() {
+    open func starting() {
         assert(true, "AsyncOperation starting not implemented!")
     }
     
-    private static var seqIndex = 0
+    fileprivate static var seqIndex = 0
     
     /**
      Seq for debugging
@@ -92,7 +92,7 @@ public class AsyncOperation: NSOperation {
      - returns: seq number
      */
     
-    public class func getSeqSeed() -> Int {
+    open class func getSeqSeed() -> Int {
         seqIndex += 1
         if seqIndex >= Int.max {
             seqIndex = 1
@@ -106,7 +106,7 @@ public class AsyncOperation: NSOperation {
      - returns: seq string
      */
     
-    public class func getSeq() -> String {
+    open class func getSeq() -> String {
         return "\(self.getSeqSeed())"
     }
 

@@ -11,41 +11,41 @@ import CocoaLumberjack
 public let log = LoggerWrapper()
 
 @objc
-public class LoggerWrapper: NSObject {
+open class LoggerWrapper: NSObject {
     
-    public static var oclog = log
+    open static var oclog = log
     
-    public static func setup(level: DDLogLevel, formatter: DDLogFormatter = SimpleDDLogFormatter()) {
+    open static func setup(_ level: DDLogLevel, formatter: DDLogFormatter = SimpleDDLogFormatter()) {
         if !RunMode.isProd() {
             let ttyLogger = DDTTYLogger.sharedInstance()
-            ttyLogger.logFormatter = formatter
-            DDLog.addLogger(ttyLogger, withLevel: level)
+            ttyLogger?.logFormatter = formatter
+            DDLog.add(ttyLogger, with: level)
         }
         
         let fileLogger = DDFileLogger()
-        fileLogger.logFormatter = formatter
-        fileLogger.rollingFrequency = 60 * 60 * 24
-        fileLogger.logFileManager.maximumNumberOfLogFiles = 7
-        DDLog.addLogger(fileLogger, withLevel: level)
+        fileLogger?.logFormatter = formatter
+        fileLogger?.rollingFrequency = TimeInterval(60 * 60 * 24)
+        fileLogger?.logFileManager.maximumNumberOfLogFiles = 7
+        DDLog.add(fileLogger, with: level)
     }
     
-    public func verbose(s: String) {
+    open func verbose(_ s: String) {
         DDLogVerbose(s)
     }
     
-    public func debug(s: String) {
+    open func debug(_ s: String) {
         DDLogDebug(s)
     }
     
-    public func info(s: String) {
+    open func info(_ s: String) {
         DDLogInfo(s)
     }
     
-    public func warning(s: String) {
+    open func warning(_ s: String) {
         DDLogWarn(s)
     }
     
-    public func error(s: String) {
+    open func error(_ s: String) {
         DDLogError(s)
     }
 }

@@ -6,49 +6,49 @@
 //  Copyright © 2015 yunio. All rights reserved.
 //
 
-public class UserDataHelper {
+open class UserDataHelper {
     
-    private static let uploadFolderName = "upload"
-    private static let downloadFolderName = "download"
+    fileprivate static let uploadFolderName = "upload"
+    fileprivate static let downloadFolderName = "download"
     
-    public static var userDataPath: String = ""
-    public static var uploadPath: String = ""
-    public static var downloadPath: String = ""
+    open static var userDataPath: String = ""
+    open static var uploadPath: String = ""
+    open static var downloadPath: String = ""
     
-    private static let FileCount = 200
-    private static let FileSize = 1024*1024*200 // 200 MB
+    fileprivate static let FileCount = 200
+    fileprivate static let FileSize = 1024*1024*200 // 200 MB
 
-    public class func check(userId: String) {
-        userDataPath = AppSandboxHelper.cachesPath.stringByAppendingString("/\(userId)")
+    open class func check(_ userId: String) {
+        userDataPath = AppSandboxHelper.cachesPath + "/\(userId)"
         self.createPath(userDataPath)
-        uploadPath = userDataPath.stringByAppendingString("/\(uploadFolderName)")
+        uploadPath = userDataPath + "/\(uploadFolderName)"
         self.createPath(uploadPath)
-        downloadPath = userDataPath.stringByAppendingString("/\(downloadFolderName)")
+        downloadPath = userDataPath + "/\(downloadFolderName)"
         self.createPath(downloadPath)
     }
     
-    public class func clearCache(all: Bool = true) {
-        let fm = NSFileManager.defaultManager()
+    open class func clearCache(_ all: Bool = true) {
+        let fm = FileManager.default
         if all {
             do {
-                try fm.removeItemAtPath(userDataPath)
+                try fm.removeItem(atPath: userDataPath)
             } catch let e {
                 log.error("failed to clearCache: \(userDataPath) \(e)")
             }
         } else {
             do {
-                let sp = try fm.contentsOfDirectoryAtPath(downloadPath)
+                let sp = try fm.contentsOfDirectory(atPath: downloadPath)
                 log.info("UserDataHelper, before \(sp.count)")
                 if sp.count > FileCount {
-                    var pathDateSize = [(path: String, date: NSTimeInterval, size: Int)]()
+                    var pathDateSize = [(path: String, date: TimeInterval, size: Int)]()
                     for p in sp {
                         let dp = downloadPath+"/"+p
-                        let properties = try fm.attributesOfItemAtPath(dp)
-                        let t = (properties[NSFileModificationDate] as! NSDate).timeIntervalSince1970
-                        let size = (properties[NSFileSize] as! NSNumber).integerValue
+                        let properties = try fm.attributesOfItem(atPath: dp)
+                        let t = (properties[FileAttributeKey.modificationDate] as! Date).timeIntervalSince1970
+                        let size = (properties[FileAttributeKey.size] as! NSNumber).intValue
                         pathDateSize.append((dp, t, size))
                     }
-                    pathDateSize = pathDateSize.sort { $0.date > $1.date }
+                    pathDateSize = pathDateSize.sorted { $0.date > $1.date }
                     var size = 0
                     var index = -1
                     for i in pathDateSize {
@@ -61,9 +61,9 @@ public class UserDataHelper {
                     
                     if index >= 0 && index < pathDateSize.count {
                         for i in index..<pathDateSize.count {
-                            try fm.removeItemAtPath(pathDateSize[i].0)
+                            try fm.removeItem(atPath: pathDateSize[i].0)
                         }
-                        let r = try fm.contentsOfDirectoryAtPath(downloadPath)
+                        let r = try fm.contentsOfDirectory(atPath: downloadPath)
                         log.info("UserDataHelper, after \(r.count)")
                     }
                 }
@@ -73,27 +73,27 @@ public class UserDataHelper {
         }
     }
     
-    public class func calculateCache() -> String {
-        let fm = NSFileManager.defaultManager()
+    open class func calculateCache() -> String {
+        let fm = FileManager.default
         var total = 0
-        if let enumerator = fm.enumeratorAtPath(downloadPath) {
+        if let enumerator = fm.enumerator(atPath: downloadPath) {
             for path in enumerator {
                 do {
-                    let fileInfo = try fm.attributesOfItemAtPath("\(downloadPath)/\(path)")
-                    total += (fileInfo[NSFileSize] as! NSNumber).integerValue
+                    let fileInfo = try fm.attributesOfItem(atPath: "\(downloadPath)/\(path)")
+                    total += (fileInfo[FileAttributeKey.size] as! NSNumber).intValue
                 } catch let e {
                     log.error("failed to calculateCache: \(path) \(e)")
                 }
             }
         }
-        return FileSizeFormatter.sharedFormatter.stringFromNumber(total)!
+        return FileSizeFormatter.sharedFormatter.string(from: NSNumber(value: total))!
     }
     
-    private class func createPath(path: String) {
-        let fm = NSFileManager.defaultManager()
-        if !fm.fileExistsAtPath(path) {
+    fileprivate class func createPath(_ path: String) {
+        let fm = FileManager.default
+        if !fm.fileExists(atPath: path) {
             do {
-                try fm.createDirectoryAtPath(path, withIntermediateDirectories: true, attributes: nil)
+                try fm.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
             } catch let e {
                 log.error("failed to create path: \(path) \(e)")
             }

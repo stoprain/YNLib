@@ -7,12 +7,12 @@
 //
 
 public enum ColorFormat: Int {
-    case RGB = 3, ARGB = 4, RRGGBB = 6, AARRGGBB = 8
+    case rgb = 3, argb = 4, rrggbb = 6, aarrggbb = 8
 }
 
-public class ColorUtils {
+open class ColorUtils {
     
-    public class func randomColorHex(format: ColorFormat) -> String {
+    open class func randomColorHex(_ format: ColorFormat) -> String {
         var hex = "#"
         for _ in 0 ..< format.rawValue {
             hex += String(NumberUtils.randomInRange(0...15), radix: 16)
@@ -25,17 +25,17 @@ public class ColorUtils {
 public extension UIColor {
     convenience init(hexString: String) {
         
-        func stof(hex: String, start: Int, end: Int) -> CGFloat {
-            let s = hex[hex.startIndex.advancedBy(start)..<hex.startIndex.advancedBy(end)]
+        func stof(_ hex: String, start: Int, end: Int) -> CGFloat {
+            let s = hex[hex.characters.index(hex.startIndex, offsetBy: start)..<hex.characters.index(hex.startIndex, offsetBy: end)]
             return CGFloat(strtoul(s, nil, 16))
         }
         
-        let s = hexString.stringByReplacingOccurrencesOfString("#", withString: "")
+        let s = hexString.replacingOccurrences(of: "#", with: "")
         var alpha: CGFloat = 0
         var red: CGFloat = 0
         var green: CGFloat = 0
         var blue: CGFloat = 0
-        switch s.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) {
+        switch s.lengthOfBytes(using: String.Encoding.utf8) {
         case 3:
             alpha = 255
             red = stof(s, start: 0, end: 1)
