@@ -20,6 +20,9 @@ open class LoggerWrapper: NSObject {
             let ttyLogger = DDTTYLogger.sharedInstance()
             ttyLogger?.logFormatter = formatter
             DDLog.add(ttyLogger, with: level)
+            let aslLogger = DDASLLogger.sharedInstance()
+            aslLogger.logFormatter = formatter
+            DDLog.addLogger(aslLogger, withLevel: level)
         }
         
         let fileLogger = DDFileLogger()

@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "YNLib"
-  s.version      = "3.0.0"
+  s.version      = "3.0.1"
   s.summary      = "YNLib is a general project utitities."
 
   s.description  = <<-DESC
@@ -27,7 +27,7 @@ Pod::Spec.new do |s|
   s.dependency 'CocoaLumberjack/Swift', '3.0.0'
   s.dependency 'Objective-LevelDB'
   s.public_header_files = 'Sources/*.h'
-  s.osx.exclude_files = ["Sources/ColorUtils.swift", "Sources/CTLabel.swift", "Sources/GRToast.swift", "Sources/ImageCompressor.swift", "Sources/ImageUtils.swift", "Sources/ScrollHandle.swift", "Sources/UIView+Frame.swift"]
+  s.osx.exclude_files = ["Sources/ColorUtils.swift", "Sources/CTLabel.swift", "Sources/GRToast.swift", "Sources/ImageCompressor.swift", "Sources/ImageUtils.swift", "Sources/ScrollHandle.swift", "Sources/UIView+Frame.swift", "ApplicationUtils.swift"]
 
   s.preserve_paths = 'CocoaPods/**/*'
   s.pod_target_xcconfig = {
