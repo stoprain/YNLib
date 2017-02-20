@@ -21,8 +21,8 @@ open class LoggerWrapper: NSObject {
             ttyLogger?.logFormatter = formatter
             DDLog.add(ttyLogger, with: level)
             let aslLogger = DDASLLogger.sharedInstance()
-            aslLogger.logFormatter = formatter
-            DDLog.addLogger(aslLogger, withLevel: level)
+            aslLogger?.logFormatter = formatter
+            DDLog.add(aslLogger, with: level)
         }
         
         let fileLogger = DDFileLogger()
