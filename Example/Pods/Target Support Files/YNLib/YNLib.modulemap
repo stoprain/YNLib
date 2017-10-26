@@ -1,0 +1,6 @@
+framework module YNLib {
+  umbrella header "YNLib-umbrella.h"
+
+  export *
+  module * { export * }
+}

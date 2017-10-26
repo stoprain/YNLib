@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'YNLib_Example' do
+  pod 'YNLib', :path => '../'
+
+  target 'YNLib_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

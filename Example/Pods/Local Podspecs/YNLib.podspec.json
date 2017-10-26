@@ -1,0 +1,62 @@
+{
+  "name": "YNLib",
+  "version": "3.1.13",
+  "summary": "YNLib is a general project utitities.",
+  "description": "YNLib is a general project utitities.\n* CoreDataManager\n* AsyncOperation\n* etc.",
+  "homepage": "https://gitlab.x.yunio.com/ios/YNLib",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Rain": "rain@yunio.com"
+  },
+  "source": {
+    "git": "https://rain@gitlab.x.yunio.com/ios/YNLib.git",
+    "tag": "3.1.13"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "module_name": "YNLib",
+  "source_files": "YNLib/Classes/*.{swift,h,m,mm,cc,hpp}",
+  "dependencies": {
+    "Objective-LevelDB": [
+      "2.1.5"
+    ],
+    "libCommonCrypto": [
+      "0.1.1"
+    ],
+    "ReactiveCocoa": [
+      "5.0.4"
+    ]
+  },
+  "resources": "YNLib/Assets/unicode_to_hanyu_pinyin.txt",
+  "vendored_frameworks": "YNLib/Frameworks/mars.framework",
+  "libraries": [
+    "c++",
+    "z"
+  ],
+  "frameworks": [
+    "CoreTelephony",
+    "SystemConfiguration"
+  ],
+  "public_header_files": "YNLib/Classes/*.h",
+  "pod_target_xcconfig": {
+    "ENABLE_BITCODE": "NO"
+  },
+  "osx": {
+    "exclude_files": [
+      "YNLib/Classes/ColorUtils.swift",
+      "YNLib/Classes/CTLabel.swift",
+      "YNLib/Classes/GRToast.swift",
+      "YNLib/Classes/ImageCompressor.swift",
+      "YNLib/Classes/ImageUtils.swift",
+      "YNLib/Classes/ScrollHandle.swift",
+      "YNLib/Classes/UIView+Frame.swift",
+      "YNLib/Classes/ApplicationUtils.swift",
+      "YNLib/Classes/StringUtils.swift",
+      "YNLib/Classes/WebViewController.swift"
+    ]
+  }
+}
