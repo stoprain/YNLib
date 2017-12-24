@@ -1,6 +1,6 @@
 {
   "name": "YNLib",
-  "version": "3.1.13",
+  "version": "3.1.17",
   "summary": "YNLib is a general project utitities.",
   "description": "YNLib is a general project utitities.\n* CoreDataManager\n* AsyncOperation\n* etc.",
   "homepage": "https://gitlab.x.yunio.com/ios/YNLib",
@@ -12,8 +12,8 @@
     "Rain": "rain@yunio.com"
   },
   "source": {
-    "git": "https://rain@gitlab.x.yunio.com/ios/YNLib.git",
-    "tag": "3.1.13"
+    "git": "git@gitlab.x.yunio.com:ios/YNLib.git",
+    "tag": "3.1.17"
   },
   "platforms": {
     "ios": "8.0"

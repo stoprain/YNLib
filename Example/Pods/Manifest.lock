@@ -8,7 +8,7 @@ PODS:
   - ReactiveSwift (1.1.5):
     - Result (~> 3.2)
   - Result (3.2.3)
-  - YNLib (3.1.13):
+  - YNLib (3.1.17):
     - libCommonCrypto (= 0.1.1)
     - Objective-LevelDB (= 2.1.5)
     - ReactiveCocoa (= 5.0.4)
@@ -27,7 +27,7 @@ SPEC CHECKSUMS:
   ReactiveCocoa: b31e754d15937811ede648fc83cd68f5de70a3d4
   ReactiveSwift: 3fea31f8fc49f112d2dc613282c5d395c4d167bb
   Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
-  YNLib: 5e092fedc2c96c6b9da844ae46f0411e4e1fc452
+  YNLib: 12c8a9f540e1d5458e5e5f10f3f32e980cc5e33b
 
 PODFILE CHECKSUM: 50ab0a13adb93722ddaef482850b331f596397f9
 
