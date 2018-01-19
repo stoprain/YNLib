@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNLib'
-  s.version          = '3.1.18'
+  s.version          = '3.1.19'
   s.summary          = 'YNLib is a general project utitities.'
 
 # This description is used to generate tags and improve search results.

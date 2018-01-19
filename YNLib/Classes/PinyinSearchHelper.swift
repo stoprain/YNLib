@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import YNLib
 
-class PinyinSearchHelper: NSObject {
+@objc open class PinyinSearchHelper: NSObject {
     
-    static func search(source: String, criteria: String) -> [NSRange] {
+    @objc open static func search(source: String, criteria: String) -> [NSRange] {
         var results = [NSRange]()
         let cri = criteria.lowercased()
         var index = 0
@@ -41,7 +40,7 @@ class PinyinSearchHelper: NSObject {
                     for i in cur {
                         pinyin.append(j)
                         scalar.append(k)
-                        let length = (String(i).toPinyin() as NSString).length
+                        let length = (String(i) == " " ? 1 : (String(i).toPinyin() as NSString).length)
                         j = j + length
                         k = k + (String(i).hasChineseCharacter ? 1 : length)
                     }
