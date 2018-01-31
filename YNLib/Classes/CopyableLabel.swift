@@ -34,7 +34,7 @@ public class CopyableLabel: UILabel {
         UIPasteboard.general.string = text
         UIMenuController.shared.setMenuVisible(false, animated: true)
     }
-    func showMenu(sender: Any?) {
+    @objc func showMenu(sender: Any?) {
         becomeFirstResponder()
         let menu = UIMenuController.shared
         if !menu.isMenuVisible {

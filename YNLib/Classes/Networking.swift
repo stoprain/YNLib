@@ -269,7 +269,7 @@ public class Networking {
     
     public class func getDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<String, Error> {
         return self.getRawDataTask(request: request, errorHandlerSet: errorHandlerSet)
-            .flatMap(FlattenStrategy.latest, transform: { (data) -> SignalProducer<String, Error> in
+            .flatMap(FlattenStrategy.latest, { (data) -> SignalProducer<String, Error> in
                 guard let string = String(data: data as Data, encoding: String.Encoding.utf8) else {
                     //log.warning("\(request.URL!.absoluteString) | ServerError")
                     return SignalProducer(error: Error(code: Networking.ErrorKind.Customize.CannotParseDataToString, req: request.req))
@@ -293,7 +293,7 @@ public protocol Loopable {
     func allProperties() throws -> [String: Any]
 }
 
-private var xoAssociationKey = "xoAssociationKe"
+private var xoAssociationKey = "xoAssociationKey"
 
 public extension Loopable {
     

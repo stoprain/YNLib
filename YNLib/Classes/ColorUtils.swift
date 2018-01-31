@@ -26,7 +26,9 @@ public extension UIColor {
     convenience init(hexString: String) {
         
         func stof(_ hex: String, start: Int, end: Int) -> CGFloat {
-            let s = hex[hex.characters.index(hex.startIndex, offsetBy: start)..<hex.characters.index(hex.startIndex, offsetBy: end)]
+            let istart = hex.index(hex.startIndex, offsetBy: start)
+            let iend = hex.index(hex.startIndex, offsetBy: end)
+            let s = String(hex[istart..<iend])
             return CGFloat(strtoul(s, nil, 16))
         }
         

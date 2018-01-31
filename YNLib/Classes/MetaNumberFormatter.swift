@@ -17,7 +17,7 @@ open class MetaNumberFormatter: NumberFormatter {
         let length = valueText.lengthOfBytes(using: String.Encoding.utf8)
         if length > 4 {
             valueText = valueText.insert(".", ind: length-4)
-            valueText = valueText.substring(to: valueText.characters.index(valueText.endIndex, offsetBy: -2)) + "万"
+            valueText = valueText[..<valueText.index(valueText.endIndex, offsetBy: -2)] + "万"
         }
         
         return valueText
@@ -27,6 +27,6 @@ open class MetaNumberFormatter: NumberFormatter {
 
 extension String {
     func insert(_ string:String, ind:Int) -> String {
-        return String(self.characters.prefix(ind)) + string + String(self.characters.suffix(self.characters.count-ind))
+        return String(self.prefix(ind)) + string + String(self.suffix(self.count-ind))
     }
 }

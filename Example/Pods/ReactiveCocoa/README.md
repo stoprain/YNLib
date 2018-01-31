@@ -7,7 +7,7 @@
 
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](#carthage) [![CocoaPods compatible](https://img.shields.io/cocoapods/v/ReactiveCocoa.svg)](#cocoapods) [![GitHub release](https://img.shields.io/github/release/ReactiveCocoa/ReactiveCocoa.svg)](https://github.com/ReactiveCocoa/ReactiveCocoa/releases) ![Swift 3.0.x](https://img.shields.io/badge/Swift-3.0.x-orange.svg) ![platforms](https://img.shields.io/badge/platforms-iOS%20%7C%20OS%20X%20%7C%20watchOS%20%7C%20tvOS%20-lightgrey.svg)
 
-⚠️ [Looking for the Objective-C API?][] ⚠️ [Still using Swift 2.x?][]
+⚠️ [Looking for the Objective-C API?][]
 
 🎉 [Migrating from RAC 4.x?][CHANGELOG]
 
@@ -100,7 +100,7 @@ If you use [Carthage][] to manage your dependencies, simply add
 ReactiveCocoa to your `Cartfile`:
 
 ```
-github "ReactiveCocoa/ReactiveCocoa" ~> 5.0
+github "ReactiveCocoa/ReactiveCocoa" ~> 7.0
 ```
 
 If you use Carthage to build your dependencies, make sure you have added `ReactiveCocoa.framework`, `ReactiveSwift.framework`, and `Result.framework` to the "_Linked Frameworks and Libraries_" section of your target, and have included them in your Carthage framework copying build phase.
@@ -111,7 +111,7 @@ If you use [CocoaPods][] to manage your dependencies, simply add
 ReactiveCocoa to your `Podfile`:
 
 ```
-pod 'ReactiveCocoa', '~> 5.0.0'
+pod 'ReactiveCocoa', '~> 7.0'
 ```
 
 #### Git submodule
@@ -135,23 +135,10 @@ If you need any help, please visit our [GitHub issues][] or [Stack Overflow][]. 
 ## Release Roadmap
 **Current Stable Release:**<br />[![GitHub release](https://img.shields.io/github/release/ReactiveCocoa/ReactiveCocoa.svg)](https://github.com/ReactiveCocoa/ReactiveCocoa/releases)
 
-#### ReactiveCocoa 6.0
-It targets Swift 3.1.x and ReactiveSwift 2.0. The estimated schedule is Spring 2017.
-
-Since ReactiveSwift 2.0 would contain breaking changes, the public API of ReactiveCocoa is considered breaking too.
-
-As resilience would be enforced in Swift 4.0, it is important for us to have a clean and steady API to start with. The expectation is to **have the API reviewing to be concluded in ReactiveCocoa 6.0**, before we move on to ReactiveSwift 3.0 and Swift 4.0. Any contribution to help realising this goal is welcomed.
-
-#### ReactiveCocoa 7.0
-It targets Swift 4.0.x and ReactiveSwift 3.0. The estimated schedule is late 2017.
-
-The release may contain breaking changes due to changes in ReactiveSwift 3.0.
-
-ReactiveCocoa 7.0 would focus on three main goals:
-
-1. Swift 4.0 Resilience
-1. Migration to ReactiveSwift 3.0
-1. Support new features introduced to AppKit, UIKit and Swift.
+### In Development
+### Plan of Record
+#### ABI stability release
+ReactiveCocoa is expected to declare library ABI stability when Swift rolls out resilence support in Swift 5. Until then, ReactiveCocoa will incrementally adopt new language features.
 
 [ReactiveSwift]: https://github.com/ReactiveCocoa/ReactiveSwift
 [ReactiveObjC]: https://github.com/ReactiveCocoa/ReactiveObjC

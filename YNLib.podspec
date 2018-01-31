@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNLib'
-  s.version          = '3.1.19'
+  s.version          = '4.0.0'
   s.summary          = 'YNLib is a general project utitities.'
 
 # This description is used to generate tags and improve search results.
@@ -37,7 +37,7 @@ Pod::Spec.new do |s|
   s.source_files = "YNLib/Classes/*.{swift,h,m,mm,cc,hpp}"
   s.dependency 'Objective-LevelDB', '2.1.5'
   s.dependency 'libCommonCrypto', '0.1.1'
-  s.dependency 'ReactiveCocoa', '5.0.4'
+  s.dependency 'ReactiveCocoa', '7.1.0'
   s.resources = 'YNLib/Assets/unicode_to_hanyu_pinyin.txt'
   s.vendored_frameworks = 'YNLib/Frameworks/mars.framework'
   s.libraries = 'c++', 'z'

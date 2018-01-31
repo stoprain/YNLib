@@ -14,7 +14,7 @@ import Foundation
 #endif
 
 /// Represents a serial queue of work items.
-public protocol Scheduler {
+public protocol Scheduler: class {
 	/// Enqueues an action on the scheduler.
 	///
 	/// When the work is executed depends on the scheduler in use.
@@ -136,37 +136,64 @@ public final class UIScheduler: Scheduler {
 	///            begins.
 	@discardableResult
 	public func schedule(_ action: @escaping () -> Void) -> Disposable? {
-		let disposable = SimpleDisposable()
-		let actionAndDecrement = {
-			if !disposable.isDisposed {
-				action()
-			}
-
-			#if os(Linux)
-				self.queueLength.modify { $0 -= 1 }
-			#else
-				OSAtomicDecrement32(self.queueLength)
-			#endif
-		}
-
-		#if os(Linux)
-			let queued = self.queueLength.modify { value -> Int32 in
-				value += 1
-				return value
-			}
-		#else
-			let queued = OSAtomicIncrement32(queueLength)
-		#endif
+		let positionInQueue = enqueue()
 
 		// If we're already running on the main queue, and there isn't work
 		// already enqueued, we can skip scheduling and just execute directly.
-		if queued == 1 && DispatchQueue.getSpecific(key: UIScheduler.dispatchSpecificKey) == UIScheduler.dispatchSpecificValue {
-			actionAndDecrement()
+		if positionInQueue == 1 && DispatchQueue.getSpecific(key: UIScheduler.dispatchSpecificKey) == UIScheduler.dispatchSpecificValue {
+			action()
+			dequeue()
+			return nil
 		} else {
-			DispatchQueue.main.async(execute: actionAndDecrement)
-		}
+			let disposable = AnyDisposable()
 
-		return disposable
+			DispatchQueue.main.async {
+				defer { self.dequeue() }
+				guard !disposable.isDisposed else { return }
+				action()
+			}
+
+			return disposable
+		}
+	}
+
+	private func dequeue() {
+		#if os(Linux)
+			queueLength.modify { $0 -= 1 }
+		#else
+			OSAtomicDecrement32(queueLength)
+		#endif
+	}
+
+	private func enqueue() -> Int32 {
+		#if os(Linux)
+		return queueLength.modify { value -> Int32 in
+			value += 1
+			return value
+		}
+		#else
+		return OSAtomicIncrement32(queueLength)
+		#endif
+	}
+}
+
+/// A `Hashable` wrapper for `DispatchSourceTimer`. `Hashable` conformance is
+/// based on the identity of the wrapper object rather than the wrapped
+/// `DispatchSourceTimer`, so two wrappers wrapping the same timer will *not*
+/// be equal.
+private final class DispatchSourceTimerWrapper: Hashable {
+	private let value: DispatchSourceTimer
+	
+	fileprivate var hashValue: Int {
+		return ObjectIdentifier(self).hashValue
+	}
+	
+	fileprivate init(_ value: DispatchSourceTimer) {
+		self.value = value
+	}
+	
+	fileprivate static func ==(lhs: DispatchSourceTimerWrapper, rhs: DispatchSourceTimerWrapper) -> Bool {
+		return lhs === rhs
 	}
 }
 
@@ -186,10 +213,13 @@ public final class QueueScheduler: DateScheduler {
 
 	public let queue: DispatchQueue
 	
+	private var timers: Atomic<Set<DispatchSourceTimerWrapper>>
+	
 	internal init(internalQueue: DispatchQueue) {
 		queue = internalQueue
+		timers = Atomic(Set())
 	}
-	
+
 	/// Initializes a scheduler that will target the given queue with its
 	/// work.
 	///
@@ -233,7 +263,7 @@ public final class QueueScheduler: DateScheduler {
 	///            begins.
 	@discardableResult
 	public func schedule(_ action: @escaping () -> Void) -> Disposable? {
-		let d = SimpleDisposable()
+		let d = AnyDisposable()
 
 		queue.async {
 			if !d.isDisposed {
@@ -263,7 +293,7 @@ public final class QueueScheduler: DateScheduler {
 	///            before it begins.
 	@discardableResult
 	public func schedule(after date: Date, action: @escaping () -> Void) -> Disposable? {
-		let d = SimpleDisposable()
+		let d = AnyDisposable()
 
 		queue.asyncAfter(wallDeadline: wallTime(with: date)) {
 			if !d.isDisposed {
@@ -319,14 +349,34 @@ public final class QueueScheduler: DateScheduler {
 			flags: DispatchSource.TimerFlags(rawValue: UInt(0)),
 			queue: queue
 		)
+
+		#if swift(>=4.0)
+		timer.schedule(wallDeadline: wallTime(with: date),
+		               repeating: interval,
+		               leeway: leeway)
+		#else
 		timer.scheduleRepeating(wallDeadline: wallTime(with: date),
 		                        interval: interval,
 		                        leeway: leeway)
+		#endif
+
 		timer.setEventHandler(handler: action)
 		timer.resume()
 
-		return ActionDisposable {
+		let wrappedTimer = DispatchSourceTimerWrapper(timer)
+		
+		timers.modify { timers in
+			timers.insert(wrappedTimer)
+		}
+
+		return AnyDisposable { [weak self] in
 			timer.cancel()
+			
+			if let scheduler = self {
+				scheduler.timers.modify { timers in
+					timers.remove(wrappedTimer)
+				}
+			}
 		}
 	}
 }
@@ -378,7 +428,7 @@ public final class TestScheduler: DateScheduler {
 		scheduledActions.sort { $0.less($1) }
 		lock.unlock()
 
-		return ActionDisposable {
+		return AnyDisposable {
 			self.lock.lock()
 			self.scheduledActions = self.scheduledActions.filter { $0 !== action }
 			self.lock.unlock()
@@ -537,7 +587,7 @@ public final class TestScheduler: DateScheduler {
 	public func run() {
 		advance(to: Date.distantFuture)
 	}
-	
+
 	/// Rewinds the virtualized clock by the given interval.
 	/// This simulates that user changes device date.
 	///
@@ -545,12 +595,12 @@ public final class TestScheduler: DateScheduler {
 	///   - interval: An interval by which the current date will be retreated.
 	public func rewind(by interval: DispatchTimeInterval) {
 		lock.lock()
-		
+
 		let newDate = currentDate.addingTimeInterval(-interval)
 		assert(currentDate.compare(newDate) != .orderedAscending)
 		_currentDate = newDate
-		
+
 		lock.unlock()
-		
+
 	}
 }
