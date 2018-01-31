@@ -14,7 +14,7 @@ open class StringUtils: NSObject {
     open static func boundingRect(_ s: String, size: CGSize, font: UIFont) -> CGRect {
         return (s as NSString).boundingRect(with: size,
                                                     options: NSStringDrawingOptions.usesLineFragmentOrigin,
-                                                    attributes: [NSFontAttributeName: font],
+                                                    attributes: [NSAttributedStringKey.font: font],
                                                     context: nil)
     }
     

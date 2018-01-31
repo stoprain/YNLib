@@ -14,14 +14,19 @@ extension Reactive where Base: NSObject {
 	/// - returns: A producer emitting values of the property specified by the
 	///            key path.
 	public func producer(forKeyPath keyPath: String) -> SignalProducer<Any?, NoError> {
-		return SignalProducer { observer, disposable in
-			disposable += KeyValueObserver.observe(
+		return SignalProducer { observer, lifetime in
+			let disposable = KeyValueObserver.observe(
 				self.base,
 				keyPath: keyPath,
 				options: [.initial, .new],
 				action: observer.send
 			)
-			disposable += self.lifetime.observeEnded(observer.sendCompleted)
+
+			lifetime.observeEnded(disposable.dispose)
+
+			if let lifetimeDisposable = self.lifetime.observeEnded(observer.sendCompleted) {
+				lifetime.observeEnded(lifetimeDisposable.dispose)
+			}
 		}
 	}
 
@@ -38,16 +43,80 @@ extension Reactive where Base: NSObject {
 	/// - returns: A producer emitting values of the property specified by the 
 	///            key path.
 	public func signal(forKeyPath keyPath: String) -> Signal<Any?, NoError> {
-		return Signal { observer in
-			let disposable = CompositeDisposable()
-			disposable += KeyValueObserver.observe(
+		return Signal { observer, signalLifetime in
+			signalLifetime += KeyValueObserver.observe(
 				self.base,
 				keyPath: keyPath,
 				options: [.new],
 				action: observer.send
 			)
-			disposable += self.lifetime.observeEnded(observer.sendCompleted)
-			return disposable
+			signalLifetime += lifetime.observeEnded(observer.sendCompleted)
+		}
+	}
+}
+
+extension Property where Value: OptionalProtocol {
+	/// Create a property that observes the given key path of the given object. The
+	/// generic type `Value` can be any Swift type that is Objective-C bridgeable.
+	///
+	/// - parameters:
+	///   - object: An object to be observed.
+	///   - keyPath: The key path to observe.
+	public convenience init(object: NSObject, keyPath: String) {
+		// `Property(_:)` caches the latest value of the `DynamicProperty`, so it is
+		// saved to be used even after `object` deinitializes.
+		self.init(UnsafeKVOProperty(object: object, optionalAttributeKeyPath: keyPath))
+	}
+}
+
+extension Property {
+	/// Create a property that observes the given key path of the given object. The
+	/// generic type `Value` can be any Swift type that is Objective-C bridgeable.
+	///
+	/// - parameters:
+	///   - object: An object to be observed.
+	///   - keyPath: The key path to observe.
+	public convenience init(object: NSObject, keyPath: String) {
+		// `Property(_:)` caches the latest value of the `DynamicProperty`, so it is
+		// saved to be used even after `object` deinitializes.
+		self.init(UnsafeKVOProperty(object: object, nonOptionalAttributeKeyPath: keyPath))
+	}
+}
+
+// `Property(unsafeProducer:)` is private to ReactiveSwift. So the fact that
+// `Property(_:)` uses only the producer is explioted here to achieve the same effect.
+private final class UnsafeKVOProperty<Value>: PropertyProtocol {
+	var value: Value { fatalError() }
+	var signal: Signal<Value, NoError> { fatalError() }
+	let producer: SignalProducer<Value, NoError>
+	
+	init(producer: SignalProducer<Value, NoError>) {
+		self.producer = producer
+	}
+	
+	convenience init(object: NSObject, nonOptionalAttributeKeyPath keyPath: String) {
+		self.init(producer: object.reactive.producer(forKeyPath: keyPath).map { $0 as! Value })
+	}
+}
+
+private extension UnsafeKVOProperty where Value: OptionalProtocol {
+	convenience init(object: NSObject, optionalAttributeKeyPath keyPath: String) {
+		self.init(producer: object.reactive.producer(forKeyPath: keyPath).map {
+			return Value(reconstructing: $0.optional as? Value.Wrapped)
+		})
+	}
+}
+
+extension BindingTarget {
+	/// Create a binding target that sets the given key path of the given object. The
+	/// generic type `Value` can be any Swift type that is Objective-C bridgeable.
+	///
+	/// - parameters:
+	///   - object: An object to be observed.
+	///   - keyPath: The key path to set.
+	public init(object: NSObject, keyPath: String) {
+		self.init(lifetime: object.reactive.lifetime) { [weak object] value in
+			object?.setValue(value, forKey: keyPath)
 		}
 	}
 }
@@ -113,7 +182,7 @@ extension KeyValueObserver {
 		keyPath: String,
 		options: NSKeyValueObservingOptions,
 		action: @escaping (_ value: AnyObject?) -> Void
-	) -> ActionDisposable {
+	) -> AnyDisposable {
 		// Compute the key path head and tail.
 		let components = keyPath.components(separatedBy: ".")
 		precondition(!components.isEmpty, "Received an empty key path.")
@@ -207,7 +276,7 @@ extension KeyValueObserver {
 			}
 		}
 
-		return ActionDisposable {
+		return AnyDisposable {
 			observer.detach()
 			headSerialDisposable.dispose()
 		}

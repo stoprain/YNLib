@@ -16,7 +16,7 @@ open class StringTerminator: NSObject {
         if let s = string {
             var text = s
             while self.countString(text) > amount {
-                text = text.substring(to: text.characters.index(before: text.endIndex))
+                text = text.substring(to: text.index(before: text.endIndex))
             }
             return text
         }
@@ -29,7 +29,7 @@ open class StringTerminator: NSObject {
             var text = s
             if self.countString(text) > amount {
                 while self.countString(text) > amount {
-                    text = text.substring(to: text.characters.index(before: text.endIndex))
+                    text = text.substring(to: text.index(before: text.endIndex))
                 }
                 return "\(text)..."
             } else {

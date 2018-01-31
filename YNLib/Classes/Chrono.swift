@@ -12,7 +12,7 @@ import QuartzCore
 @objc
 open class Chrono: NSObject {
     
-    fileprivate(set) static var ticks = [Int: CFTimeInterval]()
+    public private(set) static var ticks = [Int: CFTimeInterval]()
     
     open static func start(_ hash: Int) {
         objc_sync_enter(ticks); defer { objc_sync_exit(ticks) }

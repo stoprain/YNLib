@@ -1,6 +1,6 @@
 {
   "name": "YNLib",
-  "version": "3.1.17",
+  "version": "4.0.0",
   "summary": "YNLib is a general project utitities.",
   "description": "YNLib is a general project utitities.\n* CoreDataManager\n* AsyncOperation\n* etc.",
   "homepage": "https://gitlab.x.yunio.com/ios/YNLib",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "git@gitlab.x.yunio.com:ios/YNLib.git",
-    "tag": "3.1.17"
+    "tag": "4.0.0"
   },
   "platforms": {
     "ios": "8.0"
@@ -28,7 +28,7 @@
       "0.1.1"
     ],
     "ReactiveCocoa": [
-      "5.0.4"
+      "7.1.0"
     ]
   },
   "resources": "YNLib/Assets/unicode_to_hanyu_pinyin.txt",
