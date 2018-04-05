@@ -194,7 +194,7 @@ class LogView: UIView, LogTextViewDelegate {
     }
     
     @objc func bottomTap() {
-        self.logView.scrollRangeToVisible(NSMakeRange(self.logView.text.characters.count, 1))
+        self.logView.scrollRangeToVisible(NSMakeRange(self.logView.text.count, 1))
     }
     
     @objc func sendFile() {

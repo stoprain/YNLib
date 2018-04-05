@@ -79,4 +79,31 @@ public extension String {
         }
         return false
     }
+    
+    public func rangesOfChineseCharacter() -> [NSRange]? {
+        var results = [NSRange]()
+        var range = NSMakeRange(0, 0)
+        var newRange = true
+        for (index, unicodeScalar) in unicodeScalars.enumerated() {
+            let charCodePoint = unicodeScalar.value
+            if HanziPinyin.isHanzi(ofCharCodePoint: charCodePoint) {
+                if newRange {
+                    newRange = false
+                    range.location = index
+                }
+                range.length = range.length + 1
+            } else {
+                if range.length > 0 {
+                    results.append(range)
+                }
+                newRange = true
+                range = NSMakeRange(0, 0)
+            }
+        }
+        if range.length > 0 {
+            results.append(range)
+        }
+        return results.count > 0 ? results : nil
+    }
+
 }
