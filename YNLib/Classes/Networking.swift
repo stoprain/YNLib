@@ -56,9 +56,11 @@ public typealias ErrorCode = Int
 class IgnoreCertificateHandler: NSObject, URLSessionDelegate {
     
     func urlSession(_ session: URLSession, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust{
-            let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+        let credential = URLCredential(trust: challenge.protectionSpace.serverTrust!)
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
             completionHandler(URLSession.AuthChallengeDisposition.useCredential, credential);
+        } else {
+            completionHandler(URLSession.AuthChallengeDisposition.performDefaultHandling, credential)
         }
     }
     
@@ -85,14 +87,19 @@ public class Networking {
     }
     
     static let shared = Networking()
-    public var session = URLSession.shared
+    private var session = URLSession.shared
+    private var ephemeralSession = URLSession(configuration: URLSessionConfiguration.ephemeral)
     var ignoreCertificateHandler: IgnoreCertificateHandler?
     
     //just for dev
     class public func ignoreCertificate() {
         Networking.shared.ignoreCertificateHandler = IgnoreCertificateHandler()
-        let c = URLSessionConfiguration.default
-        Networking.shared.session = URLSession(configuration: c, delegate: Networking.shared.ignoreCertificateHandler, delegateQueue: OperationQueue.main)
+        Networking.shared.session = URLSession(configuration: URLSessionConfiguration.default,
+                                               delegate: Networking.shared.ignoreCertificateHandler,
+                                               delegateQueue: OperationQueue.main)
+        Networking.shared.ephemeralSession = URLSession(configuration: URLSessionConfiguration.ephemeral,
+                                                        delegate: Networking.shared.ignoreCertificateHandler,
+                                                        delegateQueue: OperationQueue.main)
     }
     
     public struct Error: Swift.Error, CustomStringConvertible {
@@ -223,8 +230,7 @@ public class Networking {
         }
     }
     
-    public class func getRawDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
-        let session = Networking.shared.session
+    private class func getRawDataTask(session: URLSession, request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
         let req = request.req
         log.networking.info("req \(request.req), \(request.request.curlDesc)")
         let producer = session.reactive.data(with: request.request)
@@ -265,6 +271,18 @@ public class Networking {
                 return Error(code: Networking.ErrorKind.Customize.Timeout, req: req)
         }
         return producer
+    }
+    
+    public class func getEphemeralRawDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
+        return self.getRawDataTask(session: Networking.shared.ephemeralSession,
+                                   request: request,
+                                   errorHandlerSet: errorHandlerSet)
+    }
+    
+    public class func getRawDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
+        return self.getRawDataTask(session: Networking.shared.session,
+                                   request: request,
+                                   errorHandlerSet: errorHandlerSet)
     }
     
     public class func getDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<String, Error> {
