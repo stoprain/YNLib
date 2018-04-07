@@ -87,18 +87,19 @@ public class Networking {
     }
     
     static let shared = Networking()
-    private var session = URLSession.shared
-    private var ephemeralSession = URLSession(configuration: URLSessionConfiguration.ephemeral)
-    var ignoreCertificateHandler: IgnoreCertificateHandler?
+    private static var session = URLSession.shared
+    private static var ephemeralSession = URLSession(configuration: URLSessionConfiguration.ephemeral)
+    private static var ignoreCertificateHandler: IgnoreCertificateHandler?
+    open static var diskCache = NetworkingDiskCache()
     
     //just for dev
     class public func ignoreCertificate() {
-        Networking.shared.ignoreCertificateHandler = IgnoreCertificateHandler()
-        Networking.shared.session = URLSession(configuration: URLSessionConfiguration.default,
-                                               delegate: Networking.shared.ignoreCertificateHandler,
+        Networking.ignoreCertificateHandler = IgnoreCertificateHandler()
+        Networking.session = URLSession(configuration: URLSessionConfiguration.default,
+                                               delegate: Networking.ignoreCertificateHandler,
                                                delegateQueue: OperationQueue.main)
-        Networking.shared.ephemeralSession = URLSession(configuration: URLSessionConfiguration.ephemeral,
-                                                        delegate: Networking.shared.ignoreCertificateHandler,
+        Networking.ephemeralSession = URLSession(configuration: URLSessionConfiguration.ephemeral,
+                                                        delegate: Networking.ignoreCertificateHandler,
                                                         delegateQueue: OperationQueue.main)
     }
     
@@ -230,7 +231,7 @@ public class Networking {
         }
     }
     
-    private class func getRawDataTask(session: URLSession, request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
+    private class func getRawDataTask(session: URLSession, request: Request, cacheKey: String? = nil, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
         let req = request.req
         log.networking.info("req \(request.req), \(request.request.curlDesc)")
         let producer = session.reactive.data(with: request.request)
@@ -251,6 +252,10 @@ public class Networking {
                     return SignalProducer(error: e)
                 }
                 // Otherwise the data and response are valid.
+                if let key = cacheKey, request.request.httpMethod == Method.GET.rawValue  {
+                    Networking.diskCache.setData(data: data, key: key)
+                }
+
                 return SignalProducer(value: data)
                 
             }.mapError { (error) -> Error in
@@ -273,20 +278,22 @@ public class Networking {
         return producer
     }
     
-    public class func getEphemeralRawDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
-        return self.getRawDataTask(session: Networking.shared.ephemeralSession,
+    public class func getEphemeralRawDataTask(request: Request, cacheKey: String? = nil, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
+        return self.getRawDataTask(session: Networking.ephemeralSession,
                                    request: request,
+                                   cacheKey: cacheKey,
                                    errorHandlerSet: errorHandlerSet)
     }
     
-    public class func getRawDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
-        return self.getRawDataTask(session: Networking.shared.session,
+    public class func getRawDataTask(request: Request, cacheKey: String? = nil, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<Data, Error> {
+        return self.getRawDataTask(session: Networking.session,
                                    request: request,
+                                   cacheKey: cacheKey,
                                    errorHandlerSet: errorHandlerSet)
     }
     
-    public class func getDataTask(request: Request, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<String, Error> {
-        return self.getRawDataTask(request: request, errorHandlerSet: errorHandlerSet)
+    public class func getDataTask(request: Request, cacheKey: String? = nil, errorHandlerSet: ErrorHandlerSet? = nil) -> SignalProducer<String, Error> {
+        return self.getRawDataTask(request: request, cacheKey: cacheKey, errorHandlerSet: errorHandlerSet)
             .flatMap(FlattenStrategy.latest, { (data) -> SignalProducer<String, Error> in
                 guard let string = String(data: data as Data, encoding: String.Encoding.utf8) else {
                     //log.warning("\(request.URL!.absoluteString) | ServerError")
