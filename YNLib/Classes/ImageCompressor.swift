@@ -25,7 +25,7 @@ open class ImageCompressor {
         if width >= height {
             // height is the short edge
             if (height <= shortEdge) {
-                return UIImageJPEGRepresentation(image, level)!
+                return image.jpegData(compressionQuality: level)!
             }
             
             ratio = height/shortEdge;
@@ -33,7 +33,7 @@ open class ImageCompressor {
             height = shortEdge;
         } else {
             if width <= shortEdge {
-                return UIImageJPEGRepresentation(image, level)!
+                return image.jpegData(compressionQuality: level)!
             }
             
             ratio = width/shortEdge;
@@ -44,7 +44,7 @@ open class ImageCompressor {
         //http://stackoverflow.com/questions/6081356/a-thin-whiteline-is-been-added-
         //rounding the value to prevent white line
         let result = image.imageByScalingAndCroppingForSize(CGSize(width: round(width), height: round(height)))!
-        return UIImageJPEGRepresentation(result, level)!
+        return result.jpegData(compressionQuality: level)!
     }
 
 }

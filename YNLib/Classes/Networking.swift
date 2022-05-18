@@ -7,7 +7,6 @@
 //
 
 import ReactiveSwift
-import Result
 
 public protocol ErrorHandlerSet {
     var handlers: [ErrorCode: Networking.ErrorHandler] { get }
@@ -90,7 +89,7 @@ public class Networking {
     private static var session = URLSession.shared
     private static var ephemeralSession = URLSession(configuration: URLSessionConfiguration.ephemeral)
     private static var ignoreCertificateHandler: IgnoreCertificateHandler?
-    open static var diskCache = NetworkingDiskCache()
+    public static var diskCache = NetworkingDiskCache()
     
     //just for dev
     class public func ignoreCertificate() {
@@ -236,7 +235,7 @@ public class Networking {
         log.networking.info("req \(request.req), \(request.request.curlDesc)")
         let producer = session.reactive.data(with: request.request)
             .mapError { (error) -> Error in
-                return ErrorParser.parse(e: (error as AnyError).error as NSError, req: req)
+                return ErrorParser.parse(e: error as NSError, req: req)
             }.flatMap(FlattenStrategy.latest) { (data, response) -> SignalProducer<Data, Error> in
                 if let r = response as? HTTPURLResponse {
                     log.networking.info("req \(req), code: \(r.statusCode)")

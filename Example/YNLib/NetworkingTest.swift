@@ -69,9 +69,9 @@ extension Networking {
 //        request.setValue(appVersion, forHTTPHeaderField: appVersionKey)
 //        return (req, request)
         
-        return Networking.buildBaseRequest(apiServer: "https://api.urdoctor.cn/1.0/",
+        return Networking.buildBaseRequest(apiServer: "https://github.com/",
                                            accessToken: nil, authorizationTypeKey: nil,
-                                           resource: "user", method: Networking.Method.GET, body: nil)
+                                           resource: "stoprain", method: Networking.Method.GET, body: nil)
     }
     
 }
@@ -133,12 +133,11 @@ class NetworkingTest: NSObject {
         let hs = NormalErrorHandlerSet(hs: es)
         
         // make the request
-        let r = Networking.buildRequest(resource: "user")
+        let r = Networking.buildRequest(resource: "stoprain")
         Networking.getDataTask(request: r, errorHandlerSet: hs).startWithResult { (result) in
-            if let v = result.value {
-                print("\(v)")
-            } else {
-                print("\(result.error.debugDescription)")
+            switch result {
+                case .success(let value): print("\(value)")
+                case .failure(let error): print("\(error.description)")
             }
         }
         

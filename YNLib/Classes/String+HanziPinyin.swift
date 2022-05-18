@@ -9,7 +9,7 @@
 import Foundation
 
 public extension String {
-    public func toPinyin(withFormat outputFormat: PinyinOutputFormat = .default, separator: String = " ") -> String {
+    func toPinyin(withFormat outputFormat: PinyinOutputFormat = .default, separator: String = " ") -> String {
         var pinyinStrings = [String]()
         for unicodeScalar in unicodeScalars {
             let charCodePoint = unicodeScalar.value
@@ -23,14 +23,14 @@ public extension String {
         }
 
         var pinyin = pinyinStrings.joined(separator: "")
-        if !pinyin.isEmpty && pinyin.substring(from: pinyin.characters.index(pinyin.endIndex, offsetBy: -1)) == separator {
-            pinyin.remove(at: pinyin.characters.index(pinyin.endIndex, offsetBy: -1))
+        if !pinyin.isEmpty && pinyin.substring(from: pinyin.index(pinyin.endIndex, offsetBy: -1)) == separator {
+            pinyin.remove(at: pinyin.index(pinyin.endIndex, offsetBy: -1))
         }
 
         return pinyin
     }
 
-    public func toPinyin(withFormat outputFormat: PinyinOutputFormat = .default, separator: String = " ", completion: @escaping ((_ pinyin: String) -> ())) {
+    func toPinyin(withFormat outputFormat: PinyinOutputFormat = .default, separator: String = " ", completion: @escaping ((_ pinyin: String) -> ())) {
         DispatchQueue.global(qos: .default).async {
             let pinyin = self.toPinyin(withFormat: outputFormat, separator: separator)
             DispatchQueue.main.async {
@@ -39,14 +39,14 @@ public extension String {
         }
     }
 
-    public func toPinyinAcronym(withFormat outputFormat: PinyinOutputFormat = .default, separator: String = "") -> String {
+    func toPinyinAcronym(withFormat outputFormat: PinyinOutputFormat = .default, separator: String = "") -> String {
         var pinyinStrings = [String]()
         for unicodeScalar in unicodeScalars {
             let charCodePoint = unicodeScalar.value
             let pinyinArray = HanziPinyin.pinyinArray(withCharCodePoint: charCodePoint, outputFormat: outputFormat)
 
             if pinyinArray.count > 0 {
-                let acronym = pinyinArray.first!.characters.first!
+                let acronym = pinyinArray.first!.first!
                 pinyinStrings.append(String(acronym) + separator)
             } else {
                 pinyinStrings.append(String(unicodeScalar))
@@ -54,8 +54,8 @@ public extension String {
         }
 
         var pinyinAcronym = pinyinStrings.joined(separator: "")
-        if !pinyinAcronym.isEmpty && pinyinAcronym.substring(from: pinyinAcronym.characters.index(pinyinAcronym.endIndex, offsetBy: -1)) == separator {
-            pinyinAcronym.remove(at: pinyinAcronym.characters.index(pinyinAcronym.endIndex, offsetBy: -1))
+        if !pinyinAcronym.isEmpty && pinyinAcronym.substring(from: pinyinAcronym.index(pinyinAcronym.endIndex, offsetBy: -1)) == separator {
+            pinyinAcronym.remove(at: pinyinAcronym.index(pinyinAcronym.endIndex, offsetBy: -1))
         }
 
         return pinyinAcronym

@@ -8,18 +8,18 @@
 
 import CoreData
 
-open class DataStore {
+public class DataStore {
     
-    open static let Async = AsyncDataStore.self
+    public static let Async = AsyncDataStore.self
     
-    open class func contextForThread() -> NSManagedObjectContext? {
+    public class func contextForThread() -> NSManagedObjectContext? {
         if Thread.current == Thread.main {
             return CoreDataManager.sharedManager.mainContext
         }
         return CoreDataManager.sharedManager.backgroundContext
     }
     
-    open class func performBlock(_ block: @escaping (_ context: NSManagedObjectContext) -> ()) {
+    public class func performBlock(_ block: @escaping (_ context: NSManagedObjectContext) -> ()) {
         if let context = contextForThread() {
             context.performDataStoreBlock(self, block: {
                 block(context)
@@ -29,7 +29,7 @@ open class DataStore {
     
 }
 
-open class AsyncDataStore: DataStore {
+public class AsyncDataStore: DataStore {
     
 }
 

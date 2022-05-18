@@ -10,7 +10,7 @@ import UIKit
 
 @objc open class PinyinSearchHelper: NSObject {
     
-    @objc open static func search(source: String, criteria: String) -> [NSRange] {
+    @objc public static func search(source: String, criteria: String) -> [NSRange] {
         var results = [NSRange]()
         let src = source.lowercased()
         let cri = criteria.lowercased()

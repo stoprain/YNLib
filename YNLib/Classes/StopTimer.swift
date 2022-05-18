@@ -77,7 +77,7 @@ open class StopTimer {
         if self.timer == nil {
             if let mode = self.runLoopMode {
                 self.timer = Timer(timeInterval: MinInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
-                RunLoop.current.add(self.timer!, forMode: RunLoopMode(rawValue: mode))
+                RunLoop.current.add(self.timer!, forMode: RunLoop.Mode(rawValue: mode))
             } else {
                 self.timer = Timer.scheduledTimer(timeInterval: MinInterval, target: self, selector: #selector(onTimer), userInfo: nil, repeats: true)
             }

@@ -8,11 +8,11 @@
 
 import Foundation
 
-open class MetaNumberFormatter: NumberFormatter {
+public class MetaNumberFormatter: NumberFormatter {
     
-    open static let sharedFormatter = MetaNumberFormatter()
+    public static let sharedFormatter = MetaNumberFormatter()
     
-    open override func string(from number: NSNumber) -> String {
+    public override func string(from number: NSNumber) -> String {
         var valueText = "\(number)"
         let length = valueText.lengthOfBytes(using: String.Encoding.utf8)
         if length > 4 {

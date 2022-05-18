@@ -6,14 +6,14 @@
 //  Copyright © 2015 stoprain. All rights reserved.
 //
 
-open class UserDataHelper {
+public class UserDataHelper {
     
     fileprivate static let uploadFolderName = "upload"
     fileprivate static let downloadFolderName = "download"
     
-    open static var userDataPath: String = ""
-    open static var uploadPath: String = ""
-    open static var downloadPath: String = ""
+    public static var userDataPath: String = ""
+    public static var uploadPath: String = ""
+    public static var downloadPath: String = ""
     
     fileprivate static let FileCount = 200
     fileprivate static let FileSize = 1024*1024*200 // 200 MB

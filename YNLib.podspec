@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'YNLib'
-  s.version          = '4.0.0'
+  s.version          = '5.0.0'
   s.summary          = 'YNLib is a general project utitities.'
 
 # This description is used to generate tags and improve search results.
@@ -31,13 +31,12 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'git@github.com:stoprain/YNLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '13.0'
 
   s.module_name  = 'YNLib'
   s.source_files = "YNLib/Classes/*.{swift,h,m,mm,cc,hpp}"
   s.dependency 'Objective-LevelDB', '2.1.5'
-  s.dependency 'libCommonCrypto', '0.1.1'
-  s.dependency 'ReactiveCocoa', '7.1.0'
+  s.dependency 'ReactiveCocoa', '12.0.0'
   s.resources = 'YNLib/Assets/unicode_to_hanyu_pinyin.txt'
   s.vendored_frameworks = 'YNLib/Frameworks/mars.framework'
   s.libraries = 'c++', 'z'

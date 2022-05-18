@@ -73,12 +73,12 @@ class LogTextView: UITextView {
 
 class LogView: UIView, LogTextViewDelegate {
     private var logView = LogTextView()
-    private var big = UIButton(type: UIButtonType.custom)
-    private var middle = UIButton(type: UIButtonType.custom)
-    private var small = UIButton(type: UIButtonType.custom)
-    private var delete = UIButton(type: UIButtonType.custom)
-    private var bottom = UIButton(type: UIButtonType.custom)
-    private var send = UIButton(type: UIButtonType.custom)
+    private var big = UIButton(type: UIButton.ButtonType.custom)
+    private var middle = UIButton(type: UIButton.ButtonType.custom)
+    private var small = UIButton(type: UIButton.ButtonType.custom)
+    private var delete = UIButton(type: UIButton.ButtonType.custom)
+    private var bottom = UIButton(type: UIButton.ButtonType.custom)
+    private var send = UIButton(type: UIButton.ButtonType.custom)
     private var timer: Timer?
     
     private var documentInteractionController: UIDocumentInteractionController?
@@ -230,10 +230,10 @@ class LogView: UIView, LogTextViewDelegate {
         var result = UIViewController()
         
         var window = UIApplication.shared.keyWindow
-        if window?.windowLevel != UIWindowLevelNormal {
+        if window?.windowLevel != UIWindow.Level.normal {
             let windows = UIApplication.shared.windows
             for temp in windows {
-                if temp.windowLevel == UIWindowLevelNormal {
+                if temp.windowLevel == UIWindow.Level.normal {
                     window = temp
                     break
                 }
@@ -250,10 +250,10 @@ class LogView: UIView, LogTextViewDelegate {
                     if nextResponder is UITabBarController {
                         let tabbar = nextResponder as! UITabBarController
                         let nav = tabbar.viewControllers![tabbar.selectedIndex] as! UINavigationController
-                        result = nav.childViewControllers.last!
+                        result = nav.children.last!
                     } else if nextResponder is UINavigationController {
                         let nav = nextResponder as! UINavigationController
-                        result = nav.childViewControllers.last!
+                        result = nav.children.last!
                     } else {
                         result = nextResponder as! UIViewController
                     }

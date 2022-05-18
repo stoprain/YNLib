@@ -10,22 +10,25 @@ import Foundation
 import QuartzCore
 
 @objc
-open class Chrono: NSObject {
+public class Chrono: NSObject {
     
     public private(set) static var ticks = [Int: CFTimeInterval]()
+    private static var lock = NSLock()
     
-    open static func start(_ hash: Int) {
-        objc_sync_enter(ticks); defer { objc_sync_exit(ticks) }
+    public static func start(_ hash: Int) {
+        lock.lock()
         ticks[hash] = CACurrentMediaTime()
+        lock.unlock()
     }
     
-    open static func stop(_ hash: Int, handler: (_ elapse: CFTimeInterval) -> Void) {
-        objc_sync_enter(ticks); defer { objc_sync_exit(ticks) }
+    public static func stop(_ hash: Int, handler: (_ elapse: CFTimeInterval) -> Void) {
+        lock.lock()
         var elapse: CFTimeInterval = 0
         if let t = ticks[hash] {
             elapse = CACurrentMediaTime() - t
             ticks.removeValue(forKey: hash)
         }
+        lock.unlock()
         handler(elapse)
     }
 

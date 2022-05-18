@@ -31,33 +31,33 @@ open class WebViewController: UIViewController, WKNavigationDelegate {
         
         w.translatesAutoresizingMaskIntoConstraints = false
         let width = NSLayoutConstraint(item: w,
-                                       attribute: NSLayoutAttribute.width,
-                                       relatedBy: NSLayoutRelation(rawValue: 0)!,
+                                       attribute: NSLayoutConstraint.Attribute.width,
+                                       relatedBy: NSLayoutConstraint.Relation(rawValue: 0)!,
                                        toItem: self.view,
-                                       attribute: NSLayoutAttribute.width,
+                                       attribute: NSLayoutConstraint.Attribute.width,
                                        multiplier: 1.0,
                                        constant: 0)
         let height = NSLayoutConstraint(item: w,
-                                        attribute: NSLayoutAttribute.height,
-                                        relatedBy: NSLayoutRelation(rawValue: 0)!,
+                                        attribute: NSLayoutConstraint.Attribute.height,
+                                        relatedBy: NSLayoutConstraint.Relation(rawValue: 0)!,
                                         toItem: self.view,
-                                        attribute: NSLayoutAttribute.height,
+                                        attribute: NSLayoutConstraint.Attribute.height,
                                         multiplier: 1.0,
                                         constant: 0)
         
         let top = NSLayoutConstraint(item: w,
-                                     attribute: NSLayoutAttribute.top,
-                                     relatedBy: NSLayoutRelation.equal,
+                                     attribute: NSLayoutConstraint.Attribute.top,
+                                     relatedBy: NSLayoutConstraint.Relation.equal,
                                      toItem: self.view,
-                                     attribute: NSLayoutAttribute.top,
+                                     attribute: NSLayoutConstraint.Attribute.top,
                                      multiplier: 1.0,
                                      constant: 0)
         
         let leading = NSLayoutConstraint(item: w,
-                                         attribute: NSLayoutAttribute.leading,
-                                         relatedBy: NSLayoutRelation.equal,
+                                         attribute: NSLayoutConstraint.Attribute.leading,
+                                         relatedBy: NSLayoutConstraint.Relation.equal,
                                          toItem: self.view,
-                                         attribute: NSLayoutAttribute.leading,
+                                         attribute: NSLayoutConstraint.Attribute.leading,
                                          multiplier: 1.0,
                                          constant: 0)
         

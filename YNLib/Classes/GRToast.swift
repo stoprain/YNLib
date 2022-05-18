@@ -8,9 +8,9 @@
 
 import Foundation
 
-open class GRToast {
+public class GRToast {
     
-    open static let TastyToast = GRToast()
+    public static let TastyToast = GRToast()
 
     open var successColor = UIColor(hexString: "F8E71C")
     open var errorColor = UIColor(hexString: "#FD4C5F")
@@ -45,7 +45,7 @@ open class GRToast {
             self.notiView.setSizeByHeight(29)
             self.textLabel.alpha = 1
             }, completion: { finished in
-                UIView.animate(withDuration: 0.3, delay: t, options: UIViewAnimationOptions(), animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, delay: t, options: UIView.AnimationOptions(), animations: { () -> Void in
                     self.notiView.setSizeByHeight(0)
                     self.textLabel.alpha = 0
                     }, completion: { finished in
@@ -72,7 +72,7 @@ open class GRToast {
             self.notiView.setSizeByHeight(29)
             self.textLabel.alpha = 1
             }, completion: { finished in
-                UIView.animate(withDuration: 0.3, delay: t, options: UIViewAnimationOptions(), animations: { () -> Void in
+                UIView.animate(withDuration: 0.3, delay: t, options: UIView.AnimationOptions(), animations: { () -> Void in
                     self.notiView.setSizeByHeight(0)
                     self.textLabel.alpha = 0
                     }, completion: { finished in

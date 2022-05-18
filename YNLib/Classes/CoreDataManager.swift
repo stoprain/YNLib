@@ -9,14 +9,14 @@
 import CoreData
 
 @objc
-open class CoreDataManager: NSObject {
+public class CoreDataManager: NSObject {
     
-    open var modelName = "Model"
+    public var modelName = "Model"
     
     /// create in memory db
     public var isTestMode = false
     
-    open static let sharedManager = CoreDataManager()
+    public static let sharedManager = CoreDataManager()
     
     // MARK: - Core Data stack
     
