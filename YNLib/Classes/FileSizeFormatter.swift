@@ -3,7 +3,7 @@
 //  YNLib
 //
 //  Created by stoprain on 11/29/15.
-//  Copyright © 2015 yunio. All rights reserved.
+//  Copyright © 2015 stoprain. All rights reserved.
 //
 
 import Foundation

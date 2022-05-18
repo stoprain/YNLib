@@ -22,7 +22,7 @@ pod "YNLib"
 
 ## Author
 
-stoprain, rain@yunio.com
+stoprain, mystoprain@gmail.com
 
 ## License
 

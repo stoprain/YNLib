@@ -3,7 +3,7 @@
 //  TwoTripleThree
 //
 //  Created by stoprain on 10/30/15.
-//  Copyright © 2015 yunio. All rights reserved.
+//  Copyright © 2015 stoprain. All rights reserved.
 //
 
 open class UserDataHelper {

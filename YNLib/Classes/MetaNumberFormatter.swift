@@ -3,7 +3,7 @@
 //  Groubum
 //
 //  Created by 李锦心 on 15/6/11.
-//  Copyright (c) 2015年 yunio. All rights reserved.
+//  Copyright (c) 2015年 stoprain. All rights reserved.
 //
 
 import Foundation

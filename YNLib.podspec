@@ -24,11 +24,11 @@ Pod::Spec.new do |s|
                    * etc.
                    DESC
 
-  s.homepage         = 'https://gitlab.x.yunio.com/ios/YNLib'
+  s.homepage         = 'https://github.com/stoprain/YNLib'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Rain' => 'rain@yunio.com' }
-  s.source           = { :git => 'git@gitlab.x.yunio.com:ios/YNLib.git', :tag => s.version.to_s }
+  s.author           = { 'stoprain' => 'mystoprain@gmail.com' }
+  s.source           = { :git => 'git@github.com:stoprain/YNLib.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

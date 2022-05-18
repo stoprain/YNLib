@@ -3,7 +3,7 @@
 //  YNLib
 //
 //  Created by stoprain on 9/4/16.
-//  Copyright © 2016 yunio. All rights reserved.
+//  Copyright © 2016 stoprain. All rights reserved.
 //
 
 import CoreData

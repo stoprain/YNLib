@@ -3,7 +3,7 @@
 //  YNLib
 //
 //  Created by stoprain on 27/03/2018.
-//  Copyright © 2016 yunio. All rights reserved.
+//  Copyright © 2016 stoprain. All rights reserved.
 //
 
 import UIKit
