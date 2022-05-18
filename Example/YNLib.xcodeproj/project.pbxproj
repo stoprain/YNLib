@@ -7,14 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		13861E06A4265D56D298B354 /* Pods_YNLib_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30526C732F23BBC3609F0A40 /* Pods_YNLib_Example.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		6187D21BC6489BB946581629 /* Pods_YNLib_Example_YNLib_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D560C3765323E45BBF173E2D /* Pods_YNLib_Example_YNLib_Tests.framework */; };
 		B4C083C91F46D5C500C14222 /* Hello.m in Sources */ = {isa = PBXBuildFile; fileRef = B4C083C81F46D5C500C14222 /* Hello.m */; };
 		B4C25B3E2020639300A2CFF7 /* GeneralTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C25B3D2020639300A2CFF7 /* GeneralTests.swift */; };
 		B4C25B402020654D00A2CFF7 /* StopTimerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C25B3F2020654D00A2CFF7 /* StopTimerTests.swift */; };
@@ -35,11 +33,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		19E87A059070006AD76BDF32 /* Pods-YNLib_Example-YNLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLib_Example-YNLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNLib_Example-YNLib_Tests/Pods-YNLib_Example-YNLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		30526C732F23BBC3609F0A40 /* Pods_YNLib_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNLib_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BB34E5A56A9E421BF195682 /* YNLib.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = YNLib.podspec; path = ../YNLib.podspec; sourceTree = "<group>"; };
-		4EE52A99DC92C8C58B9E9A5B /* Pods-YNLib_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLib_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNLib_Tests/Pods-YNLib_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		5FE3F8A03D1A42B657A7874F /* Pods-YNLib_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLib_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YNLib_Example/Pods-YNLib_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* YNLib_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YNLib_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -51,10 +45,7 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		94C78AE0CDFC9CCE93ED899A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		A7CCF507909A13393ACDD557 /* Pods_YNLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95FC24E43F89A47F849129F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		AC9E778235213B51D2D552D5 /* Pods-YNLib_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLib_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNLib_Example/Pods-YNLib_Example.release.xcconfig"; sourceTree = "<group>"; };
-		B3E9BA1F9E129F95A2D10B9B /* Pods-YNLib_Example-YNLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLib_Example-YNLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNLib_Example-YNLib_Tests/Pods-YNLib_Example-YNLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B42872B91F6A7D30009A02E5 /* JSONCodable.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = JSONCodable.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B4C083C61F46D5C500C14222 /* YNLib_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YNLib_Example-Bridging-Header.h"; sourceTree = "<group>"; };
 		B4C083C71F46D5C500C14222 /* Hello.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hello.h; sourceTree = "<group>"; };
@@ -65,8 +56,6 @@
 		B4C25B432020662E00A2CFF7 /* ChronoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChronoTests.swift; sourceTree = "<group>"; };
 		B4D5F3C71F0BA82B00724A88 /* NetworkingTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingTest.swift; sourceTree = "<group>"; };
 		B4D905981F176BC100C678CE /* TestPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestPopupViewController.swift; sourceTree = "<group>"; };
-		CAF2EACF0FAF109C8A3016BD /* Pods-YNLib_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YNLib_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-YNLib_Tests/Pods-YNLib_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D560C3765323E45BBF173E2D /* Pods_YNLib_Example_YNLib_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YNLib_Example_YNLib_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +63,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13861E06A4265D56D298B354 /* Pods_YNLib_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,26 +70,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6187D21BC6489BB946581629 /* Pods_YNLib_Example_YNLib_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5A0EC8EE9D805DCCC3B75F9E /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5FE3F8A03D1A42B657A7874F /* Pods-YNLib_Example.debug.xcconfig */,
-				AC9E778235213B51D2D552D5 /* Pods-YNLib_Example.release.xcconfig */,
-				4EE52A99DC92C8C58B9E9A5B /* Pods-YNLib_Tests.debug.xcconfig */,
-				CAF2EACF0FAF109C8A3016BD /* Pods-YNLib_Tests.release.xcconfig */,
-				19E87A059070006AD76BDF32 /* Pods-YNLib_Example-YNLib_Tests.debug.xcconfig */,
-				B3E9BA1F9E129F95A2D10B9B /* Pods-YNLib_Example-YNLib_Tests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -109,8 +83,6 @@
 				607FACD21AFB9204008FA782 /* Example for YNLib */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
-				5A0EC8EE9D805DCCC3B75F9E /* Pods */,
-				77166B68643A1548530EABB1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,16 +154,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		77166B68643A1548530EABB1 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				30526C732F23BBC3609F0A40 /* Pods_YNLib_Example.framework */,
-				A7CCF507909A13393ACDD557 /* Pods_YNLib_Tests.framework */,
-				D560C3765323E45BBF173E2D /* Pods_YNLib_Example_YNLib_Tests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -199,12 +161,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "YNLib_Example" */;
 			buildPhases = (
-				597104E0BADC7F789E5D59EA /* [CP] Check Pods Manifest.lock */,
 				607FACCC1AFB9204008FA782 /* Sources */,
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
-				415856DD172AA8244F91F898 /* [CP] Embed Pods Frameworks */,
-				9061DA053F761453B9721D59 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,12 +178,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "YNLib_Tests" */;
 			buildPhases = (
-				E379990A5640CEEAA16E0608 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				342E6E15B5D40652DC6F019E /* [CP] Embed Pods Frameworks */,
-				2FBDD89250880CBF0FC3E8C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -295,135 +251,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2FBDD89250880CBF0FC3E8C0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YNLib_Example-YNLib_Tests/Pods-YNLib_Example-YNLib_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		342E6E15B5D40652DC6F019E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YNLib_Example-YNLib_Tests/Pods-YNLib_Example-YNLib_Tests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Objective-LevelDB/Objective_LevelDB.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/YNLib/YNLib.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/libCommonCrypto/CommonCrypto.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Objective_LevelDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YNLib.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCrypto.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YNLib_Example-YNLib_Tests/Pods-YNLib_Example-YNLib_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		415856DD172AA8244F91F898 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-YNLib_Example/Pods-YNLib_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Objective-LevelDB/Objective_LevelDB.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
-				"${BUILT_PRODUCTS_DIR}/YNLib/YNLib.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/libCommonCrypto/CommonCrypto.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Objective_LevelDB.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YNLib.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CommonCrypto.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YNLib_Example/Pods-YNLib_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		597104E0BADC7F789E5D59EA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YNLib_Example-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9061DA053F761453B9721D59 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-YNLib_Example/Pods-YNLib_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E379990A5640CEEAA16E0608 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-YNLib_Example-YNLib_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		607FACCC1AFB9204008FA782 /* Sources */ = {
@@ -585,7 +412,6 @@
 		};
 		607FACF01AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5FE3F8A03D1A42B657A7874F /* Pods-YNLib_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -604,7 +430,6 @@
 		};
 		607FACF11AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC9E778235213B51D2D552D5 /* Pods-YNLib_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -622,7 +447,6 @@
 		};
 		607FACF31AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 19E87A059070006AD76BDF32 /* Pods-YNLib_Example-YNLib_Tests.debug.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -644,7 +468,6 @@
 		};
 		607FACF41AFB9204008FA782 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3E9BA1F9E129F95A2D10B9B /* Pods-YNLib_Example-YNLib_Tests.release.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
