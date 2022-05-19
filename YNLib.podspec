@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '13.0'
 
   s.module_name  = 'YNLib'
-  s.source_files = "YNLib/Classes/*.{swift,h,m,mm,cc,hpp}"
+  s.source_files = "YNLib/Classes/*.{swift,h,m,mm,cc,hpp}", 'Sources/**/*.{h,m,swift}'
   s.dependency 'Objective-LevelDB', '2.1.5'
   s.dependency 'ReactiveCocoa', '12.0.0'
   s.resources = 'YNLib/Assets/unicode_to_hanyu_pinyin.txt'
